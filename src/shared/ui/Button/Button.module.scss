@@ -4,7 +4,7 @@
 
 .Button {
    @include flex-center();
-   // position: relative;
+
    &:hover {
       opacity: 0.8;
       cursor: pointer;
@@ -79,13 +79,9 @@
 .buttonSelect {
    padding: 8px 16px;
    position: relative;
-   justify-content: flex-start;
+   gap: 10px;
 
-   &::after {
-      content: '';
-      position: absolute;
-      right: 20px;
-      content: url(../../assets/icons/icon-arrow-right.svg);
-      margin-left: 13px;
+   .arrow {
+      width: 11px;
    }
 }

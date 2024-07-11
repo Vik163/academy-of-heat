@@ -3,6 +3,8 @@ import { type Mods, classNames } from '@/shared/lib/classNames/classNames';
 
 import cls from './Button.module.scss';
 import { FontColor, FontSize, FontWeight } from '../Text';
+import { Icon } from '../Icon';
+import arow from '@/shared/assets/icons/icon-arrow-right.svg';
 
 export enum ButtonVariant {
    OUTLINE = 'outline',
@@ -89,6 +91,7 @@ export const Button = memo((props: ButtonProps) => {
          {...otherProps}
       >
          {children}
+         {arrow && <Icon Svg={arow} className={cls.arrow} />}
       </button>
    );
 });

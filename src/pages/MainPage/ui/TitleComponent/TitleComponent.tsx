@@ -7,9 +7,7 @@ import { FontColor, FontSize, FontWeight, HeaderTagType, Text } from '@/shared/u
 import { FlexAlign, FlexWrap } from '@/shared/ui/Stack/Flex';
 import { Button, ButtonBgColor, ButtonVariant } from '@/shared/ui/Button';
 import image from '@/shared/assets/images/several-keson.png';
-import arrow from '@/shared/assets/icons/icon-arrow-right.svg';
 import { Postman } from '@/shared/ui/Postman';
-import { Icon } from '@/shared/ui/Icon';
 
 interface TitleComponentProps {
    className?: string;
@@ -51,9 +49,9 @@ export const TitleComponent = memo((props: TitleComponentProps) => {
                bgColor={ButtonBgColor.YELLOW}
                className={classNames('', {}, [cls.buttonSelect])}
                onClick={openForm}
+               arrow
             >
                Подобрать кессон/погреб
-               <Icon Svg={arrow} className={cls.arrow} />
             </Button>
             <div className={cls.imageContainer}>
                <img src={image} className={cls.mainImage} alt='Кессон'></img>
