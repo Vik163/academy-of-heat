@@ -1,0 +1,68 @@
+.ProductItem {
+   width: 100%;
+   padding: 24px 0 79px;
+   background-color: #f5f8fb;
+
+   .crumbs {
+      max-width: var(--page-width);
+      width: 100%;
+      margin: 0 auto 30px;
+   }
+}
+
+.container {
+   max-width: var(--page-width);
+   width: 100%;
+   margin: 0 auto;
+}
+
+.infoContainer {
+   width: 600px;
+}
+
+.titleProduct {
+   width: 100%;
+   margin-bottom: 10px;
+}
+
+.imageContainer {
+   width: 367px;
+   height: 460px;
+   position: relative;
+   display: flex;
+   align-items: center;
+
+   &::before {
+      position: absolute;
+      left: 70%;
+      bottom: 150px;
+      content: url(../../../../shared/assets/icons/type-garant-1.svg);
+      z-index: 2;
+   }
+
+   &::after {
+      position: absolute;
+      left: 70%;
+      bottom: 34px;
+
+      content: url(../../../../shared/assets/icons/vectorpaint.png);
+      z-index: 2;
+   }
+
+   .mainImage {
+      width: 367px;
+   }
+}
+
+.buttonAdvice {
+   padding-left: 58px;
+   padding-right: 18px;
+   font-size: 14px;
+   box-shadow: 0px 6px 13px rgba(15, 15, 150, 0.05);
+   background-image: url(../../../../shared/assets/icons/icon-info.png);
+   background-position: 23px center;
+   background-repeat: no-repeat;
+   background-size: 26px;
+   border-radius: 8px;
+   margin-top: 23px;
+}

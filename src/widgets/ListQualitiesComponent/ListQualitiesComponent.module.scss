@@ -1,0 +1,95 @@
+.garantii {
+   position: relative;
+   padding: 56px 0 50px;
+   height: 720px;
+   background-color: #fff;
+   overflow: hidden;
+   width: 100%;
+}
+
+.block_image {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   width: 720px;
+   height: 720px;
+   transform: translate(-50%, -50%);
+   margin: 0 0 0 -488px;
+}
+
+.image_pc {
+   display: block;
+   height: 100%;
+   float: right;
+}
+
+.image_mob {
+   display: none;
+}
+
+.container {
+   position: relative;
+   max-width: 1034px;
+   padding: 0 10px;
+   margin: 0 auto;
+}
+
+.title {
+   margin: 0;
+   font-weight: 900;
+   font-size: 36px;
+   line-height: 40px;
+}
+
+.description {
+   margin: 16px 0 0;
+   font-size: 18px;
+   line-height: 27px;
+   color: #868c96;
+}
+
+.marginTitle {
+   margin-left: 70px;
+}
+
+.marginImage {
+   top: 55%;
+}
+
+.garantii_block {
+   margin-top: 70px;
+   padding-left: 440px;
+}
+
+.garantii_block_list_item {
+   position: relative;
+   margin-bottom: 36px;
+   padding-left: 80px;
+}
+
+.garantii_block_list_image {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 69px;
+   height: 69px;
+
+   img {
+      width: 69px;
+      height: 69px;
+   }
+}
+
+.garantii_block_list_title {
+   margin-bottom: 8px;
+   font-weight: 900;
+   font-size: 16px;
+   line-height: 19px;
+}
+
+.garantii_block_list_description {
+   max-width: 375px;
+   font-size: 14px;
+   line-height: 21px;
+   color: #8e8e8e;
+}

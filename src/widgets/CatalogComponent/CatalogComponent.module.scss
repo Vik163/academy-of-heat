@@ -1,0 +1,71 @@
+.CatalogComponent {
+   width: 100%;
+   padding: 50px 0 60px;
+   background-color: var(--color-bg-component);
+}
+
+.container {
+   max-width: 1034px;
+   width: 100%;
+   margin: 0 auto;
+}
+
+.title {
+   margin-bottom: 40px;
+}
+
+.linkContainer {
+   width: 324px;
+   height: 320px;
+   background-color: #fff;
+   border-radius: 15px;
+   padding: 20px 10px;
+   cursor: pointer;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+
+   &.category {
+      width: 238px;
+      height: 360px;
+      flex-direction: column;
+   }
+
+   .titleLink {
+      width: 124px;
+      margin-bottom: 20px;
+
+      &.category {
+         width: 146px;
+      }
+   }
+
+   &:hover {
+      background-color: var(--color-green);
+
+      .titleLink {
+         color: #fff;
+      }
+   }
+}
+
+.buttonSelect {
+   padding: 8px 16px;
+   position: relative;
+   justify-content: flex-start;
+
+   &::after {
+      content: '';
+      position: absolute;
+      right: 20px;
+      content: url(../../shared/assets/icons/icon-arrow-right.svg);
+      margin-left: 13px;
+   }
+}
+
+.imageLink {
+   max-width: 175px;
+   max-height: 260px;
+   display: flex;
+   justify-content: flex-end;
+}

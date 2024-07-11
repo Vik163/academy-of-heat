@@ -1,0 +1,47 @@
+.InfoComponent {
+   width: 100%;
+   padding: 66px 0 69px;
+
+   p {
+      font-size: var(--size-14);
+      margin-top: 20px;
+      line-height: 21px;
+      color: var(--color-light-grey-text);
+   }
+}
+
+.title {
+   margin-top: 20px;
+}
+
+.container {
+   position: relative;
+   max-width: var(--page-width);
+   padding: 0 10px;
+   margin: 0 auto;
+}
+
+.list {
+   padding-left: 40px;
+   margin-top: 20px;
+
+   li {
+      font-size: var(--size-14);
+      line-height: 21px;
+      list-style-type: disc;
+      color: var(--color-light-grey-text);
+
+      a {
+         color: var(--color-green);
+      }
+
+      &.numStyle {
+         list-style-type: decimal;
+      }
+   }
+}
+
+.link {
+   color: var(--color-green);
+   cursor: default;
+}

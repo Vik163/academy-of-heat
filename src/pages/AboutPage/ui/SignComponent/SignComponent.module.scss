@@ -1,0 +1,33 @@
+.SignComponent {
+   width: 100%;
+   padding: 65px 0;
+}
+
+.image {
+   width: 360px;
+   border: 2px solid #98596b;
+   cursor: pointer;
+}
+
+.imagePopup {
+   width: 360px;
+   opacity: 0;
+   -webkit-transform: scale(1.4) translate(-30px);
+   transform: scale(1.4) translate(-30px);
+   -webkit-transition: all 0.3s;
+   transition: all 0.3s;
+
+   &.openImage {
+      opacity: 1;
+      -webkit-transform: scale(1.7) translate(0);
+      transform: scale(1.7) translate(0);
+      -webkit-transition: all 0.3s;
+      transition: all 0.3s;
+   }
+}
+
+.subtitle {
+   width: 442px;
+   margin-top: 16px;
+   line-height: 25px;
+}

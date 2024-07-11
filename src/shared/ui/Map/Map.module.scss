@@ -1,0 +1,38 @@
+.markerContainer {
+   position: relative;
+}
+
+.marker {
+   width: 40px;
+
+   .icon {
+      position: absolute;
+
+      top: 6px;
+      left: 9px;
+   }
+}
+
+.zoom {
+   width: 20px;
+}
+
+.logoName {
+   font-size: var(--size-13);
+   font-weight: var(--weight-700);
+   color: var(--color-dark-green);
+}
+
+.info {
+   position: absolute;
+   bottom: 60px;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   width: 150px;
+   padding: 5px;
+   background-color: rgba(255, 255, 255, 0.9);
+   border: 1px solid var(--color-light-green);
+   border-radius: 5px;
+}

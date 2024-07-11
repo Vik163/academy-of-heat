@@ -1,0 +1,60 @@
+@import '../../../../app/styles/variables/mixins.scss';
+
+.QuestionsPage {
+   width: 100%;
+}
+
+.container {
+   max-width: var(--page-width);
+   width: 100%;
+   margin: 20px auto 60px;
+}
+
+.title {
+   margin: 20px 0;
+}
+
+.subtitle {
+   margin-bottom: 20px;
+}
+
+.questionsContainer {
+   padding-left: 10px;
+}
+
+.questionBlock {
+   max-width: 920px;
+   font-size: 15px;
+   color: #06892e;
+   cursor: pointer;
+   margin: 20px 0;
+
+   .arrow {
+      width: 20px;
+      height: 20px;
+      transform: rotate(90deg);
+      -webkit-transition: all 0.15s ease;
+      -o-transition: all 0.15s ease;
+      -moz-transition: all 0.2s ease;
+      transition: all 0.15s ease;
+      fill: #06892e;
+
+      &.arrowActive {
+         transform: rotate(270deg);
+      }
+   }
+}
+
+.question {
+   color: inherit;
+   @include nonSelect();
+}
+
+.description {
+   padding: 0 40px;
+   line-height: 21px;
+}
+
+.descriptionList {
+   padding: 10px 40px;
+}

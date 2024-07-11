@@ -1,0 +1,53 @@
+.NumInfoComponent {
+   width: 100%;
+   padding-top: 78px;
+   background-color: #f5f8fb;
+}
+
+.container {
+   max-width: var(--page-width);
+   margin: 0 auto;
+   position: relative;
+   height: 560px;
+}
+
+.subtitle {
+   margin: 16px 0 45px;
+}
+
+.image {
+   position: absolute;
+   left: -80px;
+   bottom: 0;
+   height: 450px;
+   width: 490px;
+}
+
+.infoContainer {
+   float: right;
+}
+
+.column {
+   width: 333px;
+}
+
+.columnItem {
+   margin-bottom: 41px;
+
+   span {
+      font-weight: 700;
+      font-size: 64px;
+      line-height: 64px;
+      color: #06892e;
+   }
+}
+
+.columnTitle {
+   font-size: 36px;
+   line-height: 47px;
+}
+
+.columnDescription {
+   font-size: 17px;
+   line-height: 23px;
+}

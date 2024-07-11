@@ -1,0 +1,29 @@
+@media screen and (max-width: 600px) {
+   .container {
+      width: 100%;
+      flex-direction: column;
+      padding: 0 20px;
+   }
+
+   .footerInfo {
+      width: 100%;
+   }
+
+   .logo {
+      border-bottom: none;
+   }
+
+   .textInfo {
+      width: fit-content;
+      margin-top: 17px;
+   }
+
+   .links {
+      margin: 24px 0;
+      gap: 5px;
+   }
+
+   .sequrityInfo {
+      width: 100%;
+   }
+}

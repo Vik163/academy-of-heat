@@ -1,0 +1,57 @@
+@media screen and (max-width: 600px) {
+   .TitleComponent {
+      padding: calc(var(--header-height-mobile) + 30px) 20px 40px;
+      height: fit-content;
+   }
+
+   .infoContainer {
+      width: 100%;
+
+      &::before {
+         content: url(../../../../shared/assets/images/round-header-type-home.svg);
+         position: absolute;
+         bottom: -70px;
+         right: -40px;
+         z-index: 0;
+      }
+   }
+
+   .title {
+      width: fit-content;
+      font-size: 46px;
+      line-height: 46px;
+   }
+
+   .production {
+      width: fit-content;
+      line-height: 27px;
+      margin-bottom: 530px;
+   }
+
+   .featuresList {
+      width: 100%;
+   }
+
+   .buttonSelect {
+      box-shadow: none;
+      margin-top: 40px;
+      margin-left: 0;
+      justify-content: center;
+      width: 100%;
+
+      &::after {
+         right: 20%;
+         margin-left: 13px;
+      }
+   }
+
+   .imageContainer {
+      position: absolute;
+      top: 50%;
+      max-width: 346px;
+
+      .mainImage {
+         width: 100%;
+      }
+   }
+}

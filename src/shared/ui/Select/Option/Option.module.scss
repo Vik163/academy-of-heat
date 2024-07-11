@@ -1,0 +1,9 @@
+.option {
+   padding-left: 15px;
+   cursor: pointer;
+
+   &:hover {
+      background-color: var(--color--vivid-cyan-blue);
+      color: var(--color-white);
+   }
+}

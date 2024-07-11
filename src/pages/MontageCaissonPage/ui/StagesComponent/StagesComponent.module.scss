@@ -1,0 +1,57 @@
+.StagesComponent {
+   width: 100%;
+   padding: 34px 0;
+   background-image: url(https://земляк.рф/wp-content/themes/zemljak/images/etapy.jpg);
+   background-position: top center;
+   background-repeat: repeat-x;
+}
+
+.container {
+   max-width: var(--page-width);
+   margin: 0 auto;
+}
+
+.title {
+   margin-bottom: 70px;
+}
+
+.addImage {
+   width: 309px;
+   height: 444px;
+}
+
+.stagesInfo {
+   width: 430px;
+   height: 310px;
+   padding: 31px 40px 28px;
+   background: #ffffff;
+   border-radius: 15px;
+}
+
+.buttonsContainer {
+   flex-shrink: 1;
+   height: fit-content;
+}
+
+.numStage {
+   font-size: var(--size-18);
+}
+
+.nameStage {
+   width: 260px;
+   font-size: var(--size-18);
+   font-weight: var(--weight-600);
+}
+
+.description {
+   flex-grow: 1;
+   width: 280px;
+   margin-left: 84px;
+   margin-top: 20px;
+}
+
+.buttonBack {
+   &::after {
+      transform: rotate(180deg);
+   }
+}

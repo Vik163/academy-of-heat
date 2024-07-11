@@ -1,0 +1,120 @@
+.TitleComponent {
+   width: 100%;
+   height: 680px;
+   padding: 30px 0 59px;
+   background: linear-gradient(132.95deg, #07523f 17.35%, #05372b 97.15%);
+}
+
+.infoContainer {
+   max-width: 1014px;
+   width: 100%;
+   margin: 0 auto;
+   position: relative;
+
+   &::before {
+      content: url(../../shared/assets/images/round-header-type-home.svg);
+      position: absolute;
+      bottom: -70px;
+      right: -40px;
+      z-index: 0;
+   }
+}
+
+.title {
+   font-weight: 700;
+   font-size: 36px;
+   z-index: 1;
+   margin-top: 10px;
+}
+
+.production {
+   width: 520px;
+   color: var(--color--light-green-cyan);
+   margin: 29px 0 46px;
+   line-height: 24px;
+
+   z-index: 1;
+}
+
+.list {
+   width: 494px;
+   margin: 36px 0 47px;
+}
+
+.imageStyle {
+   margin-bottom: 16px;
+   font-size: 17px;
+   line-height: 22px;
+   height: 42px;
+   color: var(--color-white);
+   display: flex;
+   align-items: center;
+   padding-left: 60px;
+   background-repeat: no-repeat;
+   background-position: top left;
+
+   &.image1 {
+      background-image: url(../../shared/assets/icons/icon-header-6.svg);
+   }
+
+   &.image2 {
+      background-image: url(../../shared/assets/icons/icon-header-7.svg);
+   }
+
+   &.image3 {
+      background-image: url(../../shared/assets/icons/icon-header-5.svg);
+   }
+
+   &.image4 {
+      background-image: url(../../shared/assets/icons/icon-header-8.svg);
+   }
+}
+
+.listTitle {
+   margin: 50px 0 5px;
+}
+
+.buttonSelect {
+   padding: 8px 16px;
+   margin-left: 10px;
+   position: relative;
+   justify-content: flex-start;
+
+   &::after {
+      content: '';
+      position: absolute;
+      right: 20px;
+      content: url(../../shared/assets/icons/icon-arrow-right.svg);
+      margin-left: 13px;
+   }
+}
+
+.imageContainer {
+   position: absolute;
+   top: 50%;
+   right: 47px;
+   max-width: 414px;
+   transform: translate(0, -50%);
+   margin-top: 35px;
+
+   &::before {
+      position: absolute;
+      left: 82%;
+      bottom: 150px;
+      content: url(../../shared/assets/icons/type-garant-1.svg);
+      z-index: 2;
+   }
+
+   &::after {
+      position: absolute;
+      left: 82%;
+      bottom: 34px;
+
+      content: url(../../shared/assets/icons/vectorpaint.png);
+      z-index: 2;
+   }
+
+   .mainImage {
+      width: 367px;
+   }
+}

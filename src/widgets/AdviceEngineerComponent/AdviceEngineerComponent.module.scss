@@ -1,0 +1,56 @@
+.AdviceEngineer {
+   width: 100%;
+   margin: 0 auto;
+   background-color: var(--color-bg-component);
+   padding: 66px 0 62px;
+}
+
+.container {
+   max-width: var(--page-width);
+   width: 100%;
+   margin: 0 auto;
+}
+
+.faceContainer {
+   width: 237px;
+   height: 237px;
+   border-radius: 50%;
+   background-color: white;
+   overflow: hidden;
+   display: flex;
+   justify-content: center;
+
+   .face {
+      height: 100%;
+   }
+}
+
+.infoContainer {
+   width: 550px;
+}
+
+.description {
+   margin: 16px 0 35px;
+}
+
+.button {
+   margin-right: 14px;
+}
+
+.whatsapp {
+   margin-right: 8px;
+}
+
+.telegram {
+   margin-right: 18px;
+}
+
+.link {
+   line-height: 40px;
+   color: var(--color-green);
+   cursor: default;
+}
+
+.caption {
+   margin-top: 23px;
+}

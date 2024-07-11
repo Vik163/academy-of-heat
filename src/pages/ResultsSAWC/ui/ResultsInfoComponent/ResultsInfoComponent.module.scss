@@ -1,0 +1,28 @@
+.ResultsInfoComponent {
+   width: 100%;
+   padding: 65px 0;
+}
+
+.container {
+   max-width: var(--page-width);
+   margin: 0 auto;
+
+   p {
+      font-size: var(--size-14);
+      line-height: 22px;
+      margin-top: 10px;
+   }
+}
+
+.title {
+   margin-bottom: 30px;
+}
+
+.imageContainer {
+   max-width: 768px;
+   cursor: pointer;
+}
+
+.imagePopup {
+   max-width: 1260px;
+}

@@ -1,0 +1,87 @@
+.selectContainer {
+   width: 100%;
+   height: 70px;
+   margin-top: 30px;
+   background-image: url('../../../../shared/assets/icons/icon-attributes-gabaritnye-razmery.svg');
+   margin-bottom: 40px;
+   background-size: 35px;
+   padding-left: 53px;
+   background-repeat: no-repeat;
+   background-position: left center;
+
+   .selectTitle {
+      font-size: var(--size-15);
+      font-weight: var(--weight-500);
+   }
+}
+
+.select {
+   height: 40px;
+   border: 2px solid var(--color-yellow);
+   display: flex;
+   border-radius: 8px;
+   font-size: var(--size-14);
+   line-height: 18px;
+   position: relative;
+   padding: 0 40px 0 15px;
+
+   &::after {
+      position: absolute;
+      content: '';
+      top: 10px;
+      right: -75px;
+      width: 36px;
+      height: 18px;
+      background-image: url(../../../../shared/assets/icons/icon-arrow-left-red.png);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      -webkit-transition: all 0.2s ease;
+      -o-transition: all 0.2s ease;
+      -moz-transition: all 0.2s ease;
+      transition: all 0.2s ease;
+      animation: left_right_arrow 0.7s linear infinite alternate;
+   }
+}
+
+.parameterContainer {
+   height: 52px;
+   background-image: url('../../../../shared/assets/icons/icon-attributes-diametr-obsadnoj-truby.png');
+   margin-bottom: 20px;
+   background-size: 35px;
+   padding-left: 53px;
+   background-repeat: no-repeat;
+   background-position: left center;
+
+   .parameterTitle {
+      font-size: var(--size-15);
+   }
+
+   .parameter {
+      font-size: var(--size-18);
+      line-height: 28px;
+      font-weight: var(--weight-500);
+   }
+
+   &.parameterCoupling {
+      background-image: url('../../../../shared/assets/icons/icon-attributes-diametr-mufty.svg');
+   }
+   &.parameterMaterial {
+      background-image: url('../../../../shared/assets/icons/icon-attributes-material.svg');
+   }
+   &.parameterWeight {
+      background-image: url('../../../../shared/assets/icons/icon-attributes-ves.svg');
+   }
+}
+
+.materialAndWight {
+   margin-top: 20px;
+}
+
+@keyframes left_right_arrow {
+   0% {
+   }
+   100% {
+      right: -55px;
+   }
+}

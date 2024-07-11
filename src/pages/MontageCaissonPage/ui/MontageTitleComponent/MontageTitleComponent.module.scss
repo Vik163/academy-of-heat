@@ -1,0 +1,68 @@
+.MontageTitleComponent {
+   padding: 24px 0 66px;
+   background-color: #f5f8fb;
+   width: 100%;
+}
+
+.container {
+   max-width: var(--page-width);
+   margin: 0 auto;
+}
+
+.title {
+   margin: 10px 0 20px;
+}
+
+.list {
+   padding-left: 40px;
+   margin-top: 20px;
+
+   &.listMargin {
+      margin: 16px 0 24px;
+   }
+
+   li {
+      font-size: var(--size-14);
+      line-height: 21px;
+      list-style-type: disc;
+      color: var(--color-light-grey-text);
+
+      a {
+         color: var(--color-green);
+      }
+
+      &.numStyle {
+         list-style-type: decimal;
+      }
+
+      &.imageStyle {
+         list-style-image: url(../../../../shared/assets/icons/icon-check.svg);
+         margin-bottom: 16px;
+         padding-left: 6px;
+         font-size: 15px;
+         line-height: 17px;
+         color: var(--color-primary);
+      }
+   }
+}
+
+.listTitle {
+   margin: 50px 0 5px;
+}
+
+.calculate {
+   width: 423px;
+   height: 76px;
+   background-color: #fff;
+   margin-top: 32px;
+   border-radius: 15px;
+}
+
+.sum {
+   font-size: 18px;
+   font-weight: var(--weight-600);
+}
+
+.button {
+   padding: 10px 18px;
+}

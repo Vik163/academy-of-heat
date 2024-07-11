@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Pattaya&display=swap');
+
+@import 'reset';
+@import 'variables/global';
+@import 'colors';
+@import 'fonts/inter.scss';
+
+body {
+   overflow-x: hidden;
+}
+
+.root {
+   font-family: 'Inter', sans-serif;
+   display: flex;
+   justify-content: center;
+   position: relative;
+   height: 100%;
+}
+
+.app {
+   width: 100%;
+   padding-left: var(--sidebar-width);
+   height: 100%;
+}
+
+.main {
+   width: 100%;
+}
+
+@media screen and (max-width: 600px) {
+   .root {
+   }
+
+   .app {
+      padding-left: 0;
+   }
+}
+
+@media screen and (max-width: 400px) {
+   .root {
+      width: 320px;
+   }
+}

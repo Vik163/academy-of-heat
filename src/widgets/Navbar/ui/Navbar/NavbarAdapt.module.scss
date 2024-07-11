@@ -1,0 +1,30 @@
+@media screen and (max-width: 600px) {
+   .Navbar {
+      width: var(--sidebar-width-mobile);
+      transform: translateX(calc(var(--sidebar-width-mobile) * -1));
+      transition: transform 0.2s;
+   }
+
+   .navMobile {
+      display: none;
+   }
+
+   .items {
+      width: var(--sidebar-width-mobile);
+   }
+
+   .navLogo {
+      width: var(--sidebar-width-mobile);
+      border-right: 1px solid var(--color-outlined);
+      border-bottom: 1px solid var(--color-outlined);
+   }
+
+   .openNavMobile {
+      display: flex;
+   }
+
+   .animate {
+      transform: translateX(0);
+      transition: transform 0.2s;
+   }
+}

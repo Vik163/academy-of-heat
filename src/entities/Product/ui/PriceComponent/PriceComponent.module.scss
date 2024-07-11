@@ -1,0 +1,36 @@
+.PriceComponent {
+   position: relative;
+   width: 498px;
+   padding: 28px 25px 28px 42px;
+   background: #ffffff;
+   box-shadow: 0px 6px 13px rgba(15, 15, 150, 0.05);
+   border-radius: 15px;
+}
+
+.priceContainer {
+   height: 40px;
+
+   .price {
+      text-decoration: line-through;
+      text-decoration-thickness: 2px;
+      text-decoration-color: var(--color-light-grey-text);
+   }
+
+   .orderText {
+      font-size: var(--size-14);
+      color: var(--color-light-grey-text);
+   }
+}
+
+.buttonSelect {
+   padding: 8px 16px;
+   position: relative;
+   justify-content: flex-start;
+
+   &::after {
+      position: absolute;
+      right: 20px;
+      content: url(../../../../shared/assets/icons/icon-arrow-right-white.svg);
+      margin-left: 13px;
+   }
+}

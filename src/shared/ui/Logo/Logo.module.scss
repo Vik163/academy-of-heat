@@ -1,0 +1,21 @@
+@import '@/app/styles/variables/mixins.scss';
+
+.logo {
+   @include flex-column-center;
+   @include font(10px, var(--weight-700), var(--color-green));
+   line-height: 18px;
+   letter-spacing: 1px;
+   background-color: transparent;
+   padding: 12px;
+   width: 210px;
+   height: var(--header-height);
+   border-bottom: 1px solid var(--color-outlined);
+}
+
+.logoName {
+   font-size: var(--size-16);
+   font-weight: var(--weight-900);
+   margin-top: 5px;
+}
+
+@import './LogoAdapt.module.scss';

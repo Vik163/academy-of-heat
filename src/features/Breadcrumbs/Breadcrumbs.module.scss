@@ -1,0 +1,23 @@
+.Breadcrumbs {
+   display: flex;
+}
+
+.linkContainer {
+   display: flex;
+   align-items: center;
+}
+
+.icon {
+   width: 4px;
+   height: 6px;
+   margin: 0 10px;
+}
+
+.link {
+   color: var(--color--cyan-bluish-gray);
+   font-size: var(--size-14);
+   &:last-child {
+      pointer-events: none;
+      cursor: text;
+   }
+}

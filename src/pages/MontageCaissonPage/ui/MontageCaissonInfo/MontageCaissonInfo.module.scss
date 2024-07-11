@@ -1,0 +1,75 @@
+.MontageCaissonInfo {
+   width: 100%;
+   padding: 66px 0 69px;
+}
+
+.container {
+   max-width: var(--page-width);
+   margin: 0 auto;
+}
+
+.title {
+   margin-top: 20px;
+}
+
+.advantages {
+   width: 412px;
+   padding: 24px 44px 24px 24px;
+   background-color: #fbfcef;
+   border-radius: 15px;
+
+   p {
+      font-size: var(--size-14);
+      margin-top: 20px;
+      line-height: 21px;
+      color: var(--color-primary);
+   }
+}
+
+.info {
+   width: 507px;
+
+   p {
+      font-size: var(--size-14);
+      margin-top: 20px;
+      line-height: 21px;
+      color: var(--color-light-grey-text);
+   }
+}
+
+.list {
+   padding-left: 40px;
+   margin-top: 20px;
+
+   &.listMargin {
+      margin: 16px 0 24px;
+   }
+
+   li {
+      font-size: var(--size-14);
+      line-height: 21px;
+      list-style-type: disc;
+      color: var(--color-light-grey-text);
+
+      a {
+         color: var(--color-green);
+      }
+
+      &.numStyle {
+         list-style-type: decimal;
+      }
+
+      &.imageStyle {
+         list-style-image: url(../../../../shared/assets/icons/icon-check.svg);
+         margin-bottom: 16px;
+         padding-left: 6px;
+         font-size: 14px;
+         line-height: 17px;
+         color: var(--color-primary);
+      }
+   }
+}
+
+.boldText {
+   font-weight: var(--weight-600);
+}
