@@ -59,16 +59,13 @@
    margin-top: 71px;
    margin-left: 10px;
    position: relative;
-   justify-content: flex-start;
+   justify-content: center;
    width: 250px;
    height: 40px;
+   gap: 10px;
 
-   &::after {
-      content: '';
-      position: absolute;
-      right: 20px;
-      content: url(../../../../shared/assets/icons/icon-arrow-right.svg);
-      margin-left: 13px;
+   .arrow {
+      width: 11px;
    }
 }
 
