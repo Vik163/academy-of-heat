@@ -8,10 +8,11 @@
       width: 100%;
 
       &::before {
-         content: url(../../../../shared/assets/images/round-header-type-home.svg);
+         content: url(../../../../shared/assets/images/round-header-type-home-mobile.svg);
          position: absolute;
-         bottom: -70px;
-         right: -40px;
+         top: 27%;
+         bottom: none;
+         right: -20px;
          z-index: 0;
       }
    }
@@ -34,24 +35,33 @@
 
    .buttonSelect {
       box-shadow: none;
-      margin-top: 40px;
+      margin-top: 20px;
       margin-left: 0;
-      justify-content: center;
+      padding-left: 22%;
       width: 100%;
 
       &::after {
-         right: 20%;
-         margin-left: 13px;
+         right: 19%;
       }
    }
 
    .imageContainer {
       position: absolute;
-      top: 50%;
+      top: 45%;
       max-width: 346px;
 
       .mainImage {
          width: 100%;
+      }
+   }
+}
+
+@media screen and (max-width: 400px) {
+   .buttonSelect {
+      padding-left: 11%;
+
+      &::after {
+         right: 11%;
       }
    }
 }
