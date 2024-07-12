@@ -28,7 +28,8 @@ export const Postman = memo((props: PostmanProps) => {
    const [loading, setLoading] = useState(false);
    const { phoneValidator } = usePhoneValidator();
    const [isOpenForm, setIsOpenForm] = useState(false);
-   const { isMobile } = useResize();
+   const { isMobile, isHorizontal } = useResize();
+   console.log('isHorizontal:', isHorizontal);
 
    const openForm = () => {
       setIsOpenForm(true);
@@ -103,10 +104,13 @@ export const Postman = memo((props: PostmanProps) => {
       <div className={cls.container}>
          {title && (
             <div>
-               <Text title={HeaderTagType.H_3} className={cls.title}>
+               <Text
+                  title={HeaderTagType.H_3}
+                  className={classNames(cls.title, { [cls.horizontal]: isHorizontal }, [])}
+               >
                   {title}
                </Text>
-               <Text className={cls.subtitle} fontSize={FontSize.SIZE_15}>
+               <Text className={classNames(cls.subtitle, { [cls.horizontal]: isHorizontal }, [])}>
                   Заполните поля ниже, наш менеджер свяжется с Вами и ответит на ваши вопросы
                </Text>
             </div>
@@ -119,7 +123,11 @@ export const Postman = memo((props: PostmanProps) => {
                defaultValue={toSend.copyemail}
             ></input>
             <input
-               className={classNames(cls.phone, { [cls.nonModal]: !closeForm }, [])}
+               className={classNames(
+                  cls.phone,
+                  { [cls.nonModal]: !closeForm, [cls.horizontal]: isHorizontal },
+                  [],
+               )}
                id='phone'
                ref={phoneRef}
                name='phone'
@@ -135,7 +143,11 @@ export const Postman = memo((props: PostmanProps) => {
             )}
             {commentText && (
                <textarea
-                  className={classNames(cls.message, { [cls.nonModal]: !closeForm }, [])}
+                  className={classNames(
+                     cls.message,
+                     { [cls.nonModal]: !closeForm, [cls.horizontal]: isHorizontal },
+                     [],
+                  )}
                   id='message'
                   ref={messageRef}
                   name='message'
@@ -150,7 +162,11 @@ export const Postman = memo((props: PostmanProps) => {
                </span>
             )}
             <Button
-               className={classNames(cls.btn, { [cls.nonModal]: !closeForm }, [])}
+               className={classNames(
+                  cls.btn,
+                  { [cls.nonModal]: !closeForm, [cls.horizontal]: isHorizontal },
+                  [],
+               )}
                type='submit'
                variant={ButtonVariant.FILLED}
             >

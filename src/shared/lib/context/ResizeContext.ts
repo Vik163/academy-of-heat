@@ -1,8 +1,8 @@
 import { createContext } from 'react';
-import { Devices } from '@/shared/types/devices';
+import { DevicesPosition } from '@/shared/types/devices';
 
 export interface ResizeContextProps {
-   device?: Devices;
+   device?: DevicesPosition;
 }
 
 export const ResizeContext = createContext<ResizeContextProps>({});

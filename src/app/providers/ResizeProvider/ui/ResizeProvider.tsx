@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { ReactNode, useCallback, useEffect, useMemo, useState } from 'react';
 import { ResizeContext } from '@/shared/lib/context/ResizeContext';
-import { Devices } from '@/shared/types/devices';
+import { Devices, DevicesPosition, Position } from '@/shared/types/devices';
 
 const points = [600, 850, 1200];
 
@@ -12,11 +12,13 @@ interface ResizeProviderProps {
 const ResizeProvider = (props: ResizeProviderProps) => {
    const { children } = props;
 
-   const [device, setDevice] = useState<Devices>('');
+   const [device, setDevice] = useState<DevicesPosition>({ device: '', position: '' });
    let size: Devices = '';
+   let position: Position = '';
 
    const handler = useCallback(() => {
       const num = window.innerWidth;
+      const numHeight = window.innerHeight;
 
       if (num < 601) {
          size = size === 'mobile' ? 'pad' : 'mobile';
@@ -27,12 +29,16 @@ const ResizeProvider = (props: ResizeProviderProps) => {
       } else {
          size = 'desktop';
       }
-
-      setDevice(size);
+      if (num > numHeight) {
+         position = 'horizontal';
+      } else {
+         position = 'vertical';
+      }
+      setDevice({ device: size, position });
    }, [size]);
 
    useEffect(() => {
-      if (!device) handler();
+      if (!device.device) handler();
 
       points.forEach((num) => window.matchMedia(`(min-width: ${num}px)`).addEventListener('change', handler));
       return () => {
@@ -48,7 +54,7 @@ const ResizeProvider = (props: ResizeProviderProps) => {
       () => ({
          device,
       }),
-      [device],
+      [device.device],
    );
 
    return <ResizeContext.Provider value={defaultProps}>{children}</ResizeContext.Provider>;

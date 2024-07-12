@@ -90,11 +90,13 @@ export const Navbar = memo(({ className, openNavMobile }: NavbarProps) => {
 
    return (
       <nav ref={navRef} className={classNames(cls.Navbar, mods, [className])}>
-         <div>
+         <VStack className={cls.container}>
             <Logo className={cls.navLogo} />
-            <VStack role='navigation' className={cls.items} align={FlexAlign.START}>
-               {itemsList}
-            </VStack>
+            <div className={cls.itemsContainer}>
+               <VStack role='navigation' className={cls.items} align={FlexAlign.START}>
+                  {itemsList}
+               </VStack>
+            </div>
             {openModal && (
                <Modal
                   isOpen={openModal}
@@ -137,8 +139,8 @@ export const Navbar = memo(({ className, openNavMobile }: NavbarProps) => {
                   </VStack>
                </Modal>
             )}
-         </div>
-         <VStack gap={20} className={cls.phoneContainer} align={FlexAlign.CENTER}>
+         </VStack>
+         <VStack className={cls.phoneContainer} align={FlexAlign.CENTER}>
             <Text
                className={cls.phone}
                fontSize={FontSize.SIZE_14}
