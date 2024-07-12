@@ -27,12 +27,6 @@
    }
 
    .error {
-      font-weight: 400;
-      font-size: 12px;
-      line-height: 20px;
-      padding-left: 3px;
-      color: red;
-
       &.nonModal {
          width: 280px;
          margin-left: 84px;
@@ -76,11 +70,12 @@
       }
    }
 
+   .answerTitle {
+      font-size: var(--size-20);
+   }
+
    .textPopup {
-      margin-top: 30px;
-      padding-top: 30px;
-      color: #686868;
-      line-height: 22px;
-      border-top: 1px solid #c0c0c0;
+      margin-top: 20px;
+      padding-top: 20px;
    }
 }

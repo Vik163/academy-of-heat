@@ -8,6 +8,7 @@ import { Button, ButtonVariant } from '@/shared/ui/Button';
 import { usePhoneValidator } from '@/shared/lib/hooks/usePhoneValidator';
 import { PageLoader } from '@/widgets/PageLoader';
 import { classNames } from '@/shared/lib/classNames/classNames';
+import { useResize } from '@/shared/lib/hooks/useResize';
 
 export interface PostmanProps {
    closeForm?: () => void;
@@ -27,6 +28,7 @@ export const Postman = memo((props: PostmanProps) => {
    const [loading, setLoading] = useState(false);
    const { phoneValidator } = usePhoneValidator();
    const [isOpenForm, setIsOpenForm] = useState(false);
+   const { isMobile } = useResize();
 
    const openForm = () => {
       setIsOpenForm(true);
@@ -160,7 +162,7 @@ export const Postman = memo((props: PostmanProps) => {
 
    const answerPopup = (
       <div className={cls.container}>
-         <Text title={HeaderTagType.H_3} fontSize={FontSize.SIZE_24} fontWeight={FontWeight.TEXT_700}>
+         <Text title={HeaderTagType.H_3} fontWeight={FontWeight.TEXT_700} className={cls.answerTitle}>
             Спасибо за заявку!
          </Text>
          <Text fontSize={FontSize.SIZE_15} fontWeight={FontWeight.TEXT_600} className={cls.textPopup}>
@@ -185,7 +187,7 @@ export const Postman = memo((props: PostmanProps) => {
          isOpen={isOpen}
          buttonCloseHeight={20}
          buttonCloseRight={20}
-         buttonCloseTop={20}
+         buttonCloseTop={isMobile ? -30 : 20}
          buttonCloseWidth={20}
          className={cls.modal}
       >
@@ -200,7 +202,7 @@ export const Postman = memo((props: PostmanProps) => {
                isOpen={isOpenForm}
                buttonCloseHeight={20}
                buttonCloseRight={20}
-               buttonCloseTop={20}
+               buttonCloseTop={isMobile ? -30 : 20}
                buttonCloseWidth={20}
                className={cls.modal}
             >
