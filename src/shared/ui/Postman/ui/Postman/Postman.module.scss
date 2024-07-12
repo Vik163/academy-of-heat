@@ -13,6 +13,8 @@
 
 .title {
    margin-bottom: 8px;
+   font-size: var(--size-22);
+   font-weight: var(--weight-700);
 }
 
 .subtitle {
@@ -124,3 +126,5 @@
    line-height: 22px;
    border-top: 1px solid #c0c0c0;
 }
+
+@import './PostmanAdapt.module.scss';

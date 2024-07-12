@@ -25,7 +25,7 @@ export const Header = memo((props: HeaderProps) => {
    const [isHeaderWhite, setISHeaderWhite] = useState<boolean>();
    const { pathname } = useLocation();
    const [isOpenForm, setIsOpenForm] = useState(false);
-   const { isMobile, isMobileL } = useResize();
+   const { isMobile } = useResize();
 
    const iconLink = !openNavMobile ? menu : close;
 
@@ -64,13 +64,13 @@ export const Header = memo((props: HeaderProps) => {
          <HStack justify={FlexJustify.BETWEEN} className={cls.headerContainer}>
             <HStack>
                <Logo className={cls.logo} />
-               {!isMobileL && !isMobile && (
+               {!isMobile && (
                   <span className={classNames(cls.dealer, { [cls.headerActive]: isHeaderWhite }, [])}>
                      Официальный дилер ТМ «ЗЕМЛЯК»
                   </span>
                )}
             </HStack>
-            {!isMobileL && !isMobile ? (
+            {!isMobile ? (
                <HStack justify={FlexJustify.END}>
                   <Text
                      className={classNames(cls.number, { [cls.headerActive]: isHeaderWhite }, [])}

@@ -1,0 +1,86 @@
+@media screen and (max-width: 600px) {
+   .modal {
+      max-width: 94%;
+      padding: 30px 32px;
+   }
+
+   .title {
+      font-size: var(--size-20);
+   }
+
+   .subtitle {
+      margin-bottom: 30px;
+   }
+
+   .form {
+      .phone {
+         font-size: 15px;
+
+         &.nonModal {
+            margin-top: 10px;
+            width: 280px;
+            height: 40px;
+            margin-left: 84px;
+            font-size: 15px;
+         }
+      }
+   }
+
+   .error {
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 20px;
+      padding-left: 3px;
+      color: red;
+
+      &.nonModal {
+         width: 280px;
+         margin-left: 84px;
+      }
+   }
+
+   .message {
+      width: 100%;
+      height: 110px;
+      line-height: 22px;
+      resize: none;
+      padding: 10px 20px;
+      font-weight: 400;
+      font-size: 16px;
+      color: #3e3d59;
+      background: #f7f7fb;
+      border: 1px solid #a8a2b4;
+      box-sizing: border-box;
+      border-radius: 6px;
+      margin-top: 30px;
+
+      &.nonModal {
+         margin-top: 10px;
+         width: 280px;
+         height: 40px;
+         margin-left: 84px;
+      }
+   }
+
+   .btn {
+      width: 100%;
+      height: 53px;
+      font-size: 17px;
+
+      &.nonModal {
+         margin-top: 10px;
+         width: 280px;
+         height: 40px;
+         margin-left: 84px;
+         font-size: 15px;
+      }
+   }
+
+   .textPopup {
+      margin-top: 30px;
+      padding-top: 30px;
+      color: #686868;
+      line-height: 22px;
+      border-top: 1px solid #c0c0c0;
+   }
+}

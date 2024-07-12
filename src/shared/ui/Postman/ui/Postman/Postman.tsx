@@ -98,15 +98,10 @@ export const Postman = memo((props: PostmanProps) => {
    };
 
    const form = (
-      <div className={cls.continer}>
+      <div className={cls.container}>
          {title && (
             <div>
-               <Text
-                  title={HeaderTagType.H_3}
-                  className={cls.title}
-                  fontSize={FontSize.SIZE_22}
-                  fontWeight={FontWeight.TEXT_700}
-               >
+               <Text title={HeaderTagType.H_3} className={cls.title}>
                   {title}
                </Text>
                <Text className={cls.subtitle} fontSize={FontSize.SIZE_15}>
@@ -164,7 +159,7 @@ export const Postman = memo((props: PostmanProps) => {
    );
 
    const answerPopup = (
-      <div className={cls.continer}>
+      <div className={cls.container}>
          <Text title={HeaderTagType.H_3} fontSize={FontSize.SIZE_24} fontWeight={FontWeight.TEXT_700}>
             Спасибо за заявку!
          </Text>

@@ -28,16 +28,7 @@ body {
 }
 
 @media screen and (max-width: 600px) {
-   .root {
-   }
-
    .app {
       padding-left: 0;
-   }
-}
-
-@media screen and (max-width: 340px) {
-   .root {
-      width: 320px;
    }
 }

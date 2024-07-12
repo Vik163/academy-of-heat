@@ -1,4 +1,5 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
+import { useResize } from './useResize';
 
 interface UseModalProps {
    isOpen: boolean;
@@ -12,6 +13,7 @@ export function useModal(props: UseModalProps) {
    const { isOpen, onClose, onAnimate, delayClose } = props;
    const [isMounted, setIsMounted] = useState(false);
    const [animatePopup, setAnimatePopup] = useState(false);
+   const { isMobile } = useResize();
 
    const timerRef = useRef<ReturnType<typeof setTimeout>>();
 
@@ -66,7 +68,7 @@ export function useModal(props: UseModalProps) {
          // не прокручивается страница
          document.body.style.overflow = 'hidden';
          document.body.style.paddingRight = `${sizeScroll}px`;
-         if (header) header.style.paddingRight = `${sizeScroll}px`;
+         if (header && !isMobile) header.style.paddingRight = `${sizeScroll}px`;
       }
       // скролл добавляю при размонтировании
       return () => {
@@ -76,7 +78,7 @@ export function useModal(props: UseModalProps) {
          }
          document.body.style.overflow = 'unset';
          document.body.style.paddingRight = '0px';
-         header.style.paddingRight = '0px';
+         if (!isMobile) header.style.paddingRight = '0px';
       };
    }, [isOpen, onKeyDown]);
 

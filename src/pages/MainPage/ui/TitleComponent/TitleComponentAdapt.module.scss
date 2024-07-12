@@ -50,13 +50,3 @@
       }
    }
 }
-
-@media screen and (max-width: 340px) {
-   .buttonSelect {
-      padding-left: 11%;
-
-      &::after {
-         right: 11%;
-      }
-   }
-}
