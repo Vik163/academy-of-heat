@@ -2,6 +2,7 @@
 
 @import 'reset';
 @import 'variables/global';
+@import 'variables/mixins.scss';
 @import 'colors';
 @import 'fonts/inter.scss';
 
@@ -27,7 +28,7 @@ body {
    width: 100%;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: $mobile) {
    .app {
       padding-left: 0;
    }

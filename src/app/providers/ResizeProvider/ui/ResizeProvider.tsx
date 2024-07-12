@@ -3,7 +3,7 @@ import React, { ReactNode, useCallback, useEffect, useMemo, useState } from 'rea
 import { ResizeContext } from '@/shared/lib/context/ResizeContext';
 import { Devices } from '@/shared/types/devices';
 
-const points = [600, 800, 1200];
+const points = [700, 800, 1200];
 
 interface ResizeProviderProps {
    children: ReactNode;

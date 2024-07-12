@@ -1,4 +1,6 @@
-@media screen and (max-width: 600px) {
+@import '../../../../../app/styles/variables/mixins.scss';
+
+@media screen and (max-width: $mobile) {
    .modal {
       max-width: 94%;
       padding: 30px 32px;

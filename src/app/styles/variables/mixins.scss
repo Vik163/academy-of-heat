@@ -1,3 +1,7 @@
+$mobile: '700px';
+$pad: '800px';
+$note: '1200px';
+
 @mixin flex-center() {
    display: flex;
    justify-content: center;

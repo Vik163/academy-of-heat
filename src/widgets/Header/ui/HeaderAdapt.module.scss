@@ -1,4 +1,6 @@
-@media screen and (max-width: 600px) {
+@import '../../../app/styles/variables/mixins.scss';
+
+@media screen and (max-width: $mobile) {
    .header {
       height: var(--header-height-mobile);
       padding-right: 20px;

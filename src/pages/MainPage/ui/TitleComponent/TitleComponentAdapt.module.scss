@@ -1,4 +1,6 @@
-@media screen and (max-width: 600px) {
+@import '../../../../app/styles/variables/mixins.scss';
+
+@media screen and (max-width: $mobile) {
    .TitleComponent {
       padding: calc(var(--header-height-mobile) + 30px) 20px 40px;
       height: fit-content;
