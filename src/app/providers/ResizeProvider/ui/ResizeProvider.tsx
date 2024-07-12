@@ -18,9 +18,9 @@ const ResizeProvider = (props: ResizeProviderProps) => {
    const handler = useCallback(() => {
       const num = window.innerWidth;
 
-      if (num < 601) {
+      if (num < 701) {
          size = size === 'mobile' ? 'pad' : 'mobile';
-      } else if (num > 600 && num < 801) {
+      } else if (num > 700 && num < 801) {
          size = size === 'pad' ? 'notebook' : 'pad';
       } else if (num > 800 && num < 1201) {
          size = size === 'notebook' ? 'desktop' : 'notebook';
