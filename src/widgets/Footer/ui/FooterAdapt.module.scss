@@ -1,14 +1,16 @@
 @import '../../../app/styles/variables/mixins.scss';
 
-@media screen and (max-width: $mobile) {
+@media screen and (max-width: $pad) {
    .container {
       width: 100%;
-      flex-direction: column;
       padding: 0 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
    }
 
    .footerInfo {
-      width: 100%;
+      width: 40%;
    }
 
    .logo {
@@ -23,6 +25,20 @@
    .links {
       margin: 24px 0;
       gap: 5px;
+   }
+
+   .sequrityInfo {
+      width: 30%;
+   }
+}
+
+@media screen and (max-width: $mobile) {
+   .container {
+      flex-direction: column;
+   }
+
+   .footerInfo {
+      width: 100%;
    }
 
    .sequrityInfo {

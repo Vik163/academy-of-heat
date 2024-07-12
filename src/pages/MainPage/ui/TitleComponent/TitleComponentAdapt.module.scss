@@ -1,33 +1,51 @@
 @import '../../../../app/styles/variables/mixins.scss';
 
-@media screen and (max-width: $mobile) {
+@media screen and (max-width: $pad) {
    .TitleComponent {
-      padding: calc(var(--header-height-mobile) + 30px) 20px 40px;
+      padding: calc(var(--header-height-mobile) + 30px) 25px 40px;
       height: fit-content;
    }
 
    .infoContainer {
       width: 100%;
-
       &::before {
-         content: url(../../../../shared/assets/images/round-header-type-home-mobile.svg);
-         position: absolute;
-         top: 27%;
+         top: -90px;
          bottom: none;
-         right: -20px;
-         z-index: 0;
+         right: -25px;
       }
    }
 
    .title {
-      width: fit-content;
+      width: 45%;
       font-size: 46px;
       line-height: 46px;
    }
 
    .production {
-      width: fit-content;
+      width: 45%;
       line-height: 27px;
+   }
+
+   .featuresList {
+      width: 45%;
+   }
+}
+
+@media screen and (max-width: $mobile) {
+   .infoContainer {
+      &::before {
+         content: url(../../../../shared/assets/images/round-header-type-home-mobile.svg);
+         top: 27%;
+         right: -20px;
+      }
+   }
+
+   .title {
+      width: fit-content;
+   }
+
+   .production {
+      width: fit-content;
       margin-bottom: 530px;
    }
 

@@ -1,11 +1,16 @@
 @import '../../../app/styles/variables/mixins.scss';
 
-@media screen and (max-width: $mobile) {
+@media screen and (max-width: $pad) {
    .header {
       height: var(--header-height-mobile);
       padding-right: 20px;
       background-color: #fff;
       width: 100%;
+
+      &.headerActive {
+         background-color: #fff;
+         backdrop-filter: none;
+      }
 
       .headerContainer {
          width: 100%;

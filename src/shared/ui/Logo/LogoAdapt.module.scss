@@ -1,4 +1,6 @@
-@media screen and (max-width: 600px) {
+@import '../../../app/styles/variables/mixins.scss';
+
+@media screen and (max-width: $pad) {
    .logo {
       font-size: 10px;
       height: var(--header-height-mobile);
@@ -11,3 +13,17 @@
       font-size: var(--size-14);
    }
 }
+
+// @media screen and (max-width: $mobile) {
+//    .logo {
+//       font-size: 10px;
+//       height: var(--header-height-mobile);
+//       padding: 0;
+//       width: var(--sidebar-width-mobile);
+//       border-right: none;
+//    }
+
+//    .logoName {
+//       font-size: var(--size-14);
+//    }
+// }

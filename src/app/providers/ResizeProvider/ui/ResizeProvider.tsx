@@ -3,7 +3,7 @@ import React, { ReactNode, useCallback, useEffect, useMemo, useState } from 'rea
 import { ResizeContext } from '@/shared/lib/context/ResizeContext';
 import { Devices } from '@/shared/types/devices';
 
-const points = [700, 800, 1200];
+const points = [600, 850, 1200];
 
 interface ResizeProviderProps {
    children: ReactNode;
@@ -18,11 +18,11 @@ const ResizeProvider = (props: ResizeProviderProps) => {
    const handler = useCallback(() => {
       const num = window.innerWidth;
 
-      if (num < 701) {
+      if (num < 601) {
          size = size === 'mobile' ? 'pad' : 'mobile';
-      } else if (num > 700 && num < 801) {
+      } else if (num < 851) {
          size = size === 'pad' ? 'notebook' : 'pad';
-      } else if (num > 800 && num < 1201) {
+      } else if (num < 1201) {
          size = size === 'notebook' ? 'desktop' : 'notebook';
       } else {
          size = 'desktop';

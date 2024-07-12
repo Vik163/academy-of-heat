@@ -27,7 +27,7 @@ export const Navbar = memo(({ className, openNavMobile }: NavbarProps) => {
    const [navbarItemsList, setNavbarItemsList] = useState(useNavbarItems());
    const [isOpenForm, setIsOpenForm] = useState(false);
    const navRef = useRef<HTMLDivElement>(null);
-   const { isMobile } = useResize();
+   const { isMobile, isPad } = useResize();
    const { isOpen, isAnimate } = useAnimate(openNavMobile || false, 200);
 
    const openForm = () => {
@@ -83,7 +83,7 @@ export const Navbar = memo(({ className, openNavMobile }: NavbarProps) => {
       [addLinks, isAddLinks, navbarItemsList],
    );
    const mods: Mods = {
-      [cls.navMobile]: isMobile,
+      [cls.navMobile]: isMobile || isPad,
       [cls.openNavMobile]: isOpen,
       [cls.animate]: isAnimate,
    };

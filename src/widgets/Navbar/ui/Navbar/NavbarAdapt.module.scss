@@ -1,6 +1,6 @@
 @import '../../../../app/styles/variables/mixins.scss';
 
-@media screen and (max-width: $mobile) {
+@media screen and (max-width: $pad) {
    .Navbar {
       width: var(--sidebar-width-mobile);
       transform: translateX(calc(var(--sidebar-width-mobile) * -1));
