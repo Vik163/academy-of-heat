@@ -74,22 +74,24 @@ export const Modal = (props: ModalProps) => {
                )}
                onClick={handleClose}
             >
-               <div
-                  className={classNames(cls.content, {}, [className])}
-                  onClick={onContentClick}
-                  onMouseLeave={closeHoverModal}
-               >
-                  <Button
-                     style={{
-                        top: `${buttonCloseTop}px`,
-                        right: `${buttonCloseRight}px`,
-                     }}
-                     className={cls.close}
-                     onClick={handleClose}
+               <div className={cls.contentWrapper}>
+                  <div
+                     className={classNames(cls.content, {}, [className])}
+                     onClick={onContentClick}
+                     onMouseLeave={closeHoverModal}
                   >
-                     <Icon width={buttonCloseWidth} height={buttonCloseHeight} Svg={close} />
-                  </Button>
-                  {children}
+                     <Button
+                        style={{
+                           top: `${buttonCloseTop}px`,
+                           right: `${buttonCloseRight}px`,
+                        }}
+                        className={cls.close}
+                        onClick={handleClose}
+                     >
+                        <Icon width={buttonCloseWidth} height={buttonCloseHeight} Svg={close} />
+                     </Button>
+                     {children}
+                  </div>
                </div>
             </div>
          </div>

@@ -1,3 +1,5 @@
+@import '../../../app/styles/variables/mixins.scss';
+
 .Modal {
    position: fixed;
    top: 0;
@@ -15,6 +17,14 @@
    &.opened {
       pointer-events: auto;
    }
+}
+
+.contentWrapper {
+   max-height: 100vh;
+   overflow: auto;
+   -ms-overflow-style: none;
+   scrollbar-width: none;
+   @include flex-center();
 }
 
 .overlay {
