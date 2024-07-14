@@ -29,6 +29,18 @@
    .featuresList {
       width: 45%;
    }
+
+   .imageContainer {
+      transform: translate(10%, -50%);
+
+      &::before {
+         left: 76%;
+      }
+
+      &::after {
+         left: 76%;
+      }
+   }
 }
 
 @media screen and (max-width: $mobile) {
@@ -36,7 +48,7 @@
       &::before {
          content: url(../../../../shared/assets/images/round-header-type-home-mobile.svg);
          top: 27%;
-         right: -20px;
+         right: -24px;
       }
    }
 
@@ -67,6 +79,14 @@
 
       .mainImage {
          width: 100%;
+      }
+
+      &::before {
+         left: 72%;
+      }
+
+      &::after {
+         left: 72%;
       }
    }
 }
