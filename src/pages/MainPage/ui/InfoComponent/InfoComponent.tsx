@@ -15,7 +15,7 @@ export const InfoComponent = memo((props: InfoComponentProps) => {
    return (
       <article className={classNames(cls.InfoComponent, {}, [className])}>
          <div className={cls.container}>
-            <Text title={HeaderTagType.H_2} fontSize={FontSize.SIZE_36} fontWeight={FontWeight.TEXT_700}>
+            <Text className={cls.mainTitle} title={HeaderTagType.H_2} fontWeight={FontWeight.TEXT_700}>
                ЗЕМЛЯК - официальный сайт производителя погребов и кессонов в России
             </Text>
             <p>

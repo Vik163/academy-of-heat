@@ -1,0 +1,105 @@
+@import '../../../../app/styles/variables/mixins.scss';
+
+@media screen and (max-width: $pad) {
+   .ModelList {
+      padding: 30px 20px;
+   }
+
+   .container {
+      padding: 0;
+   }
+
+   .title {
+      font-size: var(--size-32);
+   }
+
+   .tableContainer {
+      margin-top: 26px;
+      width: 100%;
+   }
+
+   thead {
+      height: 64px;
+      margin: 0 20px;
+   }
+
+   .column_1 {
+      width: 283px;
+   }
+
+   .column_2 {
+      width: 233px;
+   }
+
+   .column_3 {
+      width: 133px;
+   }
+
+   .column_4 {
+      width: 137px;
+      padding-right: 0;
+   }
+
+   .column_5 {
+      width: 89px;
+   }
+
+   .bodyTableText {
+      font-size: var(--size-15);
+
+      td {
+         height: 44px;
+      }
+   }
+}
+
+@media screen and (max-width: $mobile) {
+   .ModelList {
+      padding: 30px 5px;
+   }
+
+   .title {
+      font-size: var(--size-26);
+      text-align: center;
+   }
+
+   .tableContainer {
+      padding: 0 5px 10px;
+   }
+
+   thead {
+      height: 50px;
+      margin: 0 20px;
+      font-size: var(--size-12);
+   }
+
+   .column_1 {
+      width: fit-content;
+   }
+
+   .column_2 {
+      width: fit-content;
+   }
+
+   .column_3 {
+      width: fit-content;
+   }
+
+   .column_4 {
+      width: fit-content;
+   }
+
+   .column_5 {
+      width: min-content;
+      display: flex;
+      justify-content: center;
+   }
+
+   .bodyTableText {
+      font-size: var(--size-13);
+
+      td {
+         height: 64px;
+      }
+   }
+}

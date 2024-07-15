@@ -2,8 +2,9 @@ import { memo } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 
 import cls from './ModelList.module.scss';
-import { FontSize, FontWeight, HeaderTagType, Text } from '@/shared/ui/Text';
+import { FontWeight, HeaderTagType, Text } from '@/shared/ui/Text';
 import { caissons } from '@/shared/const/products/caissons';
+import { useResize } from '@/shared/lib/hooks/useResize';
 
 interface ModelListProps {
    className?: string;
@@ -11,13 +12,14 @@ interface ModelListProps {
 
 export const ModelList = memo((props: ModelListProps) => {
    const { className } = props;
+   const { isMobile } = useResize();
 
    const rowTable = caissons.map((item) => (
       <tr key={item.title} className={cls.bodyTableText}>
          <td>{item.title.slice(19)}</td>
          <td>{`${item.size} мм`}</td>
          <td>{item.weight}</td>
-         <td>Опция</td>
+         {!isMobile && <td>Опция</td>}
          <td>{item.title.includes('Лонг') ? '+' : '-'}</td>
       </tr>
    ));
@@ -25,11 +27,7 @@ export const ModelList = memo((props: ModelListProps) => {
    return (
       <article className={classNames(cls.ModelList, {}, [className])}>
          <div className={cls.container}>
-            <Text
-               title={HeaderTagType.H_3}
-               fontSize={FontSize.SIZE_36}
-               fontWeight={FontWeight.TEXT_700}
-            >
+            <Text className={cls.title} title={HeaderTagType.H_3} fontWeight={FontWeight.TEXT_700}>
                Модельный ряд кессонов ЗЕМЛЯК
             </Text>
             <div className={cls.tableContainer}>
@@ -45,16 +43,18 @@ export const ModelList = memo((props: ModelListProps) => {
                         <th scope='col' className={cls.column_3}>
                            Вес
                         </th>
-                        <th scope='col' className={cls.column_4}>
-                           Утеплённая горловина
-                        </th>
+                        {!isMobile && (
+                           <th scope='col' className={cls.column_4}>
+                              Утеплённая горловина
+                           </th>
+                        )}
                         <th scope='col' className={cls.column_5}>
                            Удлинённый корпус
                         </th>
                      </tr>
                   </thead>
                   <tbody>{rowTable}</tbody>
-               </table>{' '}
+               </table>
             </div>
          </div>
       </article>

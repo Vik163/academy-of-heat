@@ -11,6 +11,10 @@
    margin: 0 auto;
 }
 
+.title {
+   font-size: var(--size-36);
+}
+
 .tableContainer {
    margin-top: 32px;
    background: #ffffff;
@@ -70,3 +74,5 @@ thead {
       padding: 4px;
    }
 }
+
+@import './ModelListAdapt.module.scss';

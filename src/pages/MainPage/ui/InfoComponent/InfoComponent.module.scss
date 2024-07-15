@@ -10,6 +10,10 @@
    }
 }
 
+.mainTitle {
+   font-size: var(--size-36);
+}
+
 .title {
    margin-top: 20px;
 }
@@ -45,3 +49,5 @@
    color: var(--color-green);
    cursor: default;
 }
+
+@import './InfoComponentAdapt.module.scss';

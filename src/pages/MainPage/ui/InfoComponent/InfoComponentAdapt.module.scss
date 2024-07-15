@@ -1,0 +1,41 @@
+@import '../../../../app/styles/variables/mixins.scss';
+
+@media screen and (max-width: $pad) {
+   .InfoComponent {
+      padding: 30px 20px;
+   }
+
+   .mainTitle {
+      font-size: var(--size-32);
+   }
+
+   .title {
+      margin-top: 20px;
+   }
+
+   .container {
+      padding: 0;
+   }
+}
+
+@media screen and (max-width: $mobile) {
+   .InfoComponent {
+      padding: 30px 20px;
+
+      p {
+         font-size: var(--size-14);
+         margin-top: 20px;
+         line-height: 21px;
+         color: var(--color-light-grey-text);
+      }
+   }
+
+   .mainTitle {
+      font-size: var(--size-26);
+      text-align: center;
+   }
+
+   .title {
+      text-align: center;
+   }
+}
