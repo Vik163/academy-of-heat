@@ -53,12 +53,15 @@
    }
 
    .title {
-      width: fit-content;
+      width: 100%;
+      text-align: center;
+      font-size: var(--size-36);
    }
 
    .production {
       width: fit-content;
       margin-bottom: 530px;
+      text-align: center;
    }
 
    .featuresList {

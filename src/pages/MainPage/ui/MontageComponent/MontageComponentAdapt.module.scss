@@ -1,0 +1,92 @@
+@import '../../../../app/styles/variables/mixins.scss';
+
+@media screen and (max-width: $pad) {
+   .montazh {
+      padding: 30px 20px;
+   }
+
+   .container {
+      padding: 0;
+   }
+
+   .title {
+      font-size: var(--size-32);
+   }
+
+   .description {
+      margin: 10px 0 0;
+   }
+
+   .montazh_block {
+      margin-top: 40px;
+   }
+
+   .block_main {
+      max-width: 400px;
+   }
+
+   .main_title {
+      font-size: 19px;
+   }
+
+   .main_list li {
+      margin-bottom: 23px;
+      padding-left: 38px;
+      font-size: 15px;
+      background-size: 18px;
+   }
+
+   .main_list {
+      margin: 21px 0 30px;
+   }
+
+   .btn {
+      margin-top: 30px;
+   }
+}
+
+@media screen and (max-width: $mobile) {
+   .title {
+      font-size: var(--size-26);
+      text-align: center;
+   }
+
+   .description {
+      font-size: var(--size-16);
+      text-align: center;
+      margin: 0;
+   }
+
+   .montazh_block {
+      margin-top: 25px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+   }
+
+   .block_main {
+      max-width: 400px;
+   }
+
+   .main_title {
+      font-size: 17px;
+      text-align: center;
+   }
+
+   .main_list li {
+      margin-bottom: 23px;
+      padding-left: 38px;
+      font-size: 15px;
+      background-size: 18px;
+   }
+
+   .main_list {
+      margin: 21px 0 30px;
+   }
+
+   .btn {
+      width: 100%;
+      margin-top: 0;
+      margin-bottom: 30px;
+   }
+}

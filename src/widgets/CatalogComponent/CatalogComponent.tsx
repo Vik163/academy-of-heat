@@ -10,6 +10,7 @@ import { productsLinks, cellarsLinks } from '@/shared/const/products/productsLin
 import { FlexAlign, FlexJustify, FlexWrap } from '@/shared/ui/Stack/Flex';
 import { AppLink } from '@/shared/ui/AppLink';
 import { getRouteCellars, getRouteProduct } from '@/shared/const/router';
+import { useResize } from '@/shared/lib/hooks/useResize';
 
 interface CatalogComponentProps {
    className?: string;
@@ -18,6 +19,7 @@ interface CatalogComponentProps {
 export const CatalogComponent = memo((props: CatalogComponentProps) => {
    const { className } = props;
    const { pathname } = useLocation();
+   const { isMobile } = useResize();
    const isCellars = pathname === '/cellars';
    const links = isCellars ? cellarsLinks : productsLinks;
    const title = isCellars ? 'Погреба пластиковые Земляк' : 'Каталог кессонов и погребов';
@@ -26,7 +28,51 @@ export const CatalogComponent = memo((props: CatalogComponentProps) => {
       top: 0,
    });
 
-   const mods: Mods = { [cls.category]: isCellars };
+   const mods: Mods = { [cls.category]: isCellars || isMobile };
+
+   const content = (nameLink: string, key: string, image: string) => {
+      const el = (
+         <VStack
+            max
+            justify={FlexJustify.BETWEEN}
+            align={FlexAlign.START}
+            className={classNames(cls.info, mods, [])}
+         >
+            <Text
+               title={HeaderTagType.H_4}
+               fontSize={FontSize.SIZE_18}
+               fontWeight={FontWeight.TEXT_500}
+               className={classNames(cls.titleLink, mods, [])}
+            >
+               {nameLink}
+            </Text>
+            <Button
+               width={124}
+               height={40}
+               fontSize={FontSize.SIZE_15}
+               fontWeight={FontWeight.TEXT_400}
+               fontColor={FontColor.BUTTON}
+               variant={ButtonVariant.FILLED}
+               bgColor={ButtonBgColor.YELLOW}
+               className={classNames('', {}, [cls.buttonSelect])}
+            >
+               Перейти
+            </Button>
+         </VStack>
+      );
+
+      return isCellars || isMobile ? (
+         <div className={classNames(cls.link, mods, [])}>
+            <img src={image} alt={key} className={cls.imageLink} />
+            {el}
+         </div>
+      ) : (
+         <div className={classNames(cls.link, mods, [])}>
+            {el}
+            <img src={image} alt={key} className={cls.imageLink} />
+         </div>
+      );
+   };
 
    const linksCards = Object.entries(links).map(([key, value]) => {
       const nameLink = isCellars ? `Погреб ЗЕМЛЯК ${key}` : key;
@@ -35,33 +81,11 @@ export const CatalogComponent = memo((props: CatalogComponentProps) => {
             aria-label='cellars'
             href={value.link}
             target='_blank'
-            className={classNames(cls.linkContainer, mods, [])}
             rel='noreferrer'
             key={key}
+            className={classNames(cls.linkContainer, mods, [])}
          >
-            <img src={value.image} alt={key} className={cls.imageLink} />
-            <VStack max justify={FlexJustify.BETWEEN} align={FlexAlign.START}>
-               <Text
-                  title={HeaderTagType.H_4}
-                  fontSize={FontSize.SIZE_18}
-                  fontWeight={FontWeight.TEXT_500}
-                  className={classNames(cls.titleLink, mods, [])}
-               >
-                  {nameLink}
-               </Text>
-               <Button
-                  width={124}
-                  height={40}
-                  fontSize={FontSize.SIZE_15}
-                  fontWeight={FontWeight.TEXT_400}
-                  fontColor={FontColor.BUTTON}
-                  variant={ButtonVariant.FILLED}
-                  bgColor={ButtonBgColor.YELLOW}
-                  className={classNames('', {}, [cls.buttonSelect])}
-               >
-                  Перейти
-               </Button>
-            </VStack>
+            {content(nameLink, key, value.image)}
          </a>
       ) : (
          <AppLink
@@ -69,30 +93,7 @@ export const CatalogComponent = memo((props: CatalogComponentProps) => {
             key={key}
             className={classNames(cls.linkContainer, mods, [])}
          >
-            {isCellars && <img src={value.image} alt={key} className={cls.imageLink} />}
-            <VStack max justify={FlexJustify.BETWEEN} align={FlexAlign.START}>
-               <Text
-                  title={HeaderTagType.H_4}
-                  fontSize={FontSize.SIZE_18}
-                  fontWeight={FontWeight.TEXT_500}
-                  className={classNames(cls.titleLink, mods, [])}
-               >
-                  {nameLink}
-               </Text>
-               <Button
-                  width={124}
-                  height={40}
-                  fontSize={FontSize.SIZE_15}
-                  fontWeight={FontWeight.TEXT_400}
-                  fontColor={FontColor.BUTTON}
-                  variant={ButtonVariant.FILLED}
-                  bgColor={ButtonBgColor.YELLOW}
-                  className={classNames('', {}, [cls.buttonSelect])}
-               >
-                  Перейти
-               </Button>
-            </VStack>
-            {!isCellars && <img src={value.image} alt={key} className={cls.imageLink} />}
+            {content(nameLink, key, value.image)}
          </AppLink>
       );
    });
@@ -100,15 +101,10 @@ export const CatalogComponent = memo((props: CatalogComponentProps) => {
    return (
       <div className={classNames(cls.CatalogComponent, {}, [className])}>
          <div className={cls.container}>
-            <Text
-               title={HeaderTagType.H_3}
-               fontSize={FontSize.SIZE_36}
-               fontWeight={FontWeight.TEXT_700}
-               className={cls.title}
-            >
+            <Text title={HeaderTagType.H_3} fontWeight={FontWeight.TEXT_700} className={cls.title}>
                {title}
             </Text>
-            <HStack wrap={FlexWrap.WPAP} gap={20}>
+            <HStack wrap={FlexWrap.WPAP} className={cls.links}>
                {linksCards}
             </HStack>
          </div>

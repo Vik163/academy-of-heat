@@ -1,0 +1,83 @@
+@import '../../app/styles/variables/mixins.scss';
+
+@media screen and (max-width: $pad) {
+   .EquipmentComponent {
+      padding: 40px 20px;
+      height: auto;
+      overflow: hidden;
+
+      &::before {
+         left: 45%;
+      }
+   }
+
+   .mainInfo {
+      width: 100%;
+      padding: 0;
+      height: auto;
+      background-image: none;
+      background-position: 0;
+      background-repeat: no-repeat;
+      background-size: 0;
+   }
+
+   .container {
+      padding-top: 25px;
+      gap: 24px;
+   }
+
+   .listContainer {
+      gap: 24px;
+   }
+
+   .title {
+      font-size: var(--size-32);
+   }
+
+   .description {
+      margin: 16px 0 0 0;
+      font-size: var(--size-16);
+      line-height: 26px;
+   }
+
+   .button {
+      margin: 40px 0 15px;
+      width: 280px;
+   }
+}
+
+@media screen and (max-width: $mobile) {
+   .EquipmentComponent {
+      &::before {
+         content: url(../../shared/assets/images/round-oborudovaniye-mobile.svg);
+         left: auto;
+      }
+   }
+
+   .container {
+      flex-direction: column;
+   }
+
+   .title {
+      text-align: center;
+      font-size: var(--size-26);
+   }
+
+   .description {
+      text-align: center;
+   }
+
+   .itemContainer {
+      .itemTitle {
+         font-size: var(--size-15);
+      }
+   }
+
+   .button {
+      width: 100%;
+   }
+
+   .buttonText {
+      text-align: center;
+   }
+}

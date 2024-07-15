@@ -1,0 +1,102 @@
+@import '../../app/styles/variables/mixins.scss';
+
+@media screen and (max-width: $pad) {
+   .CatalogComponent {
+      display: flex;
+      justify-content: center;
+      padding: 40px 20px;
+   }
+
+   .title {
+      font-size: var(--size-32);
+   }
+
+   .links {
+      width: 100%;
+   }
+
+   .linkContainer {
+      width: 353px;
+
+      &.category {
+         width: 228px;
+      }
+   }
+}
+
+@media screen and (max-width: $mobile) {
+   .container {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+   }
+   .title {
+      margin-bottom: 30px;
+      width: 100%;
+      text-align: center;
+      font-size: var(--size-26);
+   }
+
+   .links {
+      flex-direction: column;
+      width: 280px;
+   }
+
+   .linkContainer {
+      width: 280px;
+      height: auto;
+
+      &.category {
+         width: 100%;
+         height: auto;
+      }
+   }
+
+   .link {
+      width: 100%;
+
+      gap: 20px;
+   }
+
+   .info {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-around;
+
+      &.category {
+         flex-direction: column;
+         align-items: center;
+         gap: 15px;
+      }
+
+      .titleLink {
+         width: fit-content;
+         margin-bottom: 0;
+         text-align: center;
+
+         &.category {
+            width: 100%;
+         }
+      }
+   }
+
+   .buttonSelect {
+      padding: 8px 16px;
+      position: relative;
+      justify-content: flex-start;
+
+      &::after {
+         content: '';
+         position: absolute;
+         right: 20px;
+         content: url(../../shared/assets/icons/icon-arrow-right.svg);
+         margin-left: 13px;
+      }
+   }
+
+   .imageLink {
+      min-width: fit-content;
+      height: 180px;
+   }
+}

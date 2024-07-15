@@ -6,9 +6,30 @@ import { FontColor, FontSize, FontWeight, HeaderTagType, Text } from '@/shared/u
 import { Button, ButtonBgColor, ButtonVariant } from '@/shared/ui/Button';
 import { Player } from '@/shared/ui/Player';
 import { Postman } from '@/shared/ui/Postman';
+import { useResize } from '@/shared/lib/hooks/useResize';
 
 export const MontageComponent = memo(() => {
    const [isOpenForm, setIsOpenForm] = useState(false);
+   const { isMobile, isPad } = useResize();
+
+   const sizes = () => {
+      if (isPad) {
+         return {
+            width: 420,
+            height: 280,
+         };
+      }
+      if (isMobile) {
+         return {
+            width: 280,
+            height: 200,
+         };
+      }
+      return {
+         width: 630,
+         height: 423,
+      };
+   };
 
    const openForm = () => {
       setIsOpenForm(true);
@@ -28,21 +49,18 @@ export const MontageComponent = memo(() => {
             <div className={classNames(cls.montazh_block, {}, [])}>
                <div className={cls.block_main}>
                   <Text className={cls.main_title}>В монтаж входят услуги:</Text>
-                  <div className={cls.main_list}>
-                     <ul>
-                        <li>Копка котлована</li>
-                        <li>Обрезка обсадной трубы</li>
-                        <li>Монтаж кессона и трубопровода</li>
-                        <li>Обсыпка пескоцементной смесью</li>
-                        <li>Установка оборудования</li>
-                     </ul>
-                  </div>
+                  <ul className={cls.main_list}>
+                     <li>Копка котлована</li>
+                     <li>Обрезка обсадной трубы</li>
+                     <li>Монтаж кессона и трубопровода</li>
+                     <li>Обсыпка пескоцементной смесью</li>
+                     <li>Установка оборудования</li>
+                  </ul>
                   <Button
-                     width={194}
                      height={40}
                      variant={ButtonVariant.FILLED}
                      bgColor={ButtonBgColor.YELLOW}
-                     className={cls.btn_container}
+                     className={cls.btn}
                      fontSize={FontSize.SIZE_15}
                      fontColor={FontColor.BUTTON}
                      fontWeight={FontWeight.TEXT_400}
@@ -54,10 +72,10 @@ export const MontageComponent = memo(() => {
                </div>
                <Player
                   url='https://www.youtube.com/watch?v=2rp0PbsVi6c'
-                  width={630}
-                  height={423}
+                  width={sizes().width}
+                  height={sizes().height}
                   className={cls.video}
-                  addPanel
+                  addPanel={!isMobile && !isPad}
                   poster='https://xn--e1adkde9i.xn--p1ai/wp-content/uploads/2023/10/screenshot_1.png'
                />
             </div>

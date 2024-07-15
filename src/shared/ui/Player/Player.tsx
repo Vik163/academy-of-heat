@@ -4,6 +4,7 @@ import ReactPlayer from 'react-player/youtube';
 import cls from './Player.module.scss';
 import { Modal } from '../Modal';
 import { classNames } from '@/shared/lib/classNames/classNames';
+import { useResize } from '@/shared/lib/hooks/useResize';
 
 export interface PlayerProps {
    className?: string;
@@ -17,10 +18,33 @@ export interface PlayerProps {
 
 const Player = memo((props: PlayerProps) => {
    const { className, width, height, url, onReady, addPanel, poster } = props;
-
+   const { isPad, isMobile, isNotebook } = useResize();
    const [isPlaying, setIsPlaying] = useState(false);
-   const widthPlayer = 1200;
-   const heightPlayer = 800;
+
+   const sizes = () => {
+      if (isNotebook) {
+         return {
+            width: 1000,
+            height: 670,
+         };
+      }
+      if (isPad) {
+         return {
+            width: 700,
+            height: 470,
+         };
+      }
+      if (isMobile) {
+         return {
+            width: 310,
+            height: 210,
+         };
+      }
+      return {
+         width: 1200,
+         height: 800,
+      };
+   };
 
    const startVideo = () => {
       setIsPlaying(true);
@@ -69,8 +93,8 @@ const Player = memo((props: PlayerProps) => {
                   controls
                   playing={isPlaying}
                   onReady={onReady}
-                  width={widthPlayer}
-                  height={heightPlayer}
+                  width={sizes().width}
+                  height={sizes().height}
                   url={url}
                   onEnded={endVideo}
                   config={configYoutube}

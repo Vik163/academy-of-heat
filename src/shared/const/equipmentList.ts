@@ -14,7 +14,7 @@ export const equipmentListLeft = [
    {
       image: equipment2,
       title: 'Европейский монолитный полипропилен',
-      description: 'На 15% крепче вспененног',
+      description: 'На 15% крепче вспененного',
    },
    {
       image: equipment3,
