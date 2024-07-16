@@ -1,4 +1,4 @@
-import { ChangeEvent, SyntheticEvent, memo, useRef, useState } from 'react';
+import { ChangeEvent, SyntheticEvent, memo, useEffect, useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
 
 import cls from './Postman.module.scss';
@@ -28,8 +28,24 @@ export const Postman = memo((props: PostmanProps) => {
    const [loading, setLoading] = useState(false);
    const { phoneValidator } = usePhoneValidator();
    const [isOpenForm, setIsOpenForm] = useState(false);
+   const [smallScreen, setSmallScreen] = useState(false);
    const { isMobile, isHorizontal } = useResize();
-   console.log('isHorizontal:', isHorizontal);
+   const formRef = useRef<HTMLDivElement>(null);
+
+   useEffect(() => {
+      const timeout = setTimeout(() => {
+         if (formRef.current)
+            if (window.innerHeight < formRef.current.clientHeight) {
+               setSmallScreen(true);
+            } else {
+               setSmallScreen(false);
+            }
+
+         return () => {
+            clearTimeout(timeout);
+         };
+      }, 30);
+   }, [isHorizontal]);
 
    const openForm = () => {
       setIsOpenForm(true);
@@ -101,21 +117,30 @@ export const Postman = memo((props: PostmanProps) => {
    };
 
    const form = (
-      <div className={cls.container}>
+      <div ref={formRef} className={cls.container}>
          {title && (
             <div>
                <Text
                   title={HeaderTagType.H_3}
-                  className={classNames(cls.title, { [cls.horizontal]: isHorizontal }, [])}
+                  className={classNames(cls.title, { [cls.horizontal]: smallScreen }, [])}
                >
                   {title}
                </Text>
-               <Text className={classNames(cls.subtitle, { [cls.horizontal]: isHorizontal }, [])}>
-                  Заполните поля ниже, наш менеджер свяжется с Вами и ответит на ваши вопросы
-               </Text>
+               {!smallScreen && (
+                  <Text className={classNames(cls.subtitle, { [cls.horizontal]: smallScreen }, [])}>
+                     Заполните поля ниже, наш менеджер свяжется с Вами и ответит на ваши вопросы
+                  </Text>
+               )}
             </div>
          )}
-         <form className={classNames(cls.form, { [cls.nonModal]: !closeForm }, [])} onSubmit={handleSubmit}>
+         <form
+            className={classNames(
+               cls.form,
+               { [cls.nonModal]: !closeForm, [cls.horizontal]: smallScreen },
+               [],
+            )}
+            onSubmit={handleSubmit}
+         >
             <input
                type='text'
                name='copyemail'
@@ -125,7 +150,7 @@ export const Postman = memo((props: PostmanProps) => {
             <input
                className={classNames(
                   cls.phone,
-                  { [cls.nonModal]: !closeForm, [cls.horizontal]: isHorizontal },
+                  { [cls.nonModal]: !closeForm, [cls.horizontal]: smallScreen },
                   [],
                )}
                id='phone'
@@ -145,7 +170,7 @@ export const Postman = memo((props: PostmanProps) => {
                <textarea
                   className={classNames(
                      cls.message,
-                     { [cls.nonModal]: !closeForm, [cls.horizontal]: isHorizontal },
+                     { [cls.nonModal]: !closeForm, [cls.horizontal]: smallScreen },
                      [],
                   )}
                   id='message'
@@ -164,7 +189,7 @@ export const Postman = memo((props: PostmanProps) => {
             <Button
                className={classNames(
                   cls.btn,
-                  { [cls.nonModal]: !closeForm, [cls.horizontal]: isHorizontal },
+                  { [cls.nonModal]: !closeForm, [cls.horizontal]: smallScreen },
                   [],
                )}
                type='submit'
@@ -205,7 +230,7 @@ export const Postman = memo((props: PostmanProps) => {
          buttonCloseRight={20}
          buttonCloseTop={isMobile ? -30 : 20}
          buttonCloseWidth={20}
-         className={cls.modal}
+         className={classNames(cls.modal, { [cls.horizontal]: smallScreen }, [])}
       >
          {!confirmSend ? form : answerPopup}
       </Modal>
