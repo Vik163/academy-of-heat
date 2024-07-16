@@ -162,7 +162,14 @@ export const Postman = memo((props: PostmanProps) => {
                value={toSend.phone}
             />
             {err === 'phone' && (
-               <span id='phone' className={classNames(cls.error, { [cls.nonModal]: !closeForm }, [])}>
+               <span
+                  id='phone'
+                  className={classNames(
+                     cls.error,
+                     { [cls.nonModal]: !closeForm, [cls.horizontal]: smallScreen },
+                     [],
+                  )}
+               >
                   Введите Ваш номер телефона
                </span>
             )}
