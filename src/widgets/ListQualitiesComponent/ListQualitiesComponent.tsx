@@ -24,9 +24,9 @@ interface ListQualitiesComponentProps {
 
 export const ListQualitiesComponent = memo((props: ListQualitiesComponentProps) => {
    const { data, wellsStyle } = props;
-   const { isMobile } = useResize();
+   const { isMobile, isPad } = useResize();
 
-   const image = isMobile ? data.mainImageMob : data.mainImageDesc;
+   const image = isMobile || isPad ? data.mainImageMob : data.mainImageDesc;
 
    return (
       <article id='sec-garantii' className={cls.garantii}>

@@ -45,7 +45,7 @@
    }
 }
 
-@media screen and (max-width: $mobile) {
+@media screen and (max-width: 760px) {
    .title {
       font-size: var(--size-26);
       text-align: center;

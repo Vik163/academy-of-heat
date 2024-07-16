@@ -7,20 +7,38 @@
       padding: 40px 20px;
    }
 
+   .container {
+      // display: flex;
+      // flex-direction: column;
+      // justify-content: center;
+      // align-items: center;
+   }
+
    .title {
       font-size: var(--size-32);
+      // text-align: center;
    }
 
    .links {
+      max-width: 660px;
       width: 100%;
+      margin: 0 auto;
    }
 
    .linkContainer {
-      width: 353px;
+      max-width: 48%;
 
       &.category {
          width: 228px;
       }
+   }
+
+   .info {
+      width: 45%;
+   }
+
+   .imageLink {
+      width: 45%;
    }
 }
 
@@ -44,17 +62,17 @@
    }
 
    .linkContainer {
-      width: 280px;
+      min-width: 280px;
       height: auto;
 
       &.category {
-         width: 100%;
+         width: 280px;
          height: auto;
       }
    }
 
    .link {
-      width: 100%;
+      min-width: 100%;
 
       gap: 20px;
    }
