@@ -47,6 +47,9 @@
 .close {
    position: absolute;
    background: transparent;
-   fill: rgb(237, 252, 223);
    z-index: 5;
+
+   // svg {
+   //    fill: rgb(237, 252, 223);
+   // }
 }
