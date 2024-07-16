@@ -5,6 +5,7 @@ import cls from './CatalogInfo.module.scss';
 import { HStack } from '@/shared/ui/Stack';
 import { Text, FontSize, HeaderTagType, FontWeight, FontColor } from '@/shared/ui/Text';
 import { FlexAlign } from '@/shared/ui/Stack/Flex';
+import { useResize } from '@/shared/lib/hooks/useResize';
 
 interface CatalogInfoProps {
    className?: string;
@@ -12,14 +13,22 @@ interface CatalogInfoProps {
 
 export const CatalogInfo = memo((props: CatalogInfoProps) => {
    const { className } = props;
+   const { isPad, isMobile } = useResize();
 
    return (
       <div className={classNames(cls.CatalogInfo, {}, [className])}>
-         <HStack gap={94} className={cls.container} align={FlexAlign.START}>
+         <HStack className={cls.container} align={FlexAlign.START}>
             <div className={cls.info}>
-               <Text title={HeaderTagType.H_3} fontSize={FontSize.SIZE_36} fontWeight={FontWeight.TEXT_600}>
-                  Кессоны, погреба и погреба-кессоны ЗЕМЛЯК
-               </Text>
+               {isPad || isMobile ? (
+                  <Text title={HeaderTagType.H_3} fontWeight={FontWeight.TEXT_600} className={cls.mainTitle}>
+                     Кессоны, погреба и <br />
+                     погреба-кессоны ЗЕМЛЯК
+                  </Text>
+               ) : (
+                  <Text title={HeaderTagType.H_3} fontWeight={FontWeight.TEXT_600} className={cls.mainTitle}>
+                     Кессоны, погреба и погреба-кессоны ЗЕМЛЯК
+                  </Text>
+               )}
                <p>
                   Изделия из полипропилена от ТМ «Земляк» позволяют решить различные проблемы, которые
                   возникают перед владельцами загородных домов и дачных участков. <br /> Любой собственник

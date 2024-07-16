@@ -63,13 +63,13 @@ export const CatalogComponent = memo((props: CatalogComponentProps) => {
 
       return isCellars || isMobile ? (
          <div className={classNames(cls.link, mods, [])}>
-            <img src={image} alt={key} className={cls.imageLink} />
+            <img src={image} alt={key} className={classNames(cls.imageLink, mods, [])} />
             {el}
          </div>
       ) : (
          <div className={classNames(cls.link, mods, [])}>
             {el}
-            <img src={image} alt={key} className={cls.imageLink} />
+            <img src={image} alt={key} className={classNames(cls.imageLink, mods, [])} />
          </div>
       );
    };
@@ -104,7 +104,7 @@ export const CatalogComponent = memo((props: CatalogComponentProps) => {
             <Text title={HeaderTagType.H_3} fontWeight={FontWeight.TEXT_700} className={cls.title}>
                {title}
             </Text>
-            <HStack wrap={FlexWrap.WPAP} className={cls.links}>
+            <HStack wrap={FlexWrap.WPAP} className={classNames(cls.links, mods, [])}>
                {linksCards}
             </HStack>
          </div>

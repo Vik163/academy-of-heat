@@ -8,6 +8,7 @@ import { FlexAlign } from '@/shared/ui/Stack/Flex';
 import { Button, ButtonBgColor, ButtonVariant } from '@/shared/ui/Button';
 import { EMAIL } from '@/shared/const/main_info';
 import { Postman } from '@/shared/ui/Postman';
+import { useResize } from '@/shared/lib/hooks/useResize';
 // import whatsapp from '@/shared/assets/icons/icon-whatsapp.svg';
 // import telegram from '@/shared/assets/icons/icon-telegram.svg';
 
@@ -18,6 +19,7 @@ interface AdviceEngineerComponentProps {
 export const AdviceEngineerComponent = memo((props: AdviceEngineerComponentProps) => {
    const { className } = props;
    const [isOpenForm, setIsOpenForm] = useState(false);
+   const { isMobile } = useResize();
 
    const openForm = () => {
       setIsOpenForm(true);
@@ -30,29 +32,45 @@ export const AdviceEngineerComponent = memo((props: AdviceEngineerComponentProps
    return (
       <div className={classNames(cls.AdviceEngineer, {}, [className])}>
          <HStack gap={20} className={classNames(cls.container, {}, [className])}>
-            <div className={cls.faceContainer}>
-               <img
-                  className={cls.face}
-                  src='https://земляк.рф/wp-content/uploads/2021/10/tsifry.png'
-                  alt='инженер'
-               />
-            </div>
+            {!isMobile && (
+               <div className={cls.faceContainer}>
+                  <img
+                     className={cls.face}
+                     src='https://земляк.рф/wp-content/uploads/2021/10/tsifry.png'
+                     alt='инженер'
+                  />
+               </div>
+            )}
             <VStack className={cls.infoContainer} align={FlexAlign.START}>
                <Text
-                  fontSize={FontSize.SIZE_36}
                   fontWeight={FontWeight.TEXT_700}
                   fontColor={FontColor.TEXT_PRIMARY}
+                  className={cls.title}
                >
                   Посоветуйтесь с инженером
                </Text>
-               <Text
-                  className={cls.description}
-                  fontSize={FontSize.SIZE_18}
-                  fontColor={FontColor.TEXT_PRIMARY}
-               >
+               <Text className={cls.description} fontColor={FontColor.TEXT_PRIMARY}>
                   Подбор кессона, оборудования, особенности монтажа, скидки и оптовые цены - любой вопрос!
                </Text>
-               <HStack>
+               {isMobile && (
+                  <div className={cls.faceContainer}>
+                     <img
+                        className={cls.face}
+                        src='https://земляк.рф/wp-content/uploads/2021/10/tsifry.png'
+                        alt='инженер'
+                     />
+                  </div>
+               )}
+               {isMobile && (
+                  <Text
+                     className={cls.caption}
+                     fontSize={FontSize.SIZE_14}
+                     fontColor={FontColor.TEXT_PRIMARY}
+                  >
+                     Дмитрий Попов, эксперт по водоснабжению
+                  </Text>
+               )}
+               <HStack className={cls.buttons}>
                   <Button
                      width={166}
                      height={40}
@@ -69,9 +87,15 @@ export const AdviceEngineerComponent = memo((props: AdviceEngineerComponentProps
                   </Button>
                   <Text className={cls.link}>{EMAIL}</Text>
                </HStack>
-               <Text className={cls.caption} fontSize={FontSize.SIZE_14} fontColor={FontColor.TEXT_PRIMARY}>
-                  Дмитрий Попов, эксперт по водоснабжению
-               </Text>
+               {!isMobile && (
+                  <Text
+                     className={cls.caption}
+                     fontSize={FontSize.SIZE_14}
+                     fontColor={FontColor.TEXT_PRIMARY}
+                  >
+                     Дмитрий Попов, эксперт по водоснабжению
+                  </Text>
+               )}
             </VStack>
          </HStack>
          {isOpenForm && (

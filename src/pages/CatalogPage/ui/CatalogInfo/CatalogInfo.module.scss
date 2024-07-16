@@ -7,6 +7,11 @@
    max-width: var(--page-width);
    margin: 0 auto;
    padding: 66px 0 69px;
+   gap: 94px;
+}
+
+.mainTitle {
+   font-size: var(--size-36);
 }
 
 .title {
@@ -74,3 +79,5 @@
 .boldText {
    font-weight: var(--weight-600);
 }
+
+@import './CatalogInfoAdapt.module.scss';

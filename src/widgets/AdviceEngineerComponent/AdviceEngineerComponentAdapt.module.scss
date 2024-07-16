@@ -1,0 +1,65 @@
+@import '../../app/styles/variables/mixins.scss';
+
+@media screen and (max-width: $pad) {
+   .AdviceEngineer {
+      padding: 30px 20px;
+   }
+
+   .faceContainer {
+      width: 237px;
+      height: 237px;
+   }
+
+   .infoContainer {
+      max-width: 550px;
+      width: 100%;
+   }
+
+   .title {
+      font-size: var(--size-30);
+   }
+
+   .description {
+      font-size: var(--size-16);
+   }
+}
+
+@media screen and (max-width: $mobile) {
+   .AdviceEngineer {
+      padding: 0 20px 30px;
+   }
+
+   .container {
+      flex-direction: column;
+   }
+
+   .infoContainer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+   }
+
+   .title {
+      font-size: var(--size-26);
+      text-align: center;
+   }
+
+   .description {
+      font-size: var(--size-15);
+      text-align: center;
+      margin: 12px 0 15px;
+   }
+
+   .buttons {
+      flex-direction: column-reverse;
+   }
+
+   .button {
+      margin-right: 0;
+   }
+
+   .caption {
+      margin: 15px 0;
+      text-align: center;
+   }
+}
