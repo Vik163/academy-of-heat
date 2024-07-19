@@ -1,0 +1,46 @@
+@import '../../../../app/styles/variables/mixins.scss';
+
+@media screen and (max-width: $pad) {
+   .MontageTitleComponent {
+      padding: 20px 20px 30px;
+   }
+
+   .title {
+      margin: 10px 0 10px;
+      font-size: var(--size-32);
+   }
+
+   .subtitle {
+      font-size: var(--size-16);
+   }
+
+   .listTitle {
+      margin: 40px 0 0;
+   }
+
+   .calculate {
+      width: 100%;
+   }
+}
+
+@media screen and (max-width: $mobile) {
+   .title {
+      font-size: var(--size-26);
+      text-align: center;
+   }
+
+   .subtitle {
+      font-size: var(--size-15);
+      text-align: center;
+   }
+
+   .listTitle {
+      margin-left: 15px;
+   }
+
+   .calculate {
+      width: 100%;
+      flex-direction: column;
+      gap: 15px;
+   }
+}

@@ -2,12 +2,13 @@ import { memo, useEffect, useState } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 
 import cls from './StagesComponent.module.scss';
-import { FontColor, FontSize, FontWeight, HeaderTagType, Text } from '@/shared/ui/Text';
+import { FontColor, FontWeight, HeaderTagType, Text } from '@/shared/ui/Text';
 import { HStack, VStack } from '@/shared/ui/Stack';
 import { stages } from '@/shared/const/installatons-stages';
 import { Button, ButtonBgColor, ButtonVariant } from '@/shared/ui/Button';
-import { FlexAlign } from '@/shared/ui/Stack/Flex';
+import { FlexAlign, FlexJustify } from '@/shared/ui/Stack/Flex';
 import { Postman } from '@/shared/ui/Postman';
+import { useResize } from '@/shared/lib/hooks/useResize';
 
 interface StagesComponentProps {
    className?: string;
@@ -17,6 +18,7 @@ export const StagesComponent = memo((props: StagesComponentProps) => {
    const { className } = props;
    const [stage, setStage] = useState(stages[0]);
    const [count, setCount] = useState(0);
+   const { isMobile } = useResize();
 
    const increase = () => {
       if (stages.length > count + 1) {
@@ -34,20 +36,17 @@ export const StagesComponent = memo((props: StagesComponentProps) => {
    return (
       <article className={classNames(cls.StagesComponent, {}, [className])}>
          <div className={cls.container}>
-            <Text
-               title={HeaderTagType.H_3}
-               fontSize={FontSize.SIZE_36}
-               fontWeight={FontWeight.TEXT_700}
-               className={cls.title}
-            >
+            <Text title={HeaderTagType.H_3} fontWeight={FontWeight.TEXT_700} className={cls.title}>
                Этапы установки
             </Text>
-            <HStack gap={116}>
-               <div className={cls.addImage}>
-                  <img src={stage.image} alt={stage.stage} />
-               </div>
+            <HStack className={cls.content} justify={FlexJustify.CENTER}>
+               <img
+                  className={cls.addImage}
+                  src={isMobile ? stage.imageMob : stage.image}
+                  alt={stage.stage}
+               />
                <VStack className={cls.stagesInfo} align={FlexAlign.START}>
-                  <HStack className={cls.infoContainer} gap={6} align={FlexAlign.START}>
+                  <HStack className={cls.infoContainer} align={FlexAlign.START}>
                      <span className={cls.numStage}>{stage.stage}&nbsp;&mdash;</span>
                      <Text className={cls.nameStage}>{stage.stageName}</Text>
                   </HStack>
@@ -56,13 +55,12 @@ export const StagesComponent = memo((props: StagesComponentProps) => {
                      <Postman
                         buttonText='Рассчитать стоимость монтажа'
                         kategory='Рассчитать стоимость монтажа'
+                        nonModal
                      />
                   ) : (
                      <HStack className={cls.buttonsContainer} gap={20}>
                         <Button
                            arrow
-                           width={55}
-                           height={40}
                            variant={ButtonVariant.FILLED}
                            bgColor={ButtonBgColor.GREY}
                            className={cls.buttonBack}
@@ -72,8 +70,7 @@ export const StagesComponent = memo((props: StagesComponentProps) => {
                            arrow
                            variant={ButtonVariant.FILLED}
                            bgColor={ButtonBgColor.YELLOW}
-                           width={187}
-                           height={40}
+                           className={cls.buttonForward}
                            fontColor={FontColor.BUTTON}
                            fontWeight={FontWeight.TEXT_400}
                            onClick={increase}

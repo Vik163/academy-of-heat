@@ -7,21 +7,6 @@
       height: auto;
    }
 
-   // .block_image {
-   //    bottom: -34px;
-   //    left: 0;
-   //    width: auto;
-   //    height: 620px;
-   // }
-
-   .block_image {
-      top: -80px;
-      bottom: auto;
-      left: -20%;
-      width: 90%;
-      height: auto;
-   }
-
    .title {
       width: 100%;
       font-size: var(--size-32);
@@ -40,8 +25,10 @@
    }
 
    .garantii_block {
-      margin-top: 30px;
-      padding-left: 50%;
+      margin-top: 50px;
+      margin-left: 30px;
+      flex-wrap: nowrap;
+      height: auto;
    }
 
    .garantii_block_list_item {
@@ -52,14 +39,6 @@
 @media screen and (max-width: $mobile) {
    .garantii {
       padding: 30px 20px;
-      height: auto;
-   }
-
-   .block_image {
-      top: -80px;
-      bottom: auto;
-      left: -20px;
-      width: calc(100% + 40px);
       height: auto;
    }
 
@@ -84,66 +63,7 @@
    }
 
    .garantii_block {
-      margin-top: 300px;
-      padding-left: 0;
-   }
-
-   .garantii_block_list_item {
-      position: relative;
-      margin-bottom: 25px;
-      padding-left: 80px;
-   }
-
-   .garantii_block_list_image {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 69px;
-      height: 69px;
-
-      img {
-         width: 69px;
-         height: 69px;
-      }
-   }
-
-   .garantii_block_list_title {
-      margin-bottom: 8px;
-      font-weight: 900;
-      font-size: 16px;
-      line-height: 19px;
-   }
-
-   .garantii_block_list_description {
-      max-width: 375px;
-      font-size: 14px;
-      line-height: 21px;
-      color: #8e8e8e;
-   }
-}
-
-@media screen and (max-width: 400px) {
-   .block_image {
-      top: -50px;
-   }
-
-   .garantii_block {
-      margin-top: 260px;
-   }
-}
-
-@media screen and (max-width: 360px) {
-   .block_image {
-      top: 10px;
-   }
-
-   .garantii_block {
-      margin-top: 260px;
-   }
-}
-
-@media screen and (max-width: 320px) {
-   .garantii_block {
-      margin-top: 220px;
+      margin-top: 20px;
+      margin-left: 0;
    }
 }

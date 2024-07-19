@@ -22,11 +22,25 @@
    margin-bottom: 30px;
 }
 
+.formContainer {
+   width: 100%;
+}
+
+.container {
+   width: 100%;
+}
+
+.answer {
+   width: 100%;
+}
+
 .form {
    border-top: 1px solid #e5e5e5;
 
    &.nonModal {
+      width: 100%;
       border-top: none;
+      padding-left: 84px;
    }
 
    input[name='copyemail'] {
@@ -57,7 +71,6 @@
          margin-top: 10px;
          width: 280px;
          height: 40px;
-         margin-left: 84px;
          font-size: 15px;
       }
    }
@@ -72,7 +85,6 @@
 
    &.nonModal {
       width: 280px;
-      margin-left: 84px;
    }
 }
 
@@ -95,7 +107,6 @@
       margin-top: 10px;
       width: 280px;
       height: 40px;
-      margin-left: 84px;
    }
 }
 
@@ -116,7 +127,6 @@
       margin-top: 10px;
       width: 280px;
       height: 40px;
-      margin-left: 84px;
       font-size: 15px;
    }
 }

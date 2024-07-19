@@ -1,7 +1,7 @@
 .StagesComponent {
    width: 100%;
    padding: 34px 0;
-   background-image: url(https://земляк.рф/wp-content/themes/zemljak/images/etapy.jpg);
+   background-image: url(../../../../shared/assets/images/desk/etapy.jpg);
    background-position: top center;
    background-repeat: repeat-x;
 }
@@ -11,8 +11,13 @@
    margin: 0 auto;
 }
 
+.content {
+   gap: 116px;
+}
+
 .title {
    margin-bottom: 70px;
+   font-size: var(--size-36);
 }
 
 .addImage {
@@ -26,6 +31,10 @@
    padding: 31px 40px 28px;
    background: #ffffff;
    border-radius: 15px;
+}
+
+.infoContainer {
+   gap: 6px;
 }
 
 .buttonsContainer {
@@ -50,8 +59,15 @@
    margin-top: 20px;
 }
 
-.buttonBack {
-   &::after {
-      transform: rotate(180deg);
-   }
+.buttonForward {
+   width: 187px;
+   height: 40px;
 }
+
+.buttonBack {
+   width: 55px;
+   height: 40px;
+   transform: rotate(180deg);
+}
+
+@import './StagesComponentAdapt.module.scss';

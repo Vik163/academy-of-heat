@@ -6,6 +6,11 @@
 .container {
    max-width: var(--page-width);
    margin: 0 auto;
+   gap: 94px;
+}
+
+.mainTitle {
+   font-size: var(--size-36);
 }
 
 .title {
@@ -73,3 +78,5 @@
 .boldText {
    font-weight: var(--weight-600);
 }
+
+@import './MontageCaissonInfoAdapt.module.scss';

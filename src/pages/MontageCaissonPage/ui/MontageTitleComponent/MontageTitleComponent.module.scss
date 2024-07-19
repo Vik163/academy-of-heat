@@ -11,11 +11,15 @@
 
 .title {
    margin: 10px 0 20px;
+   font-size: var(--size-36);
+}
+
+.subtitle {
+   font-size: var(--size-17);
 }
 
 .list {
    padding-left: 40px;
-   margin-top: 20px;
 
    &.listMargin {
       margin: 16px 0 24px;
@@ -52,10 +56,11 @@
 
 .calculate {
    width: 423px;
-   height: 76px;
+   padding: 18px;
    background-color: #fff;
    margin-top: 32px;
    border-radius: 15px;
+   gap: 32px;
 }
 
 .sum {
@@ -66,3 +71,5 @@
 .button {
    padding: 10px 18px;
 }
+
+@import './MontageTitleComponentAdapt.module.scss';

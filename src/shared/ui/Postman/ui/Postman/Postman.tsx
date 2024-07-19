@@ -17,10 +17,11 @@ export interface PostmanProps {
    buttonText: string;
    commentText?: string;
    kategory?: string;
+   nonModal?: boolean;
 }
 
 export const Postman = memo((props: PostmanProps) => {
-   const { closeForm, isOpen, title, buttonText, commentText, kategory } = props;
+   const { closeForm, isOpen, title, buttonText, commentText, kategory, nonModal } = props;
    const messageRef = useRef<HTMLTextAreaElement>(null);
    const phoneRef = useRef<HTMLInputElement>(null);
    const [err, setErr] = useState('');
@@ -134,11 +135,7 @@ export const Postman = memo((props: PostmanProps) => {
             </div>
          )}
          <form
-            className={classNames(
-               cls.form,
-               { [cls.nonModal]: !closeForm, [cls.horizontal]: smallScreen },
-               [],
-            )}
+            className={classNames(cls.form, { [cls.nonModal]: nonModal, [cls.horizontal]: smallScreen }, [])}
             onSubmit={handleSubmit}
          >
             <input
@@ -150,7 +147,7 @@ export const Postman = memo((props: PostmanProps) => {
             <input
                className={classNames(
                   cls.phone,
-                  { [cls.nonModal]: !closeForm, [cls.horizontal]: smallScreen },
+                  { [cls.nonModal]: nonModal, [cls.horizontal]: smallScreen },
                   [],
                )}
                id='phone'
@@ -166,7 +163,7 @@ export const Postman = memo((props: PostmanProps) => {
                   id='phone'
                   className={classNames(
                      cls.error,
-                     { [cls.nonModal]: !closeForm, [cls.horizontal]: smallScreen },
+                     { [cls.nonModal]: nonModal, [cls.horizontal]: smallScreen },
                      [],
                   )}
                >
@@ -177,7 +174,7 @@ export const Postman = memo((props: PostmanProps) => {
                <textarea
                   className={classNames(
                      cls.message,
-                     { [cls.nonModal]: !closeForm, [cls.horizontal]: smallScreen },
+                     { [cls.nonModal]: nonModal, [cls.horizontal]: smallScreen },
                      [],
                   )}
                   id='message'
@@ -189,14 +186,14 @@ export const Postman = memo((props: PostmanProps) => {
                ></textarea>
             )}
             {commentText && err === 'message' && (
-               <span id='message' className={classNames(cls.error, { [cls.nonModal]: !closeForm }, [])}>
+               <span id='message' className={classNames(cls.error, { [cls.nonModal]: nonModal }, [])}>
                   Введите Ваш номер телефона
                </span>
             )}
             <Button
                className={classNames(
                   cls.btn,
-                  { [cls.nonModal]: !closeForm, [cls.horizontal]: smallScreen },
+                  { [cls.nonModal]: nonModal, [cls.horizontal]: smallScreen },
                   [],
                )}
                type='submit'
@@ -219,9 +216,9 @@ export const Postman = memo((props: PostmanProps) => {
       </div>
    );
 
-   if (loading && !closeForm)
+   if (loading && nonModal)
       return (
-         <div>
+         <div className={cls.formContainer}>
             {form}
             <PageLoader screenFull />
          </div>
@@ -242,7 +239,7 @@ export const Postman = memo((props: PostmanProps) => {
          {!confirmSend ? form : answerPopup}
       </Modal>
    ) : (
-      <div>
+      <div className={cls.answer}>
          {form}
          {confirmSend && (
             <Modal

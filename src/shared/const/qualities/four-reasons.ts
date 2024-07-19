@@ -1,8 +1,6 @@
 export const fourReasons = {
    title: '4 причины заказать монтаж у официального дилера',
    subtitle: 'и получить надёжное качество работы',
-   mainImageDesc: 'https://xn--e1adkde9i.xn--p1ai/wp-content/uploads/2021/10/garantii-1-pc.jpg',
-   mainImageMob: 'https://xn--e1adkde9i.xn--p1ai/wp-content/uploads/2021/10/garantii-1-mob.jpg',
    items: [
       {
          itemTitle: 'Проходят обучение у производиля',

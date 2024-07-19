@@ -8,6 +8,7 @@ import { HStack } from '@/shared/ui/Stack';
 import { Button, ButtonBgColor, ButtonVariant } from '@/shared/ui/Button';
 import { FlexJustify } from '@/shared/ui/Stack/Flex';
 import { Postman } from '@/shared/ui/Postman';
+import { useResize } from '@/shared/lib/hooks/useResize';
 
 interface MontageTitleComponentProps {
    className?: string;
@@ -16,6 +17,7 @@ interface MontageTitleComponentProps {
 export const MontageTitleComponent = memo((props: MontageTitleComponentProps) => {
    const { className } = props;
    const [isOpenForm, setIsOpenForm] = useState(false);
+   const { isMobile } = useResize();
 
    const openForm = () => {
       setIsOpenForm(true);
@@ -29,15 +31,18 @@ export const MontageTitleComponent = memo((props: MontageTitleComponentProps) =>
       <article className={classNames(cls.MontageTitleComponent, {}, [className])}>
          <div className={cls.container}>
             <Breadcrumb productName='Монтаж кессона' />
-            <Text
-               title={HeaderTagType.H_2}
-               fontSize={FontSize.SIZE_36}
-               fontWeight={FontWeight.TEXT_700}
-               className={cls.title}
-            >
-               Монтаж кессона за 1 день
-            </Text>
-            <Text fontSize={FontSize.SIZE_17} fontColor={FontColor.LIGHT_GREY}>
+            {isMobile ? (
+               <Text title={HeaderTagType.H_2} fontWeight={FontWeight.TEXT_700} className={cls.title}>
+                  Монтаж кессона <br />
+                  за 1 день
+               </Text>
+            ) : (
+               <Text title={HeaderTagType.H_2} fontWeight={FontWeight.TEXT_700} className={cls.title}>
+                  Монтаж кессона за 1 день
+               </Text>
+            )}
+
+            <Text fontColor={FontColor.LIGHT_GREY} className={cls.subtitle}>
                От нашего официального дилера
             </Text>
             <Text fontSize={FontSize.SIZE_16} fontWeight={FontWeight.TEXT_600} className={cls.listTitle}>
@@ -50,7 +55,7 @@ export const MontageTitleComponent = memo((props: MontageTitleComponentProps) =>
                <li className={cls.imageStyle}>Обсыпка пескоцементной смесью</li>
                <li className={cls.imageStyle}>Установка оборудования</li>
             </ul>
-            <HStack className={cls.calculate} justify={FlexJustify.CENTER} gap={32}>
+            <HStack className={cls.calculate} justify={FlexJustify.CENTER}>
                <span className={cls.sum}>От 25 000 руб</span>
                <Button
                   className={cls.button}

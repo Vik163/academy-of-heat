@@ -1,0 +1,173 @@
+@import '../../../../app/styles/variables/mixins.scss';
+
+@media screen and (max-width: $pad) {
+   .StagesComponent {
+      width: 100%;
+      padding: 30px 20px;
+      background-image: url('../../../../shared/assets/images/pad/etapy.jpg');
+   }
+
+   .title {
+      margin-bottom: 70px;
+      font-size: var(--size-32);
+   }
+
+   .content {
+      width: 100%;
+      gap: 8%;
+   }
+
+   .addImage {
+      width: 35%;
+      height: auto;
+   }
+
+   .stagesInfo {
+      width: 55%;
+      height: 290px;
+      padding: 25px;
+   }
+
+   .numStage {
+      font-size: var(--size-17);
+   }
+
+   .nameStage {
+      width: 240px;
+      font-size: var(--size-17);
+   }
+
+   .description {
+      width: 73%;
+      margin-top: 10px;
+   }
+}
+
+@media screen and (max-width: $mobile) {
+   .StagesComponent {
+      background-image: url('../../../../shared/assets/images/mob/etapy.jpg');
+      height: auto;
+   }
+
+   .title {
+      margin-bottom: 94px;
+      font-size: var(--size-26);
+      text-align: center;
+   }
+
+   .content {
+      flex-direction: column;
+      width: 100%;
+      gap: 10px;
+   }
+
+   .addImage {
+      width: 35%;
+      height: auto;
+   }
+
+   .stagesInfo {
+      width: 100%;
+      height: auto;
+      padding: 15px;
+   }
+
+   .description {
+      width: 80%;
+      margin-left: 70px;
+      margin-top: 8px;
+      margin-bottom: 15px;
+      font-size: var(--size-13);
+   }
+
+   .buttonsContainer {
+      flex-shrink: 1;
+      height: fit-content;
+   }
+
+   .numStage {
+      font-size: var(--size-15);
+   }
+
+   .nameStage {
+      width: 240px;
+      font-size: var(--size-15);
+   }
+
+   .buttonBack {
+      width: 45px;
+      height: 37px;
+      padding: 8px;
+   }
+   .buttonForward {
+      width: 187px;
+      height: 37px;
+   }
+}
+
+@media screen and (max-width: 380px) {
+   .addImage {
+      width: 45%;
+   }
+
+   .infoContainer {
+      gap: 3px;
+   }
+
+   .numStage {
+      font-size: var(--size-14);
+   }
+
+   .nameStage {
+      width: 240px;
+      font-size: var(--size-14);
+   }
+
+   .description {
+      margin-left: 64px;
+   }
+
+   .buttonBack {
+      width: 42px;
+      height: 35px;
+   }
+   .buttonForward {
+      height: 35px;
+   }
+}
+
+@media screen and (max-width: 320px) {
+   .StagesComponent {
+      padding: 20px 10px;
+   }
+
+   .title {
+      margin-bottom: 102px;
+   }
+
+   .addImage {
+      width: 55%;
+   }
+
+   .numStage {
+      font-size: var(--size-13);
+      min-width: 57px;
+   }
+
+   .nameStage {
+      width: fit-content;
+      font-size: var(--size-14);
+   }
+
+   .description {
+      margin-left: 59px;
+   }
+
+   .buttonBack {
+      width: 38px;
+      height: 33px;
+   }
+   .buttonForward {
+      height: 33px;
+   }
+}

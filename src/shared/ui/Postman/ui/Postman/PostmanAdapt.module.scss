@@ -31,10 +31,8 @@
 
          &.nonModal {
             margin-top: 10px;
-            width: 280px;
-            height: 40px;
-            margin-left: 84px;
-            font-size: 15px;
+            width: 100%;
+            font-size: 14px;
          }
       }
    }
@@ -46,8 +44,7 @@
       }
 
       &.nonModal {
-         width: 280px;
-         margin-left: 84px;
+         width: 100%;
       }
    }
 
@@ -69,7 +66,6 @@
          margin-top: 10px;
          width: 280px;
          height: 40px;
-         margin-left: 84px;
       }
    }
 
@@ -80,10 +76,8 @@
 
       &.nonModal {
          margin-top: 10px;
-         width: 280px;
-         height: 40px;
-         margin-left: 84px;
-         font-size: 15px;
+         width: 100%;
+         font-size: 14px;
       }
 
       &.horizontal {
@@ -106,12 +100,7 @@
 
 @media screen and (max-width: $mobile) {
    .modal {
-      max-width: 94%;
       padding: 30px 32px;
-   }
-
-   .title {
-      font-size: var(--size-20);
    }
 
    .form {
@@ -119,65 +108,63 @@
          font-size: 15px;
 
          &.nonModal {
-            margin-top: 10px;
-            width: 280px;
-            height: 40px;
-            margin-left: 84px;
-            font-size: 15px;
+            margin-top: 0;
+            height: 35px;
          }
+      }
+
+      &.nonModal {
+         width: 100%;
+         font-size: 14px;
+         padding-left: 70px;
       }
    }
 
    .error {
       &.nonModal {
          width: 280px;
-         margin-left: 84px;
       }
    }
 
    .message {
-      width: 100%;
-      height: 110px;
-      line-height: 22px;
-      resize: none;
-      padding: 10px 20px;
-      font-weight: 400;
-      font-size: 16px;
-      color: #3e3d59;
-      background: #f7f7fb;
-      border: 1px solid #a8a2b4;
-      box-sizing: border-box;
-      border-radius: 6px;
-      margin-top: 30px;
-
       &.nonModal {
-         margin-top: 10px;
-         width: 280px;
-         height: 40px;
-         margin-left: 84px;
+         width: 100%;
+         height: 35px;
+         font-size: 14px;
       }
    }
 
    .btn {
-      width: 100%;
-      height: 53px;
-      font-size: 17px;
+      &.nonModal {
+         height: 35px;
+      }
+   }
+}
+
+@media screen and (max-width: 380px) {
+   .form {
+      &.nonModal {
+         padding: 0;
+      }
+   }
+}
+
+@media screen and (max-width: 320px) {
+   .form {
+      .phone {
+         &.nonModal {
+            font-size: 13px;
+         }
+      }
 
       &.nonModal {
-         margin-top: 10px;
-         width: 280px;
-         height: 40px;
-         margin-left: 84px;
-         font-size: 15px;
+         font-size: 13px;
       }
    }
 
-   .answerTitle {
-      font-size: var(--size-20);
-   }
-
-   .textPopup {
-      margin-top: 20px;
-      padding-top: 20px;
+   .btn {
+      &.nonModal {
+         font-size: 13px;
+      }
    }
 }

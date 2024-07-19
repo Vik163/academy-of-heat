@@ -1,6 +1,5 @@
 .garantii {
    padding: 50px 0;
-   height: 720px;
    background-color: #fff;
    overflow: hidden;
    width: 100%;
@@ -10,14 +9,6 @@
    position: relative;
    max-width: 1034px;
    margin: 0 auto;
-}
-
-.block_image {
-   position: absolute;
-   bottom: -90px;
-   left: -8%;
-   width: auto;
-   height: 720px;
 }
 
 .title {
@@ -40,7 +31,7 @@
 
 .garantii_block {
    margin-top: 70px;
-   padding-left: 440px;
+   height: 220px;
 }
 
 .garantii_block_list_item {

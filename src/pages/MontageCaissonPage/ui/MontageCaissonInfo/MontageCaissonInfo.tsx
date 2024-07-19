@@ -19,9 +19,9 @@ export const MontageCaissonInfo = memo((props: MontageCaissonInfoProps) => {
 
    return (
       <div className={classNames(cls.MontageCaissonInfo, {}, [className])}>
-         <HStack gap={94} className={cls.container} align={FlexAlign.START}>
+         <HStack className={cls.container} align={FlexAlign.START}>
             <div className={cls.info}>
-               <Text title={HeaderTagType.H_3} fontSize={FontSize.SIZE_36} fontWeight={FontWeight.TEXT_600}>
+               <Text title={HeaderTagType.H_3} fontWeight={FontWeight.TEXT_600} className={cls.mainTitle}>
                   Установка кессона: <br /> важный этап обустройства системы водоснабжения
                </Text>
                <p>
