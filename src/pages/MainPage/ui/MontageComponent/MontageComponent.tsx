@@ -7,29 +7,11 @@ import { Button, ButtonBgColor, ButtonVariant } from '@/shared/ui/Button';
 import { Player } from '@/shared/ui/Player';
 import { Postman } from '@/shared/ui/Postman';
 import { useResize } from '@/shared/lib/hooks/useResize';
+import { HStack } from '@/shared/ui/Stack';
 
 export const MontageComponent = memo(() => {
    const [isOpenForm, setIsOpenForm] = useState(false);
    const { isMobile, isPad } = useResize();
-
-   const sizes = () => {
-      if (isPad) {
-         return {
-            width: 420,
-            height: 280,
-         };
-      }
-      if (isMobile) {
-         return {
-            width: 280,
-            height: 200,
-         };
-      }
-      return {
-         width: 630,
-         height: 423,
-      };
-   };
 
    const openForm = () => {
       setIsOpenForm(true);
@@ -52,7 +34,7 @@ export const MontageComponent = memo(() => {
                </Text>
             )}
             <Text className={cls.description}>От нашего официального дилера </Text>
-            <div className={classNames(cls.montazh_block, {}, [])}>
+            <HStack className={classNames(cls.montazh_block, {}, [])}>
                <div className={cls.block_main}>
                   <Text className={cls.main_title}>В монтаж входят услуги:</Text>
                   <ul className={cls.main_list}>
@@ -78,13 +60,11 @@ export const MontageComponent = memo(() => {
                </div>
                <Player
                   url='https://www.youtube.com/watch?v=2rp0PbsVi6c'
-                  width={sizes().width}
-                  height={sizes().height}
                   className={cls.video}
                   addPanel={!isMobile && !isPad}
                   poster='https://xn--e1adkde9i.xn--p1ai/wp-content/uploads/2023/10/screenshot_1.png'
                />
-            </div>
+            </HStack>
          </div>
          {isOpenForm && (
             <Postman

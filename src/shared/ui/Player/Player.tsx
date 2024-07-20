@@ -4,12 +4,9 @@ import ReactPlayer from 'react-player/youtube';
 import cls from './Player.module.scss';
 import { Modal } from '../Modal';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { useResize } from '@/shared/lib/hooks/useResize';
 
 export interface PlayerProps {
    className?: string;
-   width: number;
-   height: number;
    url: string;
    onReady?: () => void;
    addPanel?: boolean;
@@ -17,34 +14,8 @@ export interface PlayerProps {
 }
 
 const Player = memo((props: PlayerProps) => {
-   const { className, width, height, url, onReady, addPanel, poster } = props;
-   const { isPad, isMobile, isNotebook } = useResize();
+   const { className, url, onReady, addPanel, poster } = props;
    const [isPlaying, setIsPlaying] = useState(false);
-
-   const sizes = () => {
-      if (isNotebook) {
-         return {
-            width: 1000,
-            height: 670,
-         };
-      }
-      if (isPad) {
-         return {
-            width: 700,
-            height: 470,
-         };
-      }
-      if (isMobile) {
-         return {
-            width: 310,
-            height: 210,
-         };
-      }
-      return {
-         width: 1200,
-         height: 800,
-      };
-   };
 
    const startVideo = () => {
       setIsPlaying(true);
@@ -63,10 +34,7 @@ const Player = memo((props: PlayerProps) => {
    };
 
    return (
-      <div
-         style={{ width, height }}
-         className={classNames(cls.videoContainer, { [cls.fullscren]: isPlaying }, [className])}
-      >
+      <div className={classNames(cls.videoContainer, { [cls.fullscren]: isPlaying }, [className])}>
          {!isPlaying && (
             <div onClick={startVideo}>
                <img className={cls.poster} src={poster} alt='видео' />
@@ -93,8 +61,8 @@ const Player = memo((props: PlayerProps) => {
                   controls
                   playing={isPlaying}
                   onReady={onReady}
-                  width={sizes().width}
-                  height={sizes().height}
+                  width='100%'
+                  height='100%'
                   url={url}
                   onEnded={endVideo}
                   config={configYoutube}
