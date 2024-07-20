@@ -1,0 +1,36 @@
+@import '../../../../app/styles/variables/mixins.scss';
+
+@media screen and (max-width: $pad) {
+   .ArragementWellsInfoComponent {
+      padding: 30px 20px;
+   }
+
+   .container {
+      flex-direction: column;
+   }
+
+   .mainTitle {
+      font-size: var(--size-32);
+   }
+
+   .title {
+      margin-top: 20px;
+   }
+
+   .advantages {
+      width: 100%;
+   }
+
+   .info {
+      width: 100%;
+   }
+}
+@media screen and (max-width: $mobile) {
+   .container {
+      gap: 20px;
+   }
+   .mainTitle {
+      font-size: var(--size-26);
+      text-align: center;
+   }
+}

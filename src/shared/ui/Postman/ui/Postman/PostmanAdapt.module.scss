@@ -143,6 +143,11 @@
 
 @media screen and (max-width: 380px) {
    .form {
+      .phone {
+         &.nonModal {
+            text-align: center;
+         }
+      }
       &.nonModal {
          padding: 0;
       }
@@ -154,6 +159,7 @@
       .phone {
          &.nonModal {
             font-size: 13px;
+            text-align: center;
          }
       }
 

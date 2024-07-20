@@ -22,8 +22,8 @@ const MontageCaissonPage = memo((props: MontageCaissonPageProps) => {
          <MontageTitleComponent />
          <StagesComponent />
          <ListQualitiesComponent data={fourReasons} />
-         <MontageCaissonInfo />
          <AdviceEngineerComponent />
+         <MontageCaissonInfo />
       </Page>
    );
 });

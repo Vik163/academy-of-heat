@@ -18,24 +18,18 @@ interface Data {
 
 interface ListQualitiesComponentProps {
    data: Data;
-   wellsStyle?: boolean;
 }
 
 export const ListQualitiesComponent = memo((props: ListQualitiesComponentProps) => {
-   const { data, wellsStyle } = props;
+   const { data } = props;
 
    return (
       <article id='sec-garantii' className={cls.garantii}>
          <div className={cls.container}>
-            <Text
-               title={HeaderTagType.H_3}
-               className={classNames(cls.title, { [cls.marginTitle]: wellsStyle }, [])}
-            >
+            <Text title={HeaderTagType.H_3} className={classNames(cls.title, {}, [])}>
                {data.title}
             </Text>
-            <Text className={classNames(cls.description, { [cls.marginTitle]: wellsStyle }, [])}>
-               {data.subtitle}
-            </Text>
+            <Text className={classNames(cls.description, {}, [])}>{data.subtitle}</Text>
             <VStack wrap={FlexWrap.WPAP} className={cls.garantii_block} align={FlexAlign.START}>
                {data.items.map((item) => (
                   <div key={item.itemTitle} className={cls.garantii_block_list_item}>

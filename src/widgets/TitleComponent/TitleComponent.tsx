@@ -37,7 +37,7 @@ export const TitleComponent = memo((props: TitleComponentProps) => {
             <Text title={HeaderTagType.H_2} className={cls.title} fontColor={FontColor.WHITE}>
                {content.title}
             </Text>
-            <Text fontSize={FontSize.SIZE_18} className={cls.production}>
+            <Text className={cls.production}>
                Лучшие технологические решения, качество сборки и красота исполнения, воплощённые инженерами в
                продукции ТМ «ЗЕМЛЯК»
             </Text>
@@ -56,8 +56,6 @@ export const TitleComponent = memo((props: TitleComponentProps) => {
                </li>
             </ul>
             <Button
-               width={166}
-               height={40}
                fontSize={FontSize.SIZE_15}
                fontWeight={FontWeight.TEXT_400}
                fontColor={FontColor.BUTTON}
@@ -65,6 +63,7 @@ export const TitleComponent = memo((props: TitleComponentProps) => {
                bgColor={ButtonBgColor.YELLOW}
                className={classNames('', {}, [cls.buttonSelect])}
                onClick={openForm}
+               arrow
             >
                Узнать больше
             </Button>

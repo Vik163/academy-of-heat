@@ -32,6 +32,7 @@
    color: var(--color--light-green-cyan);
    margin: 29px 0 46px;
    line-height: 24px;
+   font-size: var(--size-18);
 
    z-index: 1;
 }
@@ -45,7 +46,7 @@
    margin-bottom: 16px;
    font-size: 17px;
    line-height: 22px;
-   height: 42px;
+   min-height: 42px;
    color: var(--color-white);
    display: flex;
    align-items: center;
@@ -75,18 +76,10 @@
 }
 
 .buttonSelect {
-   padding: 8px 16px;
    margin-left: 10px;
    position: relative;
-   justify-content: flex-start;
-
-   &::after {
-      content: '';
-      position: absolute;
-      right: 20px;
-      content: url(../../shared/assets/icons/icon-arrow-right.svg);
-      margin-left: 13px;
-   }
+   width: 166px;
+   height: 40px;
 }
 
 .imageContainer {
@@ -118,3 +111,5 @@
       width: 367px;
    }
 }
+
+@import './TitleComponentAdapt.module.scss';

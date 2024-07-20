@@ -1,8 +1,6 @@
 export const bestDecisionsWells = {
    title: 'Лучшее решение для обустройства скважины',
    subtitle: 'по мнению 99% специалистов по водоснабжению',
-   mainImageDesc: 'https://земляк.рф/wp-content/uploads/2021/10/garantii-2-pc.jpg',
-   mainImageMob: 'https://xn--e1adkde9i.xn--p1ai/wp-content/uploads/2021/10/garantii-1-mob.jpg',
    items: [
       {
          itemTitle: 'Круглогодичное водоснабжение',

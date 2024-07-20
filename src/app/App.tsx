@@ -18,7 +18,7 @@ const App = memo(() => {
    return (
       <VStack justify={FlexJustify.CENTER} className={classNames('app', {}, ['app_colors'])}>
          <Header openNavMobile={openNavMobile} onNavMobile={onToggle} />
-         <Navbar openNavMobile={openNavMobile} />
+         <Navbar openNavMobile={openNavMobile} onNavMobile={onToggle} />
          <main className='main'>
             <AppRouter />
          </main>

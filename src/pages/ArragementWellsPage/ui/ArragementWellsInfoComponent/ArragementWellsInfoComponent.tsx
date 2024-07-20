@@ -10,9 +10,9 @@ import { FlexAlign } from '@/shared/ui/Stack/Flex';
 export const ArragementWellsInfoComponent = memo(() => {
    return (
       <div className={cls.ArragementWellsInfoComponent}>
-         <HStack gap={94} className={cls.container} align={FlexAlign.START}>
+         <HStack className={cls.container} align={FlexAlign.START}>
             <div className={cls.info}>
-               <Text title={HeaderTagType.H_3} fontSize={FontSize.SIZE_36} fontWeight={FontWeight.TEXT_700}>
+               <Text title={HeaderTagType.H_3} fontWeight={FontWeight.TEXT_700} className={cls.mainTitle}>
                   От чего зависит стоимость обустройства скважины на воду
                </Text>
                <p>

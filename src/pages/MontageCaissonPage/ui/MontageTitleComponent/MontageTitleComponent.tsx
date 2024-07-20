@@ -65,7 +65,6 @@ export const MontageTitleComponent = memo((props: MontageTitleComponentProps) =>
                   width={223}
                   height={40}
                   fontColor={FontColor.BUTTON}
-                  fontSize={FontSize.SIZE_15}
                   fontWeight={FontWeight.TEXT_400}
                   onClick={openForm}
                >

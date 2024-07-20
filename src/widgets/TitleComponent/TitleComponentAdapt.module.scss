@@ -1,0 +1,166 @@
+@import '../../app/styles/variables/mixins.scss';
+
+@media screen and (max-width: $pad) {
+   .TitleComponent {
+      padding: 30px 20px;
+      height: auto;
+   }
+
+   .infoContainer {
+      width: 100%;
+      &::before {
+         top: -90px;
+         bottom: none;
+         right: -25px;
+      }
+   }
+
+   .title {
+      width: 45%;
+      font-size: 32px;
+      line-height: 36px;
+   }
+
+   .production {
+      width: 45%;
+      line-height: 27px;
+      margin: 29px 0 26px;
+      font-size: var(--size-17);
+   }
+
+   .list {
+      position: absolute;
+      top: 45%;
+      width: 45%;
+      margin: 26px 0 27px;
+   }
+
+   .imageStyle {
+      font-size: var(--size-15);
+      height: auto;
+   }
+
+   .buttonSelect {
+      margin-top: 300px;
+   }
+
+   .imageContainer {
+      top: 40%;
+      right: 35px;
+
+      .mainImage {
+         width: 340px;
+      }
+   }
+}
+
+@media screen and (max-width: $mobile) {
+   .TitleComponent {
+      padding: 20px;
+      overflow: hidden;
+   }
+
+   .infoContainer {
+      width: 100%;
+      &::before {
+         top: -90px;
+         right: -325px;
+      }
+   }
+
+   .title {
+      width: 100%;
+      font-size: 26px;
+   }
+
+   .production {
+      width: 100%;
+      line-height: 27px;
+      margin: 20px 0 26px;
+      font-size: var(--size-16);
+   }
+
+   .list {
+      position: relative;
+      top: 0;
+      width: 100%;
+   }
+
+   .imageStyle {
+      font-size: var(--size-15);
+   }
+
+   .buttonSelect {
+      width: 100%;
+      margin-top: 400px;
+      margin-left: 0;
+   }
+
+   .imageContainer {
+      position: absolute;
+      top: 68%;
+      right: 17%;
+
+      .mainImage {
+         width: 280px;
+      }
+   }
+}
+
+@media screen and (max-width: 380px) {
+   .title {
+      text-align: center;
+   }
+
+   .production {
+      text-align: center;
+      line-height: 23px;
+      margin: 20px 0;
+      font-size: var(--size-15);
+   }
+
+   .list {
+      margin: 20px 0;
+   }
+
+   .imageStyle {
+      font-size: var(--size-15);
+   }
+
+   .buttonSelect {
+      width: 100%;
+      margin-top: 320px;
+      margin-left: 0;
+   }
+
+   .imageContainer {
+      position: absolute;
+      top: 71%;
+      right: 17%;
+
+      &::before {
+         left: 68%;
+      }
+      &::after {
+         left: 68%;
+      }
+
+      .mainImage {
+         width: 230px;
+      }
+   }
+}
+
+@media screen and (max-width: 320px) {
+   .buttonSelect {
+      margin-top: 300px;
+   }
+
+   .imageContainer {
+      top: 75%;
+
+      .mainImage {
+         width: 210px;
+      }
+   }
+}

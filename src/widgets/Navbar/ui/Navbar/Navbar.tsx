@@ -19,9 +19,10 @@ import { useResize } from '@/shared/lib/hooks/useResize';
 interface NavbarProps {
    className?: string;
    openNavMobile?: boolean;
+   onNavMobile: () => void;
 }
 
-export const Navbar = memo(({ className, openNavMobile }: NavbarProps) => {
+export const Navbar = memo(({ className, openNavMobile, onNavMobile }: NavbarProps) => {
    const [openModal, setOpenModal] = useState(false);
    const [isAddLinks, setIsAddLinks] = useState<string[]>([]);
    const [navbarItemsList, setNavbarItemsList] = useState(useNavbarItems());
@@ -90,6 +91,7 @@ export const Navbar = memo(({ className, openNavMobile }: NavbarProps) => {
 
    return (
       <nav ref={navRef} className={classNames(cls.Navbar, mods, [className])}>
+         {(isMobile || isPad) && <div className={cls.overlay} onClick={onNavMobile}></div>}
          <VStack className={cls.container}>
             <Logo className={cls.navLogo} />
             <div className={cls.itemsContainer}>

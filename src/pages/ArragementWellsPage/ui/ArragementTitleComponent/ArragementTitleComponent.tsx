@@ -4,7 +4,7 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './ArragementTitleComponent.module.scss';
 
 import { Breadcrumb } from '@/features/Breadcrumbs';
-import { FontColor, FontSize, FontWeight, HeaderTagType, Text } from '@/shared/ui/Text';
+import { FontColor, FontWeight, HeaderTagType, Text } from '@/shared/ui/Text';
 import { HStack } from '@/shared/ui/Stack';
 import { Button, ButtonBgColor, ButtonVariant } from '@/shared/ui/Button';
 import { FlexJustify } from '@/shared/ui/Stack/Flex';
@@ -30,15 +30,10 @@ export const ArragementTitleComponent = memo((props: ArragementTitleComponentPro
       <article className={classNames(cls.ArragementTitleComponent, {}, [className])}>
          <div className={cls.container}>
             <Breadcrumb productName='Обустройство скважин' />
-            <Text
-               title={HeaderTagType.H_2}
-               fontSize={FontSize.SIZE_36}
-               fontWeight={FontWeight.TEXT_700}
-               className={cls.title}
-            >
+            <Text title={HeaderTagType.H_2} fontWeight={FontWeight.TEXT_700} className={cls.title}>
                Обустройство скважин
             </Text>
-            <Text fontSize={FontSize.SIZE_17} fontColor={FontColor.LIGHT_GREY}>
+            <Text fontColor={FontColor.LIGHT_GREY} className={cls.subtitle}>
                От нашего официального дилера
             </Text>
             <ul className={classNames(cls.list, {}, [cls.listMargin])}>
@@ -47,7 +42,7 @@ export const ArragementTitleComponent = memo((props: ArragementTitleComponentPro
                <li className={classNames(cls.imageStyle, {}, [cls.image3])}>Оборудование надёжных брендов</li>
                <li className={classNames(cls.imageStyle, {}, [cls.image4])}>3 года гарантии на монтаж</li>
             </ul>
-            <HStack className={cls.calculate} justify={FlexJustify.CENTER} gap={32}>
+            <HStack className={cls.calculate} justify={FlexJustify.CENTER}>
                <span className={cls.sum}>от 145 500 руб</span>
                <Button
                   className={cls.button}
@@ -58,7 +53,6 @@ export const ArragementTitleComponent = memo((props: ArragementTitleComponentPro
                   height={40}
                   fontColor={FontColor.BUTTON}
                   fontWeight={FontWeight.TEXT_400}
-                  fontSize={FontSize.SIZE_15}
                   onClick={openForm}
                >
                   Рассчитать стоимость

@@ -116,6 +116,7 @@
 
    .numStage {
       font-size: var(--size-14);
+      min-width: 62px;
    }
 
    .nameStage {
@@ -124,7 +125,7 @@
    }
 
    .description {
-      margin-left: 64px;
+      margin-left: 65px;
    }
 
    .buttonBack {

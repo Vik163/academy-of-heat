@@ -19,7 +19,7 @@ const ArragementWellsPage = memo((props: ArragementWellsPageProps) => {
    return (
       <Page className={classNames(cls.ArragementWellsPage, {}, [className])}>
          <ArragementTitleComponent />
-         <ListQualitiesComponent data={bestDecisionsWells} wellsStyle />
+         <ListQualitiesComponent data={bestDecisionsWells} />
          <AdviceEngineerComponent />
          <ArragementWellsInfoComponent />
       </Page>
