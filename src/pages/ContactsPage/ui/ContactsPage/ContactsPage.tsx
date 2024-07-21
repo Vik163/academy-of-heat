@@ -8,17 +8,10 @@ import { FontColor, FontSize, FontWeight, HeaderTagType, Text, TextAlign } from 
 import { HStack, VStack } from '@/shared/ui/Stack';
 import Map from '@/shared/ui/Map/Map';
 import { FlexAlign, FlexJustify } from '@/shared/ui/Stack/Flex';
-import {
-   ADDRESS,
-   EMAIL,
-   MAIN_COORD,
-   MAIN_ZOOM,
-   PHONE,
-   PHONE_MOB,
-   STORES_COORD,
-} from '@/shared/const/main_info';
+import { EMAIL, MAIN_COORD, MAIN_ZOOM, PHONE, PHONE_MOB, STORES_COORD } from '@/shared/const/main_info';
 import { Button, ButtonBgColor, ButtonVariant } from '@/shared/ui/Button';
 import { Postman } from '@/shared/ui/Postman';
+import { useResize } from '@/shared/lib/hooks/useResize';
 
 export interface ContactsPageProps {
    className?: string;
@@ -27,6 +20,7 @@ export interface ContactsPageProps {
 const ContactsPage = memo((props: ContactsPageProps) => {
    const { className } = props;
    const [isOpenForm, setIsOpenForm] = useState(false);
+   const { isMobile } = useResize();
 
    const openForm = () => {
       setIsOpenForm(true);
@@ -40,21 +34,22 @@ const ContactsPage = memo((props: ContactsPageProps) => {
       <Page className={classNames(cls.ContactsPage, {}, [className])}>
          <div className={cls.container}>
             <Breadcrumb productName='Контакты' />
-            <Text
-               className={cls.title}
-               title={HeaderTagType.H_2}
-               fontSize={FontSize.SIZE_36}
-               fontWeight={FontWeight.TEXT_700}
-            >
+            <Text className={cls.title} title={HeaderTagType.H_2} fontWeight={FontWeight.TEXT_700}>
                Контакты
             </Text>
-            <HStack justify={FlexJustify.BETWEEN}>
+            <HStack justify={FlexJustify.BETWEEN} className={cls.content}>
                <VStack className={cls.infoContainer} justify={FlexJustify.BETWEEN}>
                   <div className={cls.info}>
                      <div className={cls.blockPhone}>
-                        <span>
-                           {PHONE},&emsp; {PHONE_MOB}
-                        </span>
+                        {isMobile ? (
+                           <span>
+                              {PHONE},<br /> {PHONE_MOB}
+                           </span>
+                        ) : (
+                           <span>
+                              {PHONE},&emsp; {PHONE_MOB}
+                           </span>
+                        )}
                         <p className={cls.textInfo}>
                            Работаем:
                            <br /> Понедельник - Пятница - с 8.30-18.30, <br />
@@ -63,7 +58,14 @@ const ContactsPage = memo((props: ContactsPageProps) => {
                         </p>
                      </div>
                      <div className={cls.email}>{EMAIL}</div>
-                     <div className={cls.address}>{ADDRESS}</div>
+                     {isMobile ? (
+                        <div className={cls.address}>
+                           г. Новокуйбышевск, <br />
+                           ул. Молодогвардейская, д. 4
+                        </div>
+                     ) : (
+                        <div className={cls.address}>г. Новокуйбышевск, ул. Молодогвардейская, д. 4</div>
+                     )}
                   </div>
                   <HStack
                      className={cls.buttonContainer}
@@ -74,11 +76,9 @@ const ContactsPage = memo((props: ContactsPageProps) => {
                         Задайте любой вопрос:
                      </Text>
                      <Button
-                        width={176}
-                        height={40}
                         variant={ButtonVariant.FILLED}
                         bgColor={ButtonBgColor.YELLOW}
-                        className={cls.btn_container}
+                        className={cls.btn}
                         fontSize={FontSize.SIZE_15}
                         fontColor={FontColor.BUTTON}
                         fontWeight={FontWeight.TEXT_400}
@@ -89,14 +89,7 @@ const ContactsPage = memo((props: ContactsPageProps) => {
                      </Button>
                   </HStack>
                </VStack>
-               <Map
-                  width={544}
-                  height={318}
-                  location={MAIN_COORD}
-                  zoom={MAIN_ZOOM}
-                  coordsStores={STORES_COORD}
-                  className={cls.map}
-               />
+               <Map location={MAIN_COORD} zoom={MAIN_ZOOM} coordsStores={STORES_COORD} className={cls.map} />
             </HStack>
          </div>
          {isOpenForm && (

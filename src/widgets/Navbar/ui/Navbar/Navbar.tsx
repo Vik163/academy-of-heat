@@ -1,4 +1,5 @@
-import { memo, useCallback, useMemo, useRef, useState } from 'react';
+import { memo, useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 import { VStack } from '@/shared/ui/Stack';
 
@@ -19,7 +20,7 @@ import { useResize } from '@/shared/lib/hooks/useResize';
 interface NavbarProps {
    className?: string;
    openNavMobile?: boolean;
-   onNavMobile: () => void;
+   onNavMobile: (state: boolean) => void;
 }
 
 export const Navbar = memo(({ className, openNavMobile, onNavMobile }: NavbarProps) => {
@@ -30,6 +31,7 @@ export const Navbar = memo(({ className, openNavMobile, onNavMobile }: NavbarPro
    const navRef = useRef<HTMLDivElement>(null);
    const { isMobile, isPad } = useResize();
    const { isOpen, isAnimate } = useAnimate(openNavMobile || false, 200);
+   const { state, pathname } = useLocation();
 
    const openForm = () => {
       setIsOpenForm(true);
@@ -38,6 +40,12 @@ export const Navbar = memo(({ className, openNavMobile, onNavMobile }: NavbarPro
    const closeForm = () => {
       setIsOpenForm(false);
    };
+
+   useEffect(() => {
+      if (state !== pathname) {
+         onNavMobile(false);
+      }
+   }, [pathname]);
 
    const addLinks = useCallback(
       (text: string) => {
@@ -91,7 +99,7 @@ export const Navbar = memo(({ className, openNavMobile, onNavMobile }: NavbarPro
 
    return (
       <nav ref={navRef} className={classNames(cls.Navbar, mods, [className])}>
-         {(isMobile || isPad) && <div className={cls.overlay} onClick={onNavMobile}></div>}
+         {(isMobile || isPad) && <div className={cls.overlay} onClick={() => onNavMobile(false)}></div>}
          <VStack className={cls.container}>
             <Logo className={cls.navLogo} />
             <div className={cls.itemsContainer}>

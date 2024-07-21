@@ -11,8 +11,8 @@ import { Footer } from '@/widgets/Footer';
 const App = memo(() => {
    const [openNavMobile, setOpenNavMobile] = useState(false);
 
-   const onToggle = () => {
-      setOpenNavMobile((prev) => !prev);
+   const onToggle = (state: boolean) => {
+      setOpenNavMobile(state);
    };
 
    return (

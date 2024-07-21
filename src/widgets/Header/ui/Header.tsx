@@ -16,7 +16,7 @@ import menu from '@/shared/assets/icons/icon-menu.svg';
 import close from '@/shared/assets/icons/closeIcon.svg';
 
 interface HeaderProps {
-   onNavMobile: () => void;
+   onNavMobile: (state: boolean) => void;
    openNavMobile: boolean;
 }
 
@@ -96,7 +96,7 @@ export const Header = memo((props: HeaderProps) => {
                </HStack>
             ) : (
                <Icon
-                  onClick={onNavMobile}
+                  onClick={() => onNavMobile(!openNavMobile)}
                   Svg={iconLink}
                   className={classNames(cls.menu, { [cls.close]: openNavMobile }, [])}
                />

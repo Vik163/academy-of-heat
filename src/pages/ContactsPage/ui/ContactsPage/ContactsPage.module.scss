@@ -12,6 +12,7 @@
 
 .title {
    margin: 5px 0 20px;
+   font-size: var(--size-36);
 }
 
 .infoContainer {
@@ -74,6 +75,11 @@
    width: 100%;
 }
 
+.btn {
+   width: 176px;
+   height: 40px;
+}
+
 .labelButton {
    font-size: 17px;
    line-height: 40px;
@@ -82,4 +88,8 @@
 .map {
    border-radius: 12px;
    overflow: hidden;
+   width: 544px;
+   height: 318px;
 }
+
+@import './ContactsPageAdapt.module.scss';

@@ -2,7 +2,7 @@ import { memo, useState } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 
 import cls from './ResultsInfoComponent.module.scss';
-import { FontSize, FontWeight, HeaderTagType, Text } from '@/shared/ui/Text';
+import { FontWeight, HeaderTagType, Text } from '@/shared/ui/Text';
 import { Modal } from '@/shared/ui/Modal';
 
 interface ResultsInfoComponentProps {
@@ -12,6 +12,7 @@ interface ResultsInfoComponentProps {
 export const ResultsInfoComponent = memo((props: ResultsInfoComponentProps) => {
    const { className } = props;
    const [openPopup, setOpenPopup] = useState({ name: '', link: '' });
+   const [sizesPopup, setSizesPopup] = useState({ height: 0, width: 0 });
 
    const onOpen = (name: string) => {
       setOpenPopup({
@@ -21,6 +22,7 @@ export const ResultsInfoComponent = memo((props: ResultsInfoComponentProps) => {
                ? 'https://земляк.рф/wp-content/uploads/2023/02/ip_tihonovskij_svodnaya_vedomost-1280x905.jpg'
                : 'https://земляк.рф/wp-content/uploads/2023/02/ip_tihonovskij_perechen_meropriyatij-1280x905.jpg',
       });
+      setSizesPopup({ height: window.screen.height, width: window.screen.width });
    };
 
    const onClose = () => {
@@ -33,12 +35,7 @@ export const ResultsInfoComponent = memo((props: ResultsInfoComponentProps) => {
    return (
       <article className={classNames(cls.ResultsInfoComponent, {}, [className])}>
          <div className={cls.container}>
-            <Text
-               title={HeaderTagType.H_4}
-               fontSize={FontSize.SIZE_15}
-               fontWeight={FontWeight.TEXT_700}
-               className={cls.title}
-            >
+            <Text title={HeaderTagType.H_4} fontWeight={FontWeight.TEXT_700} className={cls.title}>
                Результаты СОУТ
             </Text>
             <Text>
@@ -71,8 +68,17 @@ export const ResultsInfoComponent = memo((props: ResultsInfoComponentProps) => {
                buttonCloseRight={15}
                buttonCloseTop={15}
                buttonCloseWidth={15}
+               className={cls.modal}
             >
-               <img src={openPopup.link} alt={openPopup.name} className={cls.imagePopup} />
+               <img
+                  style={{
+                     maxHeight: `${sizesPopup.height / 1.1}px`,
+                     maxWidth: `${sizesPopup.width / 1.1}px`,
+                  }}
+                  src={openPopup.link}
+                  alt={openPopup.name}
+                  className={cls.imagePopup}
+               />
             </Modal>
          )}
       </article>

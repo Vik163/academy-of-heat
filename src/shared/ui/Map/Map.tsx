@@ -25,17 +25,15 @@ interface MapProps {
    zoom: number;
    coordsStores?: Coords;
    clickMarker?: (key: string) => void;
-   width: number;
-   height: number;
 }
 
 function Map(props: MapProps) {
-   const { className, width, height, coordsStores, clickMarker, zoom, location } = props;
+   const { className, coordsStores, clickMarker, zoom, location } = props;
    const keysCoords = coordsStores && Object.keys(coordsStores);
 
    return (
       <div
-         style={{ width: `${width}px`, height: `${height}px` }}
+         // style={{ width: `${width}px`, height: `${height}px` }}
          className={classNames(cls.Maps, {}, [className])}
       >
          <YMapComponentsProvider apiKey={process.env.REACT_APP_YA_MAP_KEY}>

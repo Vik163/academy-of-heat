@@ -15,10 +15,10 @@ export const SignComponent = memo((props: SignComponentProps) => {
    const { className } = props;
    const [isOpenPopup, setIsOpenPopup] = useState(false);
    const [animatePopup, setAnimatePopup] = useState(false);
-   const [heightPopup, setHeightPopup] = useState({ height: 0, width: 0 });
+   const [sizesPopup, setSizesPopup] = useState({ height: 0, width: 0 });
 
    const openPopup = () => {
-      setHeightPopup({ height: window.screen.height, width: window.screen.width });
+      setSizesPopup({ height: window.screen.height, width: window.screen.width });
 
       setIsOpenPopup(true);
    };
@@ -72,7 +72,7 @@ export const SignComponent = memo((props: SignComponentProps) => {
             >
                <img
                   // /2 -  scale(1.7)
-                  style={{ maxHeight: `${heightPopup.height / 2}px`, maxWidth: `${heightPopup.width / 2}px` }}
+                  style={{ maxHeight: `${sizesPopup.height / 2}px`, maxWidth: `${sizesPopup.width / 2}px` }}
                   className={classNames(cls.imagePopup, { [cls.openImage]: animatePopup }, [])}
                   src='https://земляк.рф/wp-content/uploads/2022/10/certificate-1280x1810.jpg'
                   alt='Свидетельство'

@@ -1,5 +1,5 @@
 import { type ReactNode, memo } from 'react';
-import { type LinkProps, NavLink } from 'react-router-dom';
+import { type LinkProps, NavLink, useLocation } from 'react-router-dom';
 import { classNames } from '@/shared/lib/classNames/classNames';
 
 import cls from './AppLink.module.scss';
@@ -11,22 +11,14 @@ interface AppLinkProps extends LinkProps {
 }
 
 export const AppLink = memo((props: AppLinkProps) => {
-   const {
-      className,
-      to,
-      activeClassName = '',
-      children,
-      ...otherProps
-   } = props;
+   const { className, to, activeClassName = '', children, ...otherProps } = props;
+   const location = useLocation();
 
    return (
       <NavLink
          to={to}
-         className={({ isActive }) =>
-            classNames(cls.AppLink, { [activeClassName]: isActive }, [
-               className,
-            ])
-         }
+         state={location.pathname}
+         className={({ isActive }) => classNames(cls.AppLink, { [activeClassName]: isActive }, [className])}
          {...otherProps}
       >
          {children}
