@@ -40,7 +40,7 @@ const QuestionsPage = memo((props: QuestionsPageProps) => {
                </Text>
             ) : (
                item.answer.map((str) => (
-                  <Text key={str} fontSize={FontSize.SIZE_15} className={cls.descriptionList}>
+                  <Text key={str} className={cls.descriptionList}>
                      {str}
                   </Text>
                ))
