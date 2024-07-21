@@ -15,8 +15,11 @@ export const SignComponent = memo((props: SignComponentProps) => {
    const { className } = props;
    const [isOpenPopup, setIsOpenPopup] = useState(false);
    const [animatePopup, setAnimatePopup] = useState(false);
+   const [heightPopup, setHeightPopup] = useState({ height: 0, width: 0 });
 
    const openPopup = () => {
+      setHeightPopup({ height: window.screen.height, width: window.screen.width });
+
       setIsOpenPopup(true);
    };
 
@@ -30,7 +33,7 @@ export const SignComponent = memo((props: SignComponentProps) => {
 
    return (
       <article className={classNames(cls.SignComponent, {}, [className])}>
-         <HStack max justify={FlexJustify.CENTER} gap={30}>
+         <HStack max justify={FlexJustify.CENTER} className={cls.container}>
             <div onClick={openPopup}>
                <img
                   className={cls.image}
@@ -39,7 +42,7 @@ export const SignComponent = memo((props: SignComponentProps) => {
                />
             </div>
             <VStack>
-               <Text title={HeaderTagType.H_4} fontSize={FontSize.SIZE_36} fontWeight={FontWeight.TEXT_700}>
+               <Text title={HeaderTagType.H_4} fontWeight={FontWeight.TEXT_700} className={cls.title}>
                   Товарный знак &quot;ЗЕМЛЯК&quot;
                </Text>
                <Text
@@ -64,8 +67,12 @@ export const SignComponent = memo((props: SignComponentProps) => {
                buttonCloseWidth={15}
                onAnimate={onAnimate}
                delayClose={300}
+               className={cls.modal}
+               isCenter
             >
                <img
+                  // /2 -  scale(1.7)
+                  style={{ maxHeight: `${heightPopup.height / 2}px`, maxWidth: `${heightPopup.width / 2}px` }}
                   className={classNames(cls.imagePopup, { [cls.openImage]: animatePopup }, [])}
                   src='https://земляк.рф/wp-content/uploads/2022/10/certificate-1280x1810.jpg'
                   alt='Свидетельство'

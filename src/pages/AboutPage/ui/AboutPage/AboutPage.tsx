@@ -7,8 +7,8 @@ import { TitleComponent } from '@/widgets/TitleComponent/TitleComponent';
 import { AboutVideoComponent } from '../AboutVideoComponent/AboutVideoComponent';
 import { EquipmentComponent } from '@/widgets/EquipmentComponent';
 import { AdviceEngineerComponent } from '@/widgets/AdviceEngineerComponent';
-// import { NumInfoComponent } from '../NumInfoComponent/NumInfoComponent';
-// import { SignComponent } from '../SignComponent/SignComponent';
+import { NumInfoComponent } from '../NumInfoComponent/NumInfoComponent';
+import { SignComponent } from '../SignComponent/SignComponent';
 
 export interface AboutPageProps {
    className?: string;
@@ -25,10 +25,10 @@ const AboutPage = memo((props: AboutPageProps) => {
       <Page className={classNames(cls.AboutPage, {}, [className])}>
          <TitleComponent content={titleContent} />
          <AboutVideoComponent />
-         {/* <NumInfoComponent /> */}
+         <NumInfoComponent />
          <EquipmentComponent />
          <AdviceEngineerComponent />
-         {/* <SignComponent /> */}
+         <SignComponent />
       </Page>
    );
 });

@@ -2,8 +2,9 @@ import { memo } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 
 import cls from './NumInfoComponent.module.scss';
-import { FontColor, FontSize, FontWeight, HeaderTagType, Text } from '@/shared/ui/Text';
+import { FontColor, FontWeight, HeaderTagType, Text } from '@/shared/ui/Text';
 import { HStack } from '@/shared/ui/Stack';
+import { useResize } from '@/shared/lib/hooks/useResize';
 
 interface NumInfoComponentProps {
    className?: string;
@@ -11,21 +12,24 @@ interface NumInfoComponentProps {
 
 export const NumInfoComponent = memo((props: NumInfoComponentProps) => {
    const { className } = props;
+   const { isMobile, isPad } = useResize();
 
    return (
       <article className={classNames(cls.NumInfoComponent, {}, [className])}>
          <div className={cls.container}>
-            <Text title={HeaderTagType.H_3} fontSize={FontSize.SIZE_36} fontWeight={FontWeight.TEXT_700}>
+            <Text title={HeaderTagType.H_3} fontWeight={FontWeight.TEXT_700} className={cls.title}>
                ТМ «ЗЕМЛЯК» в цифрах
             </Text>
-            <Text className={cls.subtitle} fontSize={FontSize.SIZE_18} fontColor={FontColor.LIGHT_GREY}>
+            <Text className={cls.subtitle} fontColor={FontColor.LIGHT_GREY}>
                Накопленный опыт и технологии позволяют нам создавать простые и технологичные решения
             </Text>
-            <img
-               className={cls.image}
-               src='https://xn--e1adkde9i.xn--p1ai/wp-content/uploads/2021/10/tsifry.png'
-               alt='инженер'
-            />
+            {!isMobile && !isPad && (
+               <img
+                  className={cls.image}
+                  src='https://xn--e1adkde9i.xn--p1ai/wp-content/uploads/2021/10/tsifry.png'
+                  alt='инженер'
+               />
+            )}
             <HStack className={cls.infoContainer}>
                <div className={cls.column}>
                   <div className={cls.columnItem}>

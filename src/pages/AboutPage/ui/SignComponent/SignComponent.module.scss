@@ -3,27 +3,44 @@
    padding: 65px 0;
 }
 
+.container {
+   gap: 30px;
+}
+
 .image {
-   width: 360px;
+   max-width: 360px;
+   width: 100%;
    border: 2px solid #98596b;
    cursor: pointer;
 }
 
 .imagePopup {
-   width: 360px;
+   width: auto;
    opacity: 0;
-   -webkit-transform: scale(1.4) translate(-30px);
-   transform: scale(1.4) translate(-30px);
+   -webkit-transform: scale(1.4);
+   transform: scale(1.4);
    -webkit-transition: all 0.3s;
    transition: all 0.3s;
 
    &.openImage {
       opacity: 1;
-      -webkit-transform: scale(1.7) translate(0);
-      transform: scale(1.7) translate(0);
+      -webkit-transform: scale(1.7);
+      transform: scale(1.7);
       -webkit-transition: all 0.3s;
       transition: all 0.3s;
    }
+}
+
+.modal {
+   height: 100%;
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.title {
+   font-size: var(--size-36);
 }
 
 .subtitle {
@@ -31,3 +48,5 @@
    margin-top: 16px;
    line-height: 25px;
 }
+
+@import './SignComponentAdapt.module.scss';

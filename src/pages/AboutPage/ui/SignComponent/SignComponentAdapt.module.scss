@@ -1,0 +1,54 @@
+@import '../../../../app/styles/variables/mixins.scss';
+
+@media screen and (max-width: $pad) {
+   .SignComponent {
+      padding: 30px 20px;
+   }
+
+   .image {
+      max-width: 360px;
+      width: 100%;
+   }
+
+   .container {
+      gap: 20px;
+   }
+
+   .imagePopup {
+      width: auto;
+   }
+
+   .title {
+      font-size: var(--size-32);
+      width: 100%;
+   }
+
+   .subtitle {
+      width: 442px;
+      margin-top: 16px;
+      line-height: 25px;
+   }
+}
+
+@media screen and (max-width: $mobile) {
+   .image {
+      max-width: 280px;
+   }
+
+   .container {
+      flex-direction: column;
+      gap: 20px;
+   }
+
+   .title {
+      font-size: var(--size-26);
+      text-align: center;
+   }
+
+   .subtitle {
+      width: 80%;
+      text-align: center;
+      font-size: var(--size-15);
+      line-height: 25px;
+   }
+}

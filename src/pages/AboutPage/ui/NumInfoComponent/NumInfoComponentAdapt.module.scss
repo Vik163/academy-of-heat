@@ -1,0 +1,111 @@
+@import '../../../../app/styles/variables/mixins.scss';
+
+@media screen and (max-width: $pad) {
+   .NumInfoComponent {
+      padding: 30px 20px 0;
+   }
+
+   .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: auto;
+   }
+
+   .title {
+      font-size: var(--size-32);
+   }
+
+   .subtitle {
+      font-size: var(--size-17);
+      margin: 13px 0 30px;
+   }
+
+   .infoContainer {
+      float: unset;
+      gap: 20px;
+   }
+
+   .column {
+      width: 50%;
+   }
+
+   .columnItem {
+      margin-bottom: 30px;
+
+      span {
+         font-size: 46px;
+         line-height: 46px;
+      }
+   }
+
+   .columnTitle {
+      font-size: 32px;
+      line-height: 32px;
+   }
+}
+
+@media screen and (max-width: $mobile) {
+   .title {
+      font-size: var(--size-26);
+      text-align: center;
+   }
+
+   .subtitle {
+      font-size: var(--size-16);
+      text-align: center;
+   }
+
+   .infoContainer {
+      gap: 0;
+      flex-direction: column;
+   }
+
+   .column {
+      width: 60%;
+   }
+
+   .columnItem {
+      margin-bottom: 30px;
+
+      span {
+         font-size: 32px;
+         line-height: 32px;
+      }
+   }
+
+   .columnTitle {
+      font-size: 26px;
+      line-height: 26px;
+   }
+
+   .columnDescription {
+      font-size: 16px;
+      line-height: 20px;
+   }
+}
+
+@media screen and (max-width: 430px) {
+   .column {
+      width: 80%;
+   }
+
+   .columnItem {
+      margin-bottom: 25px;
+
+      span {
+         font-size: 28px;
+         line-height: 28px;
+      }
+   }
+
+   .columnTitle {
+      font-size: 22px;
+      line-height: 22px;
+   }
+
+   .columnDescription {
+      font-size: 15px;
+      line-height: 20px;
+   }
+}
