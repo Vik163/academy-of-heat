@@ -32,6 +32,17 @@ export const Postman = memo((props: PostmanProps) => {
    const [smallScreen, setSmallScreen] = useState(false);
    const { isMobile, isHorizontal } = useResize();
    const formRef = useRef<HTMLDivElement>(null);
+   const [cursor, setCursor] = useState({ cursor: 0, len: 0 });
+   const [toSend, setToSend] = useState({
+      copyemail: '',
+      title: title || kategory,
+      phone: '',
+      message: '',
+   });
+
+   useEffect(() => {
+      if (cursor) phoneRef.current?.setSelectionRange(cursor.cursor + 1, cursor.cursor + 1);
+   }, [phoneRef, cursor, toSend.phone]);
 
    useEffect(() => {
       const timeout = setTimeout(() => {
@@ -56,13 +67,6 @@ export const Postman = memo((props: PostmanProps) => {
       setIsOpenForm(false);
    };
 
-   const [toSend, setToSend] = useState({
-      copyemail: '',
-      title: title || kategory,
-      phone: '',
-      message: '',
-   });
-
    const checkValid = () => {
       if (phoneRef.current) {
          if (!phoneRef.current.value || phoneRef.current.value.length < 18) {
@@ -71,15 +75,35 @@ export const Postman = memo((props: PostmanProps) => {
          }
          setErr('');
       }
-      // if (messageRef.current && !messageRef.current.value) {
-      //    setErr('message');
-      //    return true;
-      // }
+
       setErr('');
       return false;
    };
+
+   const handleFocusPhone = () => {
+      setToSend({ ...toSend, phone: '+7' });
+   };
+
    const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
       const { target } = e;
+
+      //! Костыль ------------------------------------------
+      if (target.selectionStart)
+         if (target.value.length > target.selectionStart) {
+            console.log('cursor:', cursor);
+
+            setCursor({
+               cursor: target.value.length === 7 ? 10 : target.selectionStart - 1,
+               len: target.value.length,
+            });
+         } else {
+            setCursor({
+               cursor: target.value.length === 7 ? 10 : target.selectionStart,
+               len: target.value.length,
+            });
+         }
+      //!-----------------------------------------------------
+
       if (err) checkValid();
       if (target) {
          if (target.type === 'tel' && target.value) {
@@ -156,6 +180,7 @@ export const Postman = memo((props: PostmanProps) => {
                type='tel'
                placeholder='Введите Ваш телефон'
                onChange={handleChange}
+               onFocus={handleFocusPhone}
                value={toSend.phone}
             />
             {err === 'phone' && (

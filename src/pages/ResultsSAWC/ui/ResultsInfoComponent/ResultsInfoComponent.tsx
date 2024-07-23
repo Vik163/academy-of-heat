@@ -4,6 +4,7 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './ResultsInfoComponent.module.scss';
 import { FontWeight, HeaderTagType, Text } from '@/shared/ui/Text';
 import { Modal } from '@/shared/ui/Modal';
+import { useSizesScreen } from '@/shared/lib/hooks/useSizesScreen';
 
 interface ResultsInfoComponentProps {
    className?: string;
@@ -12,7 +13,7 @@ interface ResultsInfoComponentProps {
 export const ResultsInfoComponent = memo((props: ResultsInfoComponentProps) => {
    const { className } = props;
    const [openPopup, setOpenPopup] = useState({ name: '', link: '' });
-   const [sizesPopup, setSizesPopup] = useState({ height: 0, width: 0 });
+   const { width, height } = useSizesScreen();
 
    const onOpen = (name: string) => {
       setOpenPopup({
@@ -22,7 +23,6 @@ export const ResultsInfoComponent = memo((props: ResultsInfoComponentProps) => {
                ? 'https://земляк.рф/wp-content/uploads/2023/02/ip_tihonovskij_svodnaya_vedomost-1280x905.jpg'
                : 'https://земляк.рф/wp-content/uploads/2023/02/ip_tihonovskij_perechen_meropriyatij-1280x905.jpg',
       });
-      setSizesPopup({ height: window.screen.height, width: window.screen.width });
    };
 
    const onClose = () => {
@@ -72,8 +72,8 @@ export const ResultsInfoComponent = memo((props: ResultsInfoComponentProps) => {
             >
                <img
                   style={{
-                     maxHeight: `${sizesPopup.height / 1.1}px`,
-                     maxWidth: `${sizesPopup.width / 1.1}px`,
+                     maxHeight: `${height / 1.1}px`,
+                     maxWidth: `${width / 1.1}px`,
                   }}
                   src={openPopup.link}
                   alt={openPopup.name}

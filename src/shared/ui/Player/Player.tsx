@@ -4,6 +4,7 @@ import ReactPlayer from 'react-player/youtube';
 import cls from './Player.module.scss';
 import { Modal } from '../Modal';
 import { classNames } from '@/shared/lib/classNames/classNames';
+import { useSizesScreen } from '@/shared/lib/hooks/useSizesScreen';
 
 export interface PlayerProps {
    className?: string;
@@ -16,6 +17,7 @@ export interface PlayerProps {
 const Player = memo((props: PlayerProps) => {
    const { className, url, onReady, addPanel, poster } = props;
    const [isPlaying, setIsPlaying] = useState(false);
+   const { width } = useSizesScreen();
 
    const startVideo = () => {
       setIsPlaying(true);
@@ -61,8 +63,8 @@ const Player = memo((props: PlayerProps) => {
                   controls
                   playing={isPlaying}
                   onReady={onReady}
-                  width='100%'
-                  height='100%'
+                  width={`${width / 1.2}px`}
+                  height={`${width / 2.1}px`}
                   url={url}
                   onEnded={endVideo}
                   config={configYoutube}

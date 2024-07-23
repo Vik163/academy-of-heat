@@ -11,7 +11,7 @@ export const usePhoneValidator = () => {
       const cvLength = currentValue.length;
 
       // returns: "+7"
-      if (cvLength < 3) return '+7';
+      // if (cvLength < 3) return '+7';
 
       if (cvLength < 6) return `${codeCountry} ${codeCity}`;
 
