@@ -71,11 +71,10 @@ export const Header = memo((props: HeaderProps) => {
                )}
             </HStack>
             {!isMobile && !isPad ? (
-               <HStack justify={FlexJustify.END}>
+               <HStack justify={FlexJustify.END} className={cls.btnContainer}>
                   <Text
                      className={classNames(cls.number, { [cls.headerActive]: isHeaderWhite }, [])}
                      fontColor={FontColor.WHITE}
-                     fontSize={FontSize.SIZE_20}
                      fontWeight={FontWeight.TEXT_700}
                   >
                      {PHONE}

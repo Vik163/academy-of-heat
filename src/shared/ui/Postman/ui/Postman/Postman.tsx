@@ -90,8 +90,6 @@ export const Postman = memo((props: PostmanProps) => {
       //! Костыль ------------------------------------------
       if (target.selectionStart)
          if (target.value.length > target.selectionStart) {
-            console.log('cursor:', cursor);
-
             setCursor({
                cursor: target.value.length === 7 ? 10 : target.selectionStart - 1,
                len: target.value.length,

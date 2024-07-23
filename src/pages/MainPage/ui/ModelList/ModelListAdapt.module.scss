@@ -1,6 +1,6 @@
 @import '../../../../app/styles/variables/mixins.scss';
 
-@media screen and (max-width: $pad) {
+@media screen and (max-width: $note) {
    .ModelList {
       padding: 30px 20px;
    }
@@ -24,24 +24,24 @@
    }
 
    .column_1 {
-      width: 283px;
+      width: 32.3%;
    }
 
    .column_2 {
-      width: 233px;
+      width: 26.6%;
    }
 
    .column_3 {
-      width: 133px;
+      width: 15.2%;
    }
 
    .column_4 {
-      width: 137px;
+      width: 15.66%;
       padding-right: 0;
    }
 
    .column_5 {
-      width: 89px;
+      width: 10.2%;
    }
 
    .bodyTableText {
@@ -74,19 +74,15 @@
    }
 
    .column_1 {
-      width: fit-content;
+      width: 38.3%;
    }
 
    .column_2 {
-      width: fit-content;
+      width: 31.6%;
    }
 
    .column_3 {
-      width: fit-content;
-   }
-
-   .column_4 {
-      width: fit-content;
+      width: 15.2%;
    }
 
    .column_5 {

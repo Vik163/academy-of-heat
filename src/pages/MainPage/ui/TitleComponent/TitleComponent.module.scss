@@ -66,10 +66,9 @@
 
 .imageContainer {
    position: absolute;
-   top: 50%;
+   top: 0;
    right: 47px;
    max-width: 414px;
-   transform: translate(0, -50%);
    margin-top: 35px;
 
    &::before {

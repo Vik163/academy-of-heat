@@ -1,5 +1,21 @@
 @import '../../../../app/styles/variables/mixins.scss';
 
+@media screen and (max-width: $note) {
+   .montazh {
+      padding: 30px 20px;
+   }
+}
+
+@media screen and (max-width: 1100px) {
+   .montazh {
+      padding: 30px 20px;
+   }
+   .video {
+      width: 52%;
+      height: 75%;
+   }
+}
+
 @media screen and (max-width: $pad) {
    .montazh {
       padding: 30px 20px;

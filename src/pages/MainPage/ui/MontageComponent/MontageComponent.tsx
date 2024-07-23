@@ -11,7 +11,7 @@ import { HStack } from '@/shared/ui/Stack';
 
 export const MontageComponent = memo(() => {
    const [isOpenForm, setIsOpenForm] = useState(false);
-   const { isMobile, isPad } = useResize();
+   const { isMobile, isPad, isNotebook } = useResize();
 
    const openForm = () => {
       setIsOpenForm(true);
@@ -61,7 +61,7 @@ export const MontageComponent = memo(() => {
                <Player
                   url='https://www.youtube.com/watch?v=2rp0PbsVi6c'
                   className={cls.video}
-                  addPanel={!isMobile && !isPad}
+                  addPanel={!isMobile && !isPad && !isNotebook}
                   poster='https://xn--e1adkde9i.xn--p1ai/wp-content/uploads/2023/10/screenshot_1.png'
                />
             </HStack>

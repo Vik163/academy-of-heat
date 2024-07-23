@@ -1,6 +1,17 @@
 @import '../../../app/styles/variables/mixins.scss';
 
-@media screen and (max-width: $pad) {
+@media screen and (max-width: $note) {
+   .container {
+      width: 100%;
+      padding: 0 20px;
+   }
+
+   .logo {
+      border-bottom: none;
+   }
+}
+
+@media screen and (max-width: 1000px) {
    .container {
       width: 100%;
       padding: 0 20px;
@@ -11,10 +22,6 @@
 
    .footerInfo {
       width: 40%;
-   }
-
-   .logo {
-      border-bottom: none;
    }
 
    .textInfo {

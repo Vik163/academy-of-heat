@@ -28,6 +28,12 @@ body {
    width: 100%;
 }
 
+@media screen and (max-width: $note) {
+   .app {
+      padding-left: var(--sidebar-width-mobile);
+   }
+}
+
 @media screen and (max-width: $pad) {
    .app {
       padding-left: 0;

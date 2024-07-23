@@ -1,17 +1,31 @@
 @import '../../../../app/styles/variables/mixins.scss';
 
-@media screen and (max-width: $pad) {
+@media screen and (max-width: $miniDesk) {
    .TitleComponent {
-      padding: calc(var(--header-height-mobile) + 30px) 25px 40px;
-      height: fit-content;
+      height: auto;
+      overflow: hidden;
    }
 
    .infoContainer {
-      width: 100%;
       &::before {
-         top: -90px;
-         bottom: none;
-         right: -25px;
+         top: -110px;
+         right: -60px;
+      }
+   }
+}
+
+@media screen and (max-width: $note) {
+   .TitleComponent {
+      padding-bottom: 70px;
+   }
+
+   .infoContainer {
+      max-width: 100%;
+      width: 100%;
+      margin: 0;
+      padding: 0 30px;
+      &::before {
+         right: 0;
       }
    }
 
@@ -30,9 +44,38 @@
       width: 45%;
    }
 
-   .imageContainer {
-      transform: translate(10%, -50%);
+   .buttonSelect {
+      margin-top: 51px;
+   }
 
+   .imageContainer {
+      max-width: 324px;
+      right: 67px;
+      &::before {
+         left: 76%;
+      }
+
+      &::after {
+         left: 76%;
+      }
+   }
+}
+
+@media screen and (max-width: $pad) {
+   .TitleComponent {
+      padding: calc(var(--header-height-mobile) + 30px) 25px 40px;
+      height: fit-content;
+   }
+
+   .infoContainer {
+      &::before {
+         top: -90px;
+         bottom: none;
+         right: -25px;
+      }
+   }
+
+   .imageContainer {
       &::before {
          left: 76%;
       }

@@ -5,6 +5,7 @@ import cls from './Player.module.scss';
 import { Modal } from '../Modal';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { useSizesScreen } from '@/shared/lib/hooks/useSizesScreen';
+import { useResize } from '@/shared/lib/hooks/useResize';
 
 export interface PlayerProps {
    className?: string;
@@ -17,7 +18,8 @@ export interface PlayerProps {
 const Player = memo((props: PlayerProps) => {
    const { className, url, onReady, addPanel, poster } = props;
    const [isPlaying, setIsPlaying] = useState(false);
-   const { width } = useSizesScreen();
+   const { width, height } = useSizesScreen();
+   const { isHorizontal } = useResize();
 
    const startVideo = () => {
       setIsPlaying(true);
@@ -63,24 +65,14 @@ const Player = memo((props: PlayerProps) => {
                   controls
                   playing={isPlaying}
                   onReady={onReady}
-                  width={`${width / 1.2}px`}
-                  height={`${width / 2.1}px`}
+                  width={`${isHorizontal ? width / 1.3 : width / 1.1}px`}
+                  height={`${isHorizontal ? height / 1.1 : width / 2.2}px`}
                   url={url}
                   onEnded={endVideo}
                   config={configYoutube}
                />
             </Modal>
          )}
-         {/* <ReactPlayer
-            controls
-            playing={playing}
-            onReady={onReady}
-            width={width}
-            height={height}
-            url={url}
-            onEnded={onEnded}
-            config={configYoutube}
-         /> */}
       </div>
    );
 });
