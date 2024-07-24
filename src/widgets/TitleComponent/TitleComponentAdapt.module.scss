@@ -1,6 +1,6 @@
 @import '../../app/styles/variables/mixins.scss';
 
-@media screen and (max-width: $pad) {
+@media screen and (max-width: $note) {
    .TitleComponent {
       padding: 30px 20px;
       height: auto;
@@ -8,7 +8,10 @@
    }
 
    .infoContainer {
+      max-width: 100%;
       width: 100%;
+      margin: 0;
+      padding: 0 20px;
       &::before {
          top: -90px;
          bottom: none;
@@ -47,10 +50,10 @@
 
    .imageContainer {
       top: 40%;
-      right: 35px;
+      right: 40px;
 
       .mainImage {
-         width: 340px;
+         width: 300px;
       }
    }
 }

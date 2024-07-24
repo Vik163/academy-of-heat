@@ -1,18 +1,19 @@
 @import '../../app/styles/variables/mixins.scss';
 
-@media screen and (max-width: $pad) {
+@media screen and (max-width: $note) {
    .AdviceEngineer {
       padding: 30px 20px;
    }
 
-   .faceContainer {
-      width: 237px;
-      height: 237px;
+   .container {
+      display: flex;
+      justify-content: center;
    }
 
-   .infoContainer {
-      max-width: 550px;
-      width: 100%;
+   .faceContainer {
+      min-width: 237px;
+      max-width: 237px;
+      height: 237px;
    }
 
    .title {

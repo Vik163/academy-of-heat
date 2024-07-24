@@ -1,5 +1,28 @@
 @import '../../../../app/styles/variables/mixins.scss';
 
+@media screen and (max-width: $note) {
+   .MontageCaissonInfo {
+      padding: 30px 20px;
+   }
+
+   .container {
+      gap: 25px;
+   }
+
+   .mainTitle {
+      font-size: var(--size-32);
+   }
+
+   .advantages {
+      width: 100%;
+      padding: 0 20px;
+   }
+
+   .info {
+      width: 100%;
+   }
+}
+
 @media screen and (max-width: $pad) {
    .MontageCaissonInfo {
       padding: 30px 20px;

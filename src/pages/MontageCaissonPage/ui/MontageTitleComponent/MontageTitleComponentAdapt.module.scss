@@ -1,6 +1,6 @@
 @import '../../../../app/styles/variables/mixins.scss';
 
-@media screen and (max-width: $pad) {
+@media screen and (max-width: $note) {
    .MontageTitleComponent {
       padding: 20px 20px 30px;
    }
@@ -17,7 +17,9 @@
    .listTitle {
       margin: 40px 0 0;
    }
+}
 
+@media screen and (max-width: $pad) {
    .calculate {
       width: 100%;
    }

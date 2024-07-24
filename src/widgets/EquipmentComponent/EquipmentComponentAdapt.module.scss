@@ -23,7 +23,8 @@
 
    .container {
       padding-top: 25px;
-      gap: 24px;
+      justify-content: center;
+      gap: 54px;
    }
 
    .listContainer {
@@ -43,6 +44,27 @@
    .button {
       margin: 40px 0 15px;
       width: 280px;
+      margin-left: calc((100% - 822px) / 2);
+   }
+
+   .buttonText {
+      margin-left: calc((100% - 822px) / 2);
+   }
+}
+
+@media screen and (max-width: 1050px) {
+   .button {
+      margin-left: 0;
+   }
+
+   .buttonText {
+      margin-left: 0;
+   }
+}
+
+@media screen and (max-width: $pad) {
+   .container {
+      gap: 24px;
    }
 }
 

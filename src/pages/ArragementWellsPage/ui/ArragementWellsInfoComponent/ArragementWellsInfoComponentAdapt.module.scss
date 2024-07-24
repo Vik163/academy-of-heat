@@ -1,12 +1,12 @@
 @import '../../../../app/styles/variables/mixins.scss';
 
-@media screen and (max-width: $pad) {
+@media screen and (max-width: $note) {
    .ArragementWellsInfoComponent {
       padding: 30px 20px;
    }
 
    .container {
-      flex-direction: column;
+      gap: 25px;
    }
 
    .mainTitle {
@@ -15,6 +15,24 @@
 
    .title {
       margin-top: 20px;
+   }
+
+   .advantages {
+      width: 40%;
+   }
+
+   .info {
+      width: 60%;
+   }
+}
+
+@media screen and (max-width: $pad) {
+   .ArragementWellsInfoComponent {
+      padding: 30px 20px;
+   }
+
+   .container {
+      flex-direction: column;
    }
 
    .advantages {

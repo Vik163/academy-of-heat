@@ -1,14 +1,13 @@
 @import '../../../../app/styles/variables/mixins.scss';
 
-@media screen and (max-width: $pad) {
+@media screen and (max-width: $note) {
    .StagesComponent {
       width: 100%;
       padding: 30px 20px;
-      background-image: url('../../../../shared/assets/images/pad/etapy.jpg');
    }
 
    .title {
-      margin-bottom: 70px;
+      margin-bottom: 80px;
       font-size: var(--size-32);
    }
 
@@ -18,14 +17,14 @@
    }
 
    .addImage {
-      width: 35%;
+      width: 28%;
       height: auto;
    }
 
    .stagesInfo {
       width: 55%;
       height: 290px;
-      padding: 25px;
+      padding: 20px;
    }
 
    .numStage {
@@ -40,6 +39,24 @@
    .description {
       width: 73%;
       margin-top: 10px;
+   }
+}
+
+@media screen and (max-width: $pad) {
+   .StagesComponent {
+      background-image: url('../../../../shared/assets/images/pad/etapy.jpg');
+   }
+
+   .title {
+      margin-bottom: 70px;
+   }
+
+   .addImage {
+      width: 35%;
+   }
+
+   .stagesInfo {
+      padding: 25px;
    }
 }
 

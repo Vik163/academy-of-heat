@@ -12,7 +12,7 @@ interface NumInfoComponentProps {
 
 export const NumInfoComponent = memo((props: NumInfoComponentProps) => {
    const { className } = props;
-   const { isMobile, isPad } = useResize();
+   const { isMobile, isPad, isNotebook } = useResize();
 
    return (
       <article className={classNames(cls.NumInfoComponent, {}, [className])}>
@@ -23,7 +23,7 @@ export const NumInfoComponent = memo((props: NumInfoComponentProps) => {
             <Text className={cls.subtitle} fontColor={FontColor.LIGHT_GREY}>
                Накопленный опыт и технологии позволяют нам создавать простые и технологичные решения
             </Text>
-            {!isMobile && !isPad && (
+            {!isMobile && !isPad && !isNotebook && (
                <img
                   className={cls.image}
                   src='https://xn--e1adkde9i.xn--p1ai/wp-content/uploads/2021/10/tsifry.png'

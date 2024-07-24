@@ -11,6 +11,7 @@ import { FontColor, FontSize, Text } from '@/shared/ui/Text';
 import { Logo } from '@/shared/ui/Logo';
 import { EMAIL, PHONE, PHONE_MOB } from '@/shared/const/main_info';
 import polity from '../../../shared/assets/politika_konfidenczialnost_actepla.pdf';
+import { useResize } from '@/shared/lib/hooks/useResize';
 
 interface FooterProps {
    className?: string;
@@ -19,6 +20,7 @@ interface FooterProps {
 export const Footer = memo((props: FooterProps) => {
    const { className } = props;
    const year = new Date().getFullYear();
+   const { isMobile } = useResize();
 
    return (
       <footer>
@@ -46,7 +48,7 @@ export const Footer = memo((props: FooterProps) => {
                <p className={cls.textInfo}>Оплата: все виды расчета</p>
                <p className={cls.textInfo}>Доставка: обговаривается индивидуально</p>
                <p className={cls.textInfo}>Посещение склада по договорённости</p>
-               <p className={cls.textInfo}>{year} © ТМ «ЗЕМЛЯК». Все права защищены.</p>
+               {!isMobile && <p className={cls.textInfo}>{year} © ТМ «ЗЕМЛЯК». Все права защищены.</p>}
             </div>
             <VStack className={cls.links} align={FlexAlign.START} justify={FlexJustify.START}>
                <Link to={getRouteCatalog()} className={cls.link}>
@@ -62,8 +64,8 @@ export const Footer = memo((props: FooterProps) => {
                   Вопрос-ответ
                </Link>
             </VStack>
-            <VStack className={cls.sequrityInfo} align={FlexAlign.START} gap={20}>
-               <Text fontSize={FontSize.SIZE_11} fontColor={FontColor.LIGHT_GREY}>
+            <VStack className={cls.sequrityInfo} align={FlexAlign.START}>
+               <Text fontSize={FontSize.SIZE_11} fontColor={FontColor.LIGHT_GREY} className={cls.text}>
                   Любая информация, представленная на данном сайте, носит исключительно информационный
                   характер и ни при каких условиях не является публичной офертой, определяемой положением
                   статьи 437 ГК РФ. Отправляя сведения через любую электронную форму на этом сайте, вы даёте
@@ -73,6 +75,7 @@ export const Footer = memo((props: FooterProps) => {
                   Политика конфиденциальности
                </a>
             </VStack>
+            {isMobile && <p className={cls.textInfo}>{year} © ТМ «ЗЕМЛЯК». Все права защищены.</p>}
          </HStack>
       </footer>
    );
