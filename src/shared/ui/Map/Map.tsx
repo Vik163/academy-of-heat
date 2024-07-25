@@ -32,10 +32,7 @@ function Map(props: MapProps) {
    const keysCoords = coordsStores && Object.keys(coordsStores);
 
    return (
-      <div
-         // style={{ width: `${width}px`, height: `${height}px` }}
-         className={classNames(cls.Maps, {}, [className])}
-      >
+      <div className={classNames(cls.Maps, {}, [className])}>
          <YMapComponentsProvider apiKey={process.env.REACT_APP_YA_MAP_KEY}>
             <YMap location={{ center: location, zoom, duration: 800 }}>
                <YMapDefaultFeaturesLayer />

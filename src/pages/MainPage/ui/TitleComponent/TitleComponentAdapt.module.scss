@@ -58,6 +58,10 @@
       &::after {
          left: 76%;
       }
+
+      .mainImage {
+         width: 300px;
+      }
    }
 }
 
@@ -69,13 +73,17 @@
 
    .infoContainer {
       &::before {
-         top: -90px;
+         content: url(../../../../shared/assets/images/round-header-type-home-mobile.svg);
+         top: 15%;
          bottom: none;
          right: -25px;
       }
    }
 
    .imageContainer {
+      top: 20%;
+      right: 40px;
+
       &::before {
          left: 76%;
       }
@@ -83,14 +91,17 @@
       &::after {
          left: 76%;
       }
+
+      .mainImage {
+         width: 260px;
+      }
    }
 }
 
 @media screen and (max-width: $mobile) {
    .infoContainer {
       &::before {
-         content: url(../../../../shared/assets/images/round-header-type-home-mobile.svg);
-         top: 27%;
+         top: 44%;
          right: -24px;
       }
    }
@@ -103,7 +114,7 @@
 
    .production {
       width: fit-content;
-      margin-bottom: 530px;
+      margin-bottom: 50px;
       text-align: center;
    }
 
@@ -113,19 +124,13 @@
 
    .buttonSelect {
       box-shadow: none;
-      margin-top: 20px;
+      margin-top: 360px;
       margin-left: 0;
       width: 100%;
    }
 
    .imageContainer {
-      position: absolute;
-      top: 45%;
-      max-width: 346px;
-
-      .mainImage {
-         width: 100%;
-      }
+      top: 49%;
 
       &::before {
          left: 72%;
@@ -133,6 +138,28 @@
 
       &::after {
          left: 72%;
+      }
+
+      .mainImage {
+         width: 240px;
+      }
+   }
+}
+
+@media screen and (max-width: 380px) {
+   .infoContainer {
+      padding: 0;
+   }
+
+   .buttonSelect {
+      margin-top: 310px;
+      height: 35px;
+   }
+
+   .imageContainer {
+      top: 53%;
+      .mainImage {
+         width: 210px;
       }
    }
 }
