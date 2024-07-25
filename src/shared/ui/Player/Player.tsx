@@ -66,7 +66,7 @@ const Player = memo((props: PlayerProps) => {
                   playing={isPlaying}
                   onReady={onReady}
                   width={`${isHorizontal ? width / 1.3 : width / 1.1}px`}
-                  height={`${isHorizontal ? height / 1.1 : width / 2.2}px`}
+                  height={`${isHorizontal ? height / 1.2 : width / 2.2}px`}
                   url={url}
                   onEnded={endVideo}
                   config={configYoutube}
