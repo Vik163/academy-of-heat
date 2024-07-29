@@ -3,7 +3,7 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 
 import cls from './AdviceEngineerComponent.module.scss';
 import { HStack, VStack } from '@/shared/ui/Stack';
-import { FontColor, FontSize, FontWeight, Text } from '@/shared/ui/Text';
+import { FontColor, FontSize, FontWeight, HeaderTagType, Text } from '@/shared/ui/Text';
 import { FlexAlign } from '@/shared/ui/Stack/Flex';
 import { Button, ButtonBgColor, ButtonVariant } from '@/shared/ui/Button';
 import { EMAIL } from '@/shared/const/main_info';
@@ -43,6 +43,7 @@ export const AdviceEngineerComponent = memo((props: AdviceEngineerComponentProps
             )}
             <VStack className={cls.infoContainer} align={FlexAlign.START}>
                <Text
+                  title={HeaderTagType.H_2}
                   fontWeight={FontWeight.TEXT_700}
                   fontColor={FontColor.TEXT_PRIMARY}
                   className={cls.title}

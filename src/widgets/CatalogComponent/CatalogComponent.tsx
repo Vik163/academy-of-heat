@@ -101,7 +101,7 @@ export const CatalogComponent = memo((props: CatalogComponentProps) => {
    return (
       <div className={classNames(cls.CatalogComponent, {}, [className])}>
          <div className={cls.container}>
-            <Text title={HeaderTagType.H_3} fontWeight={FontWeight.TEXT_700} className={cls.title}>
+            <Text title={HeaderTagType.H_1} fontWeight={FontWeight.TEXT_700} className={cls.title}>
                {title}
             </Text>
             <HStack wrap={FlexWrap.WPAP} className={classNames(cls.links, mods, [])}>

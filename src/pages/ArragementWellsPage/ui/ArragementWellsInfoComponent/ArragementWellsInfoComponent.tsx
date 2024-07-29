@@ -12,7 +12,7 @@ export const ArragementWellsInfoComponent = memo(() => {
       <div className={cls.ArragementWellsInfoComponent}>
          <HStack className={cls.container} align={FlexAlign.START}>
             <div className={cls.info}>
-               <Text title={HeaderTagType.H_3} fontWeight={FontWeight.TEXT_700} className={cls.mainTitle}>
+               <Text title={HeaderTagType.H_2} fontWeight={FontWeight.TEXT_700} className={cls.mainTitle}>
                   От чего зависит стоимость обустройства скважины на воду
                </Text>
                <p>
@@ -57,7 +57,7 @@ export const ArragementWellsInfoComponent = memo(() => {
                   на обслуживание и эксплуатацию.
                </p>
                <Text
-                  title={HeaderTagType.H_4}
+                  title={HeaderTagType.H_3}
                   fontSize={FontSize.SIZE_20}
                   fontWeight={FontWeight.TEXT_600}
                   fontColor={FontColor.LIGHT_GREY}

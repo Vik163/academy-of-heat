@@ -26,7 +26,7 @@ export const ListQualitiesComponent = memo((props: ListQualitiesComponentProps) 
    return (
       <article id='sec-garantii' className={cls.garantii}>
          <div className={cls.container}>
-            <Text title={HeaderTagType.H_3} className={classNames(cls.title, {}, [])}>
+            <Text title={HeaderTagType.H_2} className={classNames(cls.title, {}, [])}>
                {data.title}
             </Text>
             <Text className={classNames(cls.description, {}, [])}>{data.subtitle}</Text>
@@ -36,7 +36,7 @@ export const ListQualitiesComponent = memo((props: ListQualitiesComponentProps) 
                      <div className={cls.garantii_block_list_image}>
                         <img src={item.itemImage} alt={item.itemTitle} />
                      </div>
-                     <Text title={HeaderTagType.H_4} className={cls.garantii_block_list_title}>
+                     <Text title={HeaderTagType.H_3} className={cls.garantii_block_list_title}>
                         {item.itemTitle}
                      </Text>
                      <Text className={cls.garantii_block_list_description}>{item.itemDescription}</Text>

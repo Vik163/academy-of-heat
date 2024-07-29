@@ -35,7 +35,7 @@ export const ResultsInfoComponent = memo((props: ResultsInfoComponentProps) => {
    return (
       <article className={classNames(cls.ResultsInfoComponent, {}, [className])}>
          <div className={cls.container}>
-            <Text title={HeaderTagType.H_4} fontWeight={FontWeight.TEXT_700} className={cls.title}>
+            <Text title={HeaderTagType.H_2} fontWeight={FontWeight.TEXT_700} className={cls.title}>
                Результаты СОУТ
             </Text>
             <Text>

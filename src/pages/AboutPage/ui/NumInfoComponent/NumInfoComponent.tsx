@@ -17,7 +17,7 @@ export const NumInfoComponent = memo((props: NumInfoComponentProps) => {
    return (
       <article className={classNames(cls.NumInfoComponent, {}, [className])}>
          <div className={cls.container}>
-            <Text title={HeaderTagType.H_3} fontWeight={FontWeight.TEXT_700} className={cls.title}>
+            <Text title={HeaderTagType.H_2} fontWeight={FontWeight.TEXT_700} className={cls.title}>
                ТМ «ЗЕМЛЯК» в цифрах
             </Text>
             <Text className={cls.subtitle} fontColor={FontColor.LIGHT_GREY}>

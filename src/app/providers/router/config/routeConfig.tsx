@@ -63,26 +63,6 @@ export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
       path: getRouteResultsSAWC(),
       element: <ResultsSAWC />,
    },
-   // [AppRoutes.ACTIONS]: {
-   //    path: getRouteActions(),
-   //    element: <ActionsPage />,
-   // },
-   // [AppRoutes.CONTACTS]: {
-   //    path: getRouteContacts(),
-   //    element: <ContactsPage />,
-   // },
-   // [AppRoutes.PROFILE]: {
-   //    path: getRouteProfile(':id'),
-   //    element: <ProfilePage />,
-   // },
-   // [AppRoutes.BASKET]: {
-   //    path: getRouteBasket(),
-   //    element: <BasketPage />,
-   // },
-   // [AppRoutes.ORDER]: {
-   //    path: getRouteOrder(),
-   //    element: <OrderPage />,
-   // },
    // [AppRoutes.NOT_FOUND]: {
    //    path: getRouteNotFound(),
    //    element: <NotFoundPage />,

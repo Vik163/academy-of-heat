@@ -29,7 +29,7 @@ export const EquipmentComponent = memo((props: EquipmentComponentProps) => {
    return (
       <article className={classNames(cls.EquipmentComponent, {}, [className])}>
          <div className={cls.mainInfo}>
-            <Text title={HeaderTagType.H_3} fontWeight={FontWeight.TEXT_700} className={cls.title}>
+            <Text title={HeaderTagType.H_2} fontWeight={FontWeight.TEXT_700} className={cls.title}>
                Производим на чешском оборудовании
             </Text>
             <Text className={cls.description} fontColor={FontColor.LIGHT_GREY}>
@@ -42,7 +42,7 @@ export const EquipmentComponent = memo((props: EquipmentComponentProps) => {
                         <img src={i.image} alt={i.title} className={cls.image} />
                         <Text
                            className={cls.itemTitle}
-                           title={HeaderTagType.H_4}
+                           title={HeaderTagType.H_3}
                            fontWeight={FontWeight.TEXT_700}
                         >
                            {i.title}
@@ -63,7 +63,7 @@ export const EquipmentComponent = memo((props: EquipmentComponentProps) => {
                         <img src={i.image} alt={i.title} className={cls.image} />
                         <Text
                            className={cls.itemTitle}
-                           title={HeaderTagType.H_4}
+                           title={HeaderTagType.H_3}
                            fontWeight={FontWeight.TEXT_700}
                            fontSize={FontSize.SIZE_16}
                         >

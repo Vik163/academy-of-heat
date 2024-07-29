@@ -21,7 +21,7 @@ export const MontageCaissonInfo = memo((props: MontageCaissonInfoProps) => {
       <div className={classNames(cls.MontageCaissonInfo, {}, [className])}>
          <HStack className={cls.container} align={FlexAlign.START}>
             <div className={cls.info}>
-               <Text title={HeaderTagType.H_3} fontWeight={FontWeight.TEXT_600} className={cls.mainTitle}>
+               <Text title={HeaderTagType.H_2} fontWeight={FontWeight.TEXT_600} className={cls.mainTitle}>
                   Установка кессона: <br /> важный этап обустройства системы водоснабжения
                </Text>
                <p>
@@ -52,7 +52,7 @@ export const MontageCaissonInfo = memo((props: MontageCaissonInfoProps) => {
                   ежегодное обслуживание и чистка кессона.
                </p>
                <Text
-                  title={HeaderTagType.H_4}
+                  title={HeaderTagType.H_3}
                   fontSize={FontSize.SIZE_20}
                   fontWeight={FontWeight.TEXT_500}
                   fontColor={FontColor.LIGHT_GREY}
@@ -106,7 +106,7 @@ export const MontageCaissonInfo = memo((props: MontageCaissonInfoProps) => {
                   которая будет служить вам долгие годы.
                </p>
                <Text
-                  title={HeaderTagType.H_4}
+                  title={HeaderTagType.H_3}
                   fontSize={FontSize.SIZE_20}
                   fontWeight={FontWeight.TEXT_500}
                   fontColor={FontColor.LIGHT_GREY}

@@ -32,12 +32,12 @@ export const MontageTitleComponent = memo((props: MontageTitleComponentProps) =>
          <div className={cls.container}>
             <Breadcrumb productName='Монтаж кессона' />
             {isMobile ? (
-               <Text title={HeaderTagType.H_2} fontWeight={FontWeight.TEXT_700} className={cls.title}>
+               <Text title={HeaderTagType.H_1} fontWeight={FontWeight.TEXT_700} className={cls.title}>
                   Монтаж кессона <br />
                   за 1 день
                </Text>
             ) : (
-               <Text title={HeaderTagType.H_2} fontWeight={FontWeight.TEXT_700} className={cls.title}>
+               <Text title={HeaderTagType.H_1} fontWeight={FontWeight.TEXT_700} className={cls.title}>
                   Монтаж кессона за 1 день
                </Text>
             )}

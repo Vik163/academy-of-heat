@@ -42,7 +42,7 @@ export const SignComponent = memo((props: SignComponentProps) => {
                />
             </div>
             <VStack>
-               <Text title={HeaderTagType.H_4} fontWeight={FontWeight.TEXT_700} className={cls.title}>
+               <Text title={HeaderTagType.H_2} fontWeight={FontWeight.TEXT_700} className={cls.title}>
                   Товарный знак &quot;ЗЕМЛЯК&quot;
                </Text>
                <Text

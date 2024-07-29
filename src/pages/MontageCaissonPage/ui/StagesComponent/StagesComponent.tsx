@@ -36,7 +36,7 @@ export const StagesComponent = memo((props: StagesComponentProps) => {
    return (
       <article className={classNames(cls.StagesComponent, {}, [className])}>
          <div className={cls.container}>
-            <Text title={HeaderTagType.H_3} fontWeight={FontWeight.TEXT_700} className={cls.title}>
+            <Text title={HeaderTagType.H_2} fontWeight={FontWeight.TEXT_700} className={cls.title}>
                Этапы установки
             </Text>
             <HStack className={cls.content} justify={FlexJustify.CENTER}>

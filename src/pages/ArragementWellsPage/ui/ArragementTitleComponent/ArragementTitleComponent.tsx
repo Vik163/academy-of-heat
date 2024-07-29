@@ -30,7 +30,7 @@ export const ArragementTitleComponent = memo((props: ArragementTitleComponentPro
       <article className={classNames(cls.ArragementTitleComponent, {}, [className])}>
          <div className={cls.container}>
             <Breadcrumb productName='Обустройство скважин' />
-            <Text title={HeaderTagType.H_2} fontWeight={FontWeight.TEXT_700} className={cls.title}>
+            <Text title={HeaderTagType.H_1} fontWeight={FontWeight.TEXT_700} className={cls.title}>
                Обустройство скважин
             </Text>
             <Text fontColor={FontColor.LIGHT_GREY} className={cls.subtitle}>

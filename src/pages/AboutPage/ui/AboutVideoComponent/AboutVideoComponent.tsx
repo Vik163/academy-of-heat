@@ -14,7 +14,7 @@ export const AboutVideoComponent = memo((props: AboutVideoComponentProps) => {
 
    return (
       <article className={classNames(cls.AboutVideoComponent, {}, [className])}>
-         <Text title={HeaderTagType.H_3} fontWeight={FontWeight.TEXT_700} className={cls.title}>
+         <Text title={HeaderTagType.H_2} fontWeight={FontWeight.TEXT_700} className={cls.title}>
             Кессоны и погреба Торговой марки ЗЕМЛЯК
          </Text>
          <Player

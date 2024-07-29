@@ -34,7 +34,7 @@ const ContactsPage = memo((props: ContactsPageProps) => {
       <Page className={classNames(cls.ContactsPage, {}, [className])}>
          <div className={cls.container}>
             <Breadcrumb productName='Контакты' />
-            <Text className={cls.title} title={HeaderTagType.H_2} fontWeight={FontWeight.TEXT_700}>
+            <Text className={cls.title} title={HeaderTagType.H_1} fontWeight={FontWeight.TEXT_700}>
                Контакты
             </Text>
             <HStack justify={FlexJustify.BETWEEN} className={cls.content}>

@@ -29,7 +29,7 @@ const QuestionsPage = memo((props: QuestionsPageProps) => {
                className={classNames(cls.arrow, { [cls.arrowActive]: isActive === item.question }, [])}
                Svg={arrow}
             />
-            <Text title={HeaderTagType.H_4} className={cls.question}>
+            <Text title={HeaderTagType.H_3} className={cls.question}>
                {item.question}
             </Text>
          </HStack>
@@ -54,7 +54,7 @@ const QuestionsPage = memo((props: QuestionsPageProps) => {
             <Breadcrumb productName='Вопрос-ответ' />
             <Text
                className={cls.title}
-               title={HeaderTagType.H_2}
+               title={HeaderTagType.H_1}
                fontSize={FontSize.SIZE_36}
                fontWeight={FontWeight.TEXT_700}
             >
@@ -62,7 +62,7 @@ const QuestionsPage = memo((props: QuestionsPageProps) => {
             </Text>
             <div className={cls.questionsContainer}>
                <Text
-                  title={HeaderTagType.H_3}
+                  title={HeaderTagType.H_2}
                   className={cls.subtitle}
                   fontSize={FontSize.SIZE_20}
                   fontWeight={FontWeight.TEXT_600}
