@@ -591,7 +591,6 @@ module.exports = function (webpackEnv) {
          // Generates an `index.html` file with the <script> injected.
          new HtmlWebpackPlugin({
             inject: true,
-            // favicon: path.resolve(__dirname, '../public/favicon.ico'),
             template: paths.appHtml,
             ...(isEnvProduction
                ? {
