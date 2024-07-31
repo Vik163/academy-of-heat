@@ -20,7 +20,7 @@ export const CatalogComponent = memo((props: CatalogComponentProps) => {
    const { className } = props;
    const { pathname } = useLocation();
    const { isMobile } = useResize();
-   const isCellars = pathname === '/cellars';
+   const isCellars = pathname === '/pogreba';
    const links = isCellars ? cellarsLinks : productsLinks;
    const title = isCellars ? 'Погреба пластиковые Земляк' : 'Каталог кессонов и погребов';
 
@@ -76,9 +76,9 @@ export const CatalogComponent = memo((props: CatalogComponentProps) => {
 
    const linksCards = Object.entries(links).map(([key, value]) => {
       const nameLink = isCellars ? `Погреб ЗЕМЛЯК ${key}` : key;
-      return value.link !== 'cellars' ? (
+      return value.link !== 'pogreba' ? (
          <a
-            aria-label='cellars'
+            aria-label='pogreba'
             href={value.link}
             target='_blank'
             rel='noreferrer'
@@ -89,7 +89,7 @@ export const CatalogComponent = memo((props: CatalogComponentProps) => {
          </a>
       ) : (
          <AppLink
-            to={value.link === 'cellars' ? getRouteCellars() : getRouteProduct(value.link)}
+            to={value.link === 'pogreba' ? getRouteCellars() : getRouteProduct(value.link)}
             key={key}
             className={classNames(cls.linkContainer, mods, [])}
          >

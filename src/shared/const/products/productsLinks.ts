@@ -9,7 +9,7 @@ export const productsLinks = {
    },
    ПОГРЕБА: {
       image: 'https://земляк.рф/wp-content/uploads/2021/10/kategorii-3.png',
-      link: 'cellars',
+      link: 'pogreba',
    },
    ЕМКОСТИ: {
       image: 'https://земляк.рф/wp-content/uploads/2022/12/kesson-1-kopiya.png',
