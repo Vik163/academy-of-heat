@@ -7,22 +7,22 @@
 			<priority>0.8</priority>
 		</url>
 		<url>
-			<loc>https://academy-of-heat.vercel.app/#/catalog</loc>
+			<loc>https://academy-of-heat.vercel.app/katalog</loc>
 			<lastmod>2024-07-30T13:03:39+01:00</lastmod>
 			<priority>1.0</priority>
 		</url>
 		<url>
-			<loc>https://academy-of-heat.vercel.app/#/cellars</loc>
+			<loc>https://academy-of-heat.vercel.app/pogreba</loc>
 			<lastmod>2024-07-30T13:03:39+01:00</lastmod>
 			<priority>0.8</priority>
 		</url>
 		<url>
-			<loc>https://academy-of-heat.vercel.app/#/montage-caisson</loc>
+			<loc>https://academy-of-heat.vercel.app/montazh-kessona</loc>
 			<lastmod>2024-07-30T13:03:39+01:00</lastmod>
 			<priority>0.5</priority>
 		</url>
 		<url>
-			<loc>https://academy-of-heat.vercel.app/#/arrangement-wells</loc>
+			<loc>https://academy-of-heat.vercel.app/obustrojstvo-skvazhin</loc>
 			<lastmod>2024-07-30T13:03:39+01:00</lastmod>
 			<priority>0.5</priority>
 		</url>
