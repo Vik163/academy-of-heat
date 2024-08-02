@@ -32,7 +32,7 @@ module.exports = function (proxy, allowedHost) {
       // really know what you're doing with a special environment variable.
       // Note: ["localhost", ".localhost"] will support subdomains - but we might
       // want to allow setting the allowedHosts manually for more complex setups
-      allowedHosts: disableFirewall ? 'all' : ['localhost', 'https://heat-academy-dev-frontend.vercel.app'],
+      allowedHosts: disableFirewall ? 'all' : ['localhost', '127.0.0.1', 'academy_of_heat'],
       // allowedHosts: disableFirewall ? 'all' : [allowedHost],
       headers: {
          'Access-Control-Allow-Credentials': 'true',

@@ -1,5 +1,5 @@
 {
-   "name": "heat_academy_dev",
+   "name": "academy_of_heat",
    "version": "0.1.0",
    "private": false,
    "devDependencies": {
@@ -91,8 +91,6 @@
    "scripts": {
       "dev": "node scripts/start.js",
       "build": "node scripts/build.js",
-      "predeploy": "npm run build",
-      "deploy": "gh-pages -d build",
       "lint": "eslint \"**/*.{ts,tsx}\"",
       "lint:fix": "eslint \"**/*.{ts,tsx}\" --fix"
    },
