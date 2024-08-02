@@ -3,6 +3,7 @@ const evalSourceMapMiddleware = require('react-dev-utils/evalSourceMapMiddleware
 const noopServiceWorkerMiddleware = require('react-dev-utils/noopServiceWorkerMiddleware');
 const ignoredFiles = require('react-dev-utils/ignoredFiles');
 const redirectServedPath = require('react-dev-utils/redirectServedPathMiddleware');
+const path = require('path');
 const paths = require('./paths');
 const getHttpsConfig = require('./getHttpsConfig');
 
@@ -91,7 +92,11 @@ module.exports = function (proxy, allowedHost) {
          publicPath: paths.publicUrlOrPath.slice(0, -1),
       },
 
-      https: getHttpsConfig(),
+      // https: getHttpsConfig(),
+      https: {
+         key: fs.readFileSync(path.join(__dirname, '../cert/localhost+3-key.pem')),
+         cert: fs.readFileSync(path.join(__dirname, '../cert/localhost+3.pem')),
+      },
       host,
 
       historyApiFallback: {
