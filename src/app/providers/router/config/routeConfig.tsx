@@ -4,6 +4,7 @@ import { CatalogPage } from '@/pages/CatalogPage';
 import { ContactsPage } from '@/pages/ContactsPage';
 import { MainPage } from '@/pages/MainPage';
 import { MontageCaissonPage } from '@/pages/MontageCaissonPage';
+import { NotFoundPage } from '@/pages/NotFoundPage';
 import { ProductPage } from '@/pages/ProductPage';
 import { QuestionsPage } from '@/pages/QuestionsPage';
 import { ResultsSAWC } from '@/pages/ResultsSAWC';
@@ -19,6 +20,7 @@ import {
    getRouteArrangementWells,
    getRouteMontageCaisson,
    getRouteResultsSAWC,
+   getRouteNotFound,
 } from '@/shared/const/router';
 import { type AppRoutesProps } from '@/shared/types/router';
 
@@ -63,8 +65,8 @@ export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
       path: getRouteResultsSAWC(),
       element: <ResultsSAWC />,
    },
-   // [AppRoutes.NOT_FOUND]: {
-   //    path: getRouteNotFound(),
-   //    element: <NotFoundPage />,
-   // },
+   [AppRoutes.NOT_FOUND]: {
+      path: getRouteNotFound(),
+      element: <NotFoundPage />,
+   },
 };

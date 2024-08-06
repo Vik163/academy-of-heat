@@ -10,7 +10,7 @@ export enum AppRoutes {
    ARRANGEMENT_WELLS = 'obustrojstvo-skvazhin',
    MAIN = 'main',
 
-   // NOT_FOUND = 'not_found',
+   NOT_FOUND = 'not_found',
 }
 
 export const RoutePath = {
@@ -25,7 +25,7 @@ export const RoutePath = {
    [AppRoutes.ARRANGEMENT_WELLS]: '/obustrojstvo-skvazhin',
    [AppRoutes.MONTAGE_CAISSON]: '/montazh-kessona',
    // последний
-   // [AppRoutes.NOT_FOUND]: '*',
+   [AppRoutes.NOT_FOUND]: '*',
 };
 
 export const getRouteMain = () => '/';
@@ -55,5 +55,5 @@ export const AppRouteByPathPattern: Record<string, AppRoutes> = {
    [getRouteQuestions()]: AppRoutes.QUESTIONS,
    [getRouteMontageCaisson()]: AppRoutes.MONTAGE_CAISSON,
    [getRouteArrangementWells()]: AppRoutes.ARRANGEMENT_WELLS,
-   // [getRouteNotFound()]: AppRoutes.NOT_FOUND,
+   [getRouteNotFound()]: AppRoutes.NOT_FOUND,
 };

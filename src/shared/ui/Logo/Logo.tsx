@@ -1,6 +1,6 @@
 import { memo } from 'react';
 import { Link } from 'react-router-dom';
-import logo from '@/shared/assets/icons/favicon_1.png';
+import logo from '@/shared/assets/icons/logo.png';
 import { classNames } from '@/shared/lib/classNames/classNames';
 
 import cls from './Logo.module.scss';

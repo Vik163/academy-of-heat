@@ -21,7 +21,7 @@
    margin: 0 auto;
    height: 721px;
    background-image: url(../../shared/assets/images/oborudovaniye.png);
-   background-position: 323px 120px;
+   background-position: 313px 120px;
    background-repeat: no-repeat;
    background-size: 391px;
    z-index: 2;
@@ -46,7 +46,7 @@
 
 .itemContainer {
    display: grid;
-   grid-template-columns: 69px minmax(200px, 305px);
+   grid-template-columns: 69px minmax(200px, 279px);
    gap: 5px 10px;
    grid-template-rows: auto;
 
