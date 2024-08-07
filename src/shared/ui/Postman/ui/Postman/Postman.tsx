@@ -1,6 +1,7 @@
 import { ChangeEvent, SyntheticEvent, memo, useEffect, useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
 
+import { useNavigate } from 'react-router-dom';
 import cls from './Postman.module.scss';
 import { Modal } from '@/shared/ui/Modal';
 import { FontSize, FontWeight, HeaderTagType, Text } from '@/shared/ui/Text';
@@ -23,6 +24,7 @@ export interface PostmanProps {
 export const Postman = memo((props: PostmanProps) => {
    const { closeForm, isOpen, title, buttonText, commentText, kategory, nonModal } = props;
    const messageRef = useRef<HTMLTextAreaElement>(null);
+   const navigate = useNavigate();
    const phoneRef = useRef<HTMLInputElement>(null);
    const [err, setErr] = useState('');
    const [confirmSend, setConfirmSend] = useState(false);
@@ -129,10 +131,12 @@ export const Postman = memo((props: PostmanProps) => {
                   toSend,
                   process.env.REACT_APP_EMAIL_SERVICE_PUBLIC_KEY,
                );
+
                setConfirmSend(true);
             }
          } catch (error) {
-            console.log(error);
+            localStorage.setItem('err', 'Сообщение не передано');
+            navigate('*');
          } finally {
             setLoading(false);
          }

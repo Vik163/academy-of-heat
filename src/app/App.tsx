@@ -11,6 +11,8 @@ import { Footer } from '@/widgets/Footer';
 const App = memo(() => {
    const [openNavMobile, setOpenNavMobile] = useState(false);
 
+   localStorage.removeItem('err');
+
    const onToggle = (state: boolean) => {
       setOpenNavMobile(state);
    };
