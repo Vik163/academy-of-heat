@@ -318,22 +318,22 @@ module.exports = function (webpackEnv) {
          ],
       },
       externalsType: 'script',
-      // externals: {
-      //    // Вместо YOUR_API_KEY подставить значение настоящего ключа
-      //    ymaps3: [
-      //       `promise new Promise((resolve) => {
-      //           if (typeof ymaps3 !== 'undefined') {
-      //             return ymaps3.ready.then(() => resolve(ymaps3));
-      //           }
-      //           const script = document.createElement('script');
-      //           script.src = "https://api-maps.yandex.ru/v3/?apikey=${process.env.REACT_APP_YA_MAP_KEY}&lang=ru_RU";
-      //           script.onload = () => {
-      //             ymaps3.ready.then(() => resolve(ymaps3));
-      //           };
-      //           document.head.appendChild(script);
-      //         })`,
-      //    ],
-      // },
+      externals: {
+         // Вместо YOUR_API_KEY подставить значение настоящего ключа
+         ymaps3: [
+            `promise new Promise((resolve) => {
+                if (typeof ymaps3 !== 'undefined') {
+                  return ymaps3.ready.then(() => resolve(ymaps3));
+                }
+                const script = document.createElement('script');
+                script.src = "https://api-maps.yandex.ru/v3/?apikey=${process.env.REACT_APP_YA_MAP_KEY}&lang=ru_RU";
+                script.onload = () => {
+                  ymaps3.ready.then(() => resolve(ymaps3));
+                };
+                document.head.appendChild(script);
+              })`,
+         ],
+      },
       module: {
          strictExportPresence: true,
          rules: [
