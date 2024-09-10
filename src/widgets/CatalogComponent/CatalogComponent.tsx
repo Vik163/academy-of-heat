@@ -1,4 +1,4 @@
-import { memo } from 'react';
+import { memo, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { Mods, classNames } from '@/shared/lib/classNames/classNames';
 
@@ -11,6 +11,7 @@ import { FlexAlign, FlexJustify, FlexWrap } from '@/shared/ui/Stack/Flex';
 import { AppLink } from '@/shared/ui/AppLink';
 import { getRouteCellars, getRouteProduct } from '@/shared/const/router';
 import { useResize } from '@/shared/lib/hooks/useResize';
+import { Modal } from '@/shared/ui/Modal';
 
 interface CatalogComponentProps {
    className?: string;
@@ -19,6 +20,7 @@ interface CatalogComponentProps {
 export const CatalogComponent = memo((props: CatalogComponentProps) => {
    const { className } = props;
    const { pathname } = useLocation();
+   const [isOpen, setIsOpen] = useState(false);
    const { isMobile } = useResize();
    const isCellars = pathname === '/pogreba';
    const links = isCellars ? cellarsLinks : productsLinks;
@@ -74,19 +76,51 @@ export const CatalogComponent = memo((props: CatalogComponentProps) => {
       );
    };
 
+   const answerPopup = (
+      <div className={cls.container}>
+         <Text title={HeaderTagType.H_3} fontWeight={FontWeight.TEXT_700} className={cls.answerTitle}>
+            Вы переходите на сайт производителя - ТМ «ЗЕМЛЯК»
+         </Text>
+         {/* <Text fontSize={FontSize.SIZE_15} fontWeight={FontWeight.TEXT_600} className={cls.textPopup}>
+            Наш менеджер перезвонит <br /> Вам в ближайшее время
+         </Text> */}
+      </div>
+   );
+
+   const closeModal = () => {
+      setIsOpen(false);
+   };
+
+   const linkSite = (value: { image: string; link: string }, key: string, nameLink: string) => {
+      return (
+         <a aria-label='pogreba' href={value.link} target='_blank' rel='noreferrer' key={key}>
+            {content(nameLink, key, value.image)}
+         </a>
+      );
+   };
+
+   const clickLink = (link: string) => {
+      setIsOpen(true);
+      setTimeout(() => {
+         // window.location.href = link;
+
+         window.open(link); // открывает новую страницу
+      }, 2000);
+      setTimeout(() => {
+         setIsOpen(false);
+      }, 4000);
+   };
+
    const linksCards = Object.entries(links).map(([key, value]) => {
       const nameLink = isCellars ? `Погреб ЗЕМЛЯК ${key}` : key;
       return value.link !== 'pogreba' ? (
-         <a
-            aria-label='pogreba'
-            href={value.link}
-            target='_blank'
-            rel='noreferrer'
+         <div
             key={key}
             className={classNames(cls.linkContainer, mods, [])}
+            onClick={() => clickLink(value.link)}
          >
             {content(nameLink, key, value.image)}
-         </a>
+         </div>
       ) : (
          <AppLink
             to={value.link === 'pogreba' ? getRouteCellars() : getRouteProduct(value.link)}
@@ -108,6 +142,20 @@ export const CatalogComponent = memo((props: CatalogComponentProps) => {
                {linksCards}
             </HStack>
          </div>
+         {isOpen && (
+            <Modal
+               onClose={closeModal}
+               isOpen={isOpen}
+               buttonCloseHeight={20}
+               buttonCloseRight={20}
+               buttonCloseTop={isMobile ? -30 : 20}
+               buttonCloseWidth={20}
+               className={cls.modal}
+               delayClose={0}
+            >
+               {answerPopup}
+            </Modal>
+         )}
       </div>
    );
 });
