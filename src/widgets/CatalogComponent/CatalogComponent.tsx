@@ -91,18 +91,18 @@ export const CatalogComponent = memo((props: CatalogComponentProps) => {
       setIsOpen(false);
    };
 
-   const linkSite = (value: { image: string; link: string }, key: string, nameLink: string) => {
-      return (
-         <a aria-label='pogreba' href={value.link} target='_blank' rel='noreferrer' key={key}>
-            {content(nameLink, key, value.image)}
-         </a>
-      );
-   };
+   // const linkSite = (value: { image: string; link: string }, key: string, nameLink: string) => {
+   //    return (
+   //       <a aria-label='pogreba' href={value.link} target='_blank' rel='noreferrer' key={key}>
+   //          {content(nameLink, key, value.image)}
+   //       </a>
+   //    );
+   // };
 
    const clickLink = (link: string) => {
       setIsOpen(true);
       setTimeout(() => {
-         // window.location.href = link;
+         // window.location.href = link; // остается на странице
 
          window.open(link); // открывает новую страницу
       }, 2000);
