@@ -81,9 +81,9 @@ export const CatalogComponent = memo((props: CatalogComponentProps) => {
          <Text title={HeaderTagType.H_3} fontWeight={FontWeight.TEXT_700} className={cls.answerTitle}>
             Вы переходите на сайт производителя - ТМ «ЗЕМЛЯК»
          </Text>
-         {/* <Text fontSize={FontSize.SIZE_15} fontWeight={FontWeight.TEXT_600} className={cls.textPopup}>
-            Наш менеджер перезвонит <br /> Вам в ближайшее время
-         </Text> */}
+         <Text fontSize={FontSize.SIZE_15} fontWeight={FontWeight.TEXT_600} className={cls.textPopup}>
+            Наша страница останется открытой
+         </Text>
       </div>
    );
 
