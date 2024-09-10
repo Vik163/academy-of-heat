@@ -108,7 +108,7 @@ export const CatalogComponent = memo((props: CatalogComponentProps) => {
       }, 2000);
       setTimeout(() => {
          setIsOpen(false);
-      }, 4000);
+      }, 5000);
    };
 
    const linksCards = Object.entries(links).map(([key, value]) => {
